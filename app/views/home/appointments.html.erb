@@ -1,0 +1,15 @@
+<article>
+  <h3>장소약속</h3>
+  <% @location_apps.each do |la| %>
+      <p><%= link_to "#{la.title}", location_app_path(la) %></p>
+  <% end %>
+  <%= link_to '장소약속 하기', new_location_app_path %>
+</article>
+
+<article>
+  <h3>돈약속</h3>
+  <% @money_apps.each do |ma| %>
+      <p><%= link_to "#{ma.title}", money_app_path(ma) %></p>
+  <% end %>
+  <%= link_to '돈약속 하기', new_money_app_path %>
+</article>

@@ -1,20 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+
+  root 'home#index'
   get 'home/index'
 
-  get 'home/appoinments'
+  get 'home/appointments'
 
-  get 'locationapp/new'
+  resources :location_apps, except: :index
+  resources :money_apps, except: :index
 
-  get 'locationapp/edit'
+  post 'invite/money_done' => 'invite#money_done'
 
-  get 'locationapp/show'
-
-  get 'moneyapp/new'
-
-  get 'moneyapp/edit'
-
-  get 'moneyapp/show'
-
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -3722,3 +3722,128 @@ Processing by MoneyAppsController#show as HTML
 Completed 200 OK in 69ms (Views: 60.9ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-16 19:22:37 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 2206ms (Views: 2132.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-16 19:22:48 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 86ms (Views: 57.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-16 19:22:54 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hYxUvOxyingvsXlv5euJCcu//KHUD2GfHVrzNpVl7DhneA6n/cQCmLMCmGjN5g7lD020gU0K/wOM+e5aohW95Q==", "user"=>{"email"=>"ssr@ssr.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ssr@ssr.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-07-16 10:22:54.457028"], ["last_sign_in_at", "2017-07-15 16:47:53.478501"], ["sign_in_count", 3], ["updated_at", "2017-07-16 10:22:54.458490"], ["id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 171ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-16 19:22:54 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home/appointments" for 127.0.0.1 at 2017-07-16 19:22:55 +0900
+Processing by HomeController#appointments as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/appointments.html.erb within layouts/application
+  [1m[36mLocationApp Load (0.4ms)[0m  [1m[34mSELECT "location_apps".* FROM "location_apps" INNER JOIN "location_infos" ON "location_apps"."id" = "location_infos"."location_app_id" WHERE "location_infos"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mMoneyApp Load (0.8ms)[0m  [1m[34mSELECT "money_apps".* FROM "money_apps" INNER JOIN "money_infos" ON "money_apps"."id" = "money_infos"."money_app_id" WHERE "money_infos"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered home/appointments.html.erb within layouts/application (47.5ms)
+Completed 200 OK in 132ms (Views: 73.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-16 19:22:58 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 61ms (Views: 58.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home/appointments" for 127.0.0.1 at 2017-07-16 19:22:59 +0900
+Processing by HomeController#appointments as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/appointments.html.erb within layouts/application
+  [1m[36mLocationApp Load (0.2ms)[0m  [1m[34mSELECT "location_apps".* FROM "location_apps" INNER JOIN "location_infos" ON "location_apps"."id" = "location_infos"."location_app_id" WHERE "location_infos"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mMoneyApp Load (0.3ms)[0m  [1m[34mSELECT "money_apps".* FROM "money_apps" INNER JOIN "money_infos" ON "money_apps"."id" = "money_infos"."money_app_id" WHERE "money_infos"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered home/appointments.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 76ms (Views: 68.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-16 19:23:04 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 74.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home/appointments" for 127.0.0.1 at 2017-07-16 19:23:05 +0900
+Processing by HomeController#appointments as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/appointments.html.erb within layouts/application
+  [1m[36mLocationApp Load (0.9ms)[0m  [1m[34mSELECT "location_apps".* FROM "location_apps" INNER JOIN "location_infos" ON "location_apps"."id" = "location_infos"."location_app_id" WHERE "location_infos"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mMoneyApp Load (0.2ms)[0m  [1m[34mSELECT "money_apps".* FROM "money_apps" INNER JOIN "money_infos" ON "money_apps"."id" = "money_infos"."money_app_id" WHERE "money_infos"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered home/appointments.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 92ms (Views: 85.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/money_apps/1" for 127.0.0.1 at 2017-07-16 19:23:08 +0900
+Processing by MoneyAppsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMoneyApp Load (0.3ms)[0m  [1m[34mSELECT  "money_apps".* FROM "money_apps" WHERE "money_apps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering money_apps/show.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "money_infos" ON "users"."id" = "money_infos"."user_id" WHERE "money_infos"."money_app_id" = ?[0m  [["money_app_id", 1]]
+  Rendered money_apps/show.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 82ms (Views: 63.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/home/appointments" for 127.0.0.1 at 2017-07-16 19:23:10 +0900
+Processing by HomeController#appointments as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/appointments.html.erb within layouts/application
+  [1m[36mLocationApp Load (0.1ms)[0m  [1m[34mSELECT "location_apps".* FROM "location_apps" INNER JOIN "location_infos" ON "location_apps"."id" = "location_infos"."location_app_id" WHERE "location_infos"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mMoneyApp Load (0.1ms)[0m  [1m[34mSELECT "money_apps".* FROM "money_apps" INNER JOIN "money_infos" ON "money_apps"."id" = "money_infos"."money_app_id" WHERE "money_infos"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered home/appointments.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 80ms (Views: 73.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/location_apps/new" for 127.0.0.1 at 2017-07-16 19:23:14 +0900
+Processing by LocationAppsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering location_apps/new.html.erb within layouts/application
+  Rendered location_apps/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 73ms (Views: 50.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/money_apps/1" for 127.0.0.1 at 2017-07-16 19:23:30 +0900
+Processing by MoneyAppsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMoneyApp Load (0.2ms)[0m  [1m[34mSELECT  "money_apps".* FROM "money_apps" WHERE "money_apps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering money_apps/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "money_infos" ON "users"."id" = "money_infos"."user_id" WHERE "money_infos"."money_app_id" = ?[0m  [["money_app_id", 1]]
+  Rendered money_apps/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 50ms (Views: 41.8ms | ActiveRecord: 0.7ms)
+
+

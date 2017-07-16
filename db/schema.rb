@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20170715134456) do
   create_table "money_infos", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "money_app_id"
-    t.integer  "money"
+    t.integer  "money",        default: 0
     t.boolean  "done",         default: false
     t.boolean  "builder",      default: false
     t.datetime "created_at",                   null: false

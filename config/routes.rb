@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :location_apps, except: :index
   resources :money_apps, except: :index
 
-  post 'invite/money_done' => 'invite#money_done'
+  resources :money_infos, only: :update
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

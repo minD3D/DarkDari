@@ -4,10 +4,36 @@
 <p><%= @money_app.total_money %></p>
 
 <h4>참여자들</h4>
-<% @users.each do |u| %>
-    <p><%= u.email %> <%= link_to '끝!', invite_money_done_path, method: :post %></p>
-    <!-- 나중에 저 done도 builder만 할 수 있게 바꾸고, done: true이면 채무청산한거 표시해주기 -->
+<table>
+  <tr>
+    <th>유저</th>
+    <th>채무액</th>
+    <th>완료여부</th>
+  </tr>
+  <% @users.each_with_index do |u, i| %>
+      <tr>
+        <td><%= u.email %></td>
+        <% if builder?(current_user) %>
+            <th><%= @infos[i].money %>원</th>
+            <% if @infos[i].done %>
+                <td>완료!</td>
+            <% else %>
+                <td><%= link_to "미완료", money_info_path(@infos[i]), method: :patch, data: {confirm: '완료 시키겠습니까?'} %>(클릭시
+                  완료)
+                </td>
+            <% end %>
+        <% else %>
+            <th><%= @infos[i].money %>원</th>
+            <td><%= @infos[i].done %></td>
+        <% end %>
+      </tr>
+  <% end %>
+</table>
+
+<%#= TODO: 채무액 변경기능, 완료 했으면 변경 불가  %>
+<%#= TODO: 유저 약속에 추가하는 기능(MoneyInfos#create) %>
+<% if builder?(current_user) %>
+    <%= link_to '수정', edit_money_app_path(@money_app) %>
+    <%= link_to '삭제', money_app_path(@money_app), method: :delete, data: {confirm: 'Are you sure?'} %>
 <% end %>
-<%= link_to '수정', edit_money_app_path(@money_app) %>
-<%= link_to '삭제', money_app_path(@money_app), method: :delete %>
 <%= link_to '목록', home_appointments_path %>

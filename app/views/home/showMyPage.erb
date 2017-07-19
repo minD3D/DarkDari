@@ -1,0 +1,98 @@
+ <!--showMyPage 최혁 추가 부분-->
+
+ <!--// jQuery UI CSS파일-->
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+ <!--// jQuery 기본 js파일-->
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ <!--// jQuery UI 라이브러리 js파일-->
+ <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
+<script>
+ $(function() {
+ $( "#testDatepicker" ).datepicker({
+ });
+ });
+</script>
+
+
+ <!-- Header -->
+<div class="myPage-header">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-12">
+          <h1>임시 마이페이지</h1>
+        <div class="content">
+            <div class="row">
+
+              <h2 class="subs-title text-center">A. 새로운 닥달이를 만드세요</h2></br></div>
+              <div class="text-center">
+                <!-- 약속 생성-->
+                <form  action="#" method="get">
+
+                   <input  type="radio" name="monoey" value="" checked > 돈 닥달
+                  <input type="radio" name="monoey" value=""  > 시간 닥달
+                  <input type="radio" name="monoey" value=""  > 의견 닥달        </br> </br>
+
+                  <p>닥달이 이름 :<input   placeholder="내 돈 빨리내놔!"   name="promise_name" id="promise_name" type="text"></p>
+
+                  <p> 마감시간 : <input style="color: black"   name="promise_time" id="promise_time" type="datetime-local"></p>
+
+
+                  <input style="color: black" name="darkdal" value="닥달이 생성" type="submit">
+                </form>
+
+              </div>
+            </div>
+
+        <p>---------그리드 활용 공간 시작 부분 1-------------------</p>
+          <section id="about" class="section-padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 text-center">
+                  <div class="about-title">
+                  <h2>B. 생성된 닥달이 내역들</h2>
+                  </div>
+                </br>
+                  <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp delay-02s">
+                      그리드 임시.1
+
+                  </div>
+                  <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp delay-04s">
+                    그리드 임시.2
+                  </div>
+                  <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp delay-06s">
+                    그리드 임시.3
+                  </div>
+                  <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp delay-08s">
+                    그리드 임시.4
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+      </br>
+        <p>---------기타 활용 공간 시작 부분 2-------------------</p>
+          <div id="contact-info">
+            <div class="container">
+                <div class="contact col-md-6 wow fadeIn delay-08s">
+                  <div class="col-md-10 col-md-offset-1">
+              기 타  활 용  공 간
+                  </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+</div>
+<!-- /.intro-header -->
+
+<%= render '/layouts/aboutcontact' %>
+<!-- layouts에 about과 contact분리함 -->
+

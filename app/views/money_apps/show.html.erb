@@ -4,7 +4,7 @@
 <p><%= @money_app.total_money %></p>
 
 <h4>참여자들</h4>
-<table>
+<table width="1000px">
   <tr>
     <th>유저</th>
     <th>채무액</th>
@@ -14,26 +14,47 @@
       <tr>
         <td><%= u.email %></td>
         <% if builder?(current_user) %>
-            <th><%= @infos[i].money %>원</th>
+            <!-- 약속 생성한 유저 화면-->
             <% if @infos[i].done %>
                 <td>완료!</td>
+                <td><%= @infos[i].money %>원</td>
             <% else %>
-                <td><%= link_to "미완료", money_info_path(@infos[i]), method: :patch, data: {confirm: '완료 시키겠습니까?'} %>(클릭시
-                  완료)
+                <td>
+                  <%= link_to "미완료", make_done_money_info_path(@infos[i]),
+                              method: :patch,
+                              data: {confirm: '완료 시키겠습니까?'} %>
+                  (클릭시완료)
+                </td>
+                <td id="money-container<%= i %>">
+                  <span id="money<%= i %>"><%= @infos[i].money %></span>원
+                  <button onclick="moneyForm(<%= i %>)">금액 수정</button>
                 </td>
             <% end %>
         <% else %>
-            <th><%= @infos[i].money %>원</th>
+            <!-- 일반 유저 화면 -->
+            <td><%= @infos[i].money %>원</td>
             <td><%= @infos[i].done %></td>
         <% end %>
       </tr>
   <% end %>
 </table>
 
-<%#= TODO: 채무액 변경기능, 완료 했으면 변경 불가  %>
+<%#= TODO: 채무액 변경기능, 완료 했으면 변경 불가 / 전송해서 수정하기 %>
 <%#= TODO: 유저 약속에 추가하는 기능(MoneyInfos#create) %>
+
 <% if builder?(current_user) %>
     <%= link_to '수정', edit_money_app_path(@money_app) %>
     <%= link_to '삭제', money_app_path(@money_app), method: :delete, data: {confirm: 'Are you sure?'} %>
 <% end %>
 <%= link_to '목록', home_appointments_path %>
+
+<script>
+    function moneyForm(i) {
+        var containerId = 'money-container' + i;
+        var id = 'money' + i;
+        var money = document.getElementById(id).textContent;
+
+        document.getElementById(containerId).innerHTML
+            = '<input type="number" min="0" name="money_change" value="' + money + '">';
+    }
+</script>

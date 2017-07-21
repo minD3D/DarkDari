@@ -2,7 +2,11 @@ class MoneyInfosController < ApplicationController
   before_action :set_info
   before_action :builder?
 
-  def update
+  def create
+
+  end
+
+  def make_done
     @info.done = true
     @info.save
 

@@ -61,6 +61,7 @@ class MoneyAppsController < ApplicationController
   end
 
   # 만든 사람의 id와 글 아이디로 관계 생성, builder: true
+  # TODO: 모델 콜백으로 옮기든 엑티브잡으로 옮기든 해야할듯
   def money_info
     MoneyInfo.create(user_id: current_user.id,
                      money_app_id: @money_app.id,

@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/index'
 
+  # showMyPage 최혁 추가 부분
+  get 'home/showMyPage'
+
   get 'home/appointments'
 
   resources :location_apps, except: :index

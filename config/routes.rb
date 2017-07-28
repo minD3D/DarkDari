@@ -14,10 +14,13 @@ Rails.application.routes.draw do
 
   resources :money_infos, only: :create do
     member do
-      patch 'make_done'
+      patch 'done'
       patch 'change_money'
     end
   end
+
+
+  resources :notifications, only: [:create, :destroy]
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

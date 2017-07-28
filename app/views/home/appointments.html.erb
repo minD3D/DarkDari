@@ -13,3 +13,23 @@
   <% end %>
   <%= link_to '돈약속 하기', new_money_app_path %>
 </article>
+
+<article>
+  <h3>알림</h3>
+  <% @notification.each do |n| %>
+      <div class="notification">
+        <p><%= n.requester.nickname %>님의 초대</p>
+        <p><%= raw(n.message) %></p>
+        <% case n.type %>
+        <% when 'AppNote' %>
+            <%= link_to '수락', money_infos_path(note_id: n.id), method: :post %>
+        <% when 'LocationNote' %>
+            <%= link_to '수락', '/' %>
+            <%# location_info 생성 %>
+        <% else %>
+            ...
+        <% end %>
+        <%= link_to '거절', notification_path(n), method: :delete %>
+      </div>
+  <% end %>
+</article>

@@ -8,6 +8,7 @@ class MoneyAppsController < ApplicationController
     @users = @money_app.users
     @infos = @money_app.money_infos
 
+    @search_users = User.search(params[:s_nickname])
   end
 
   def new
@@ -38,8 +39,6 @@ class MoneyAppsController < ApplicationController
     @money_app.destroy
     redirect_to home_appointments_path
   end
-
-
 
 
   private

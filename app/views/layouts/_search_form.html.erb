@@ -1,0 +1,30 @@
+<article>
+  <h4>유저초대</h4>
+  <%= form_tag(money_app_path(app), method: :get) do %>
+      <%= search_field_tag(:s_nickname) %>
+      <%= submit_tag('유저찾기') %>
+  <% end %>
+
+  <%# TODO: 본인은 검색에 안뜨게 바꾸기 %>
+  <% if @search_users.present? %>
+      <div>
+        <% @search_users.each do |su| %>
+            <p>
+              <%= su.email %>
+              <% case invited?(su.id, app.id) %>
+              <% when 1 %>
+                  참여중
+              <% when 2 %>
+                  <%= link_to '초대취소', notification_path(get_notification_id(su.id, app.id)), method: :delete %>
+              <% when 3 %>
+                  <%= link_to '초대', notifications_path(type: type,
+                                                       user_id: su.id,
+                                                       app_id: app.id), method: :post %> <%# 페북 참고해 보니까 id같은거 암호화해서 보내는듯 %>
+              <% end %>
+            </p>
+
+        <% end %>
+      </div>
+  <% end %>
+  <%# TODO: 초대요청 보낸 유저들 보여주기 %>
+</article>

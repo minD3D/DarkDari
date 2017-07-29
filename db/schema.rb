@@ -10,48 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170723152138) do
+ActiveRecord::Schema.define(version: 20170729074747) do
 
-  create_table "location_apps", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "deadline"
-    t.string   "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "appointments", force: :cascade do |t|
+    t.string   "title",                   null: false
+    t.text     "content",                 null: false
+    t.datetime "deadline",                null: false
+    t.string   "location",   default: "", null: false
+    t.string   "type",                    null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
-  create_table "location_infos", force: :cascade do |t|
+  create_table "infos", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "location_app_id"
-    t.string   "current_location"
-    t.boolean  "done",             default: false
-    t.boolean  "builder",          default: false
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.index ["location_app_id"], name: "index_location_infos_on_location_app_id"
-    t.index ["user_id"], name: "index_location_infos_on_user_id"
-  end
-
-  create_table "money_apps", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "deadline"
-    t.integer  "total_money"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "money_infos", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "money_app_id"
-    t.integer  "money",        default: 0
-    t.boolean  "done",         default: false
-    t.boolean  "builder",      default: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.index ["money_app_id"], name: "index_money_infos_on_money_app_id"
-    t.index ["user_id"], name: "index_money_infos_on_user_id"
+    t.integer  "appointment_id"
+    t.integer  "money",          default: 0
+    t.boolean  "done",           default: false
+    t.boolean  "builder",        default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.index ["appointment_id"], name: "index_infos_on_appointment_id"
+    t.index ["user_id"], name: "index_infos_on_user_id"
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -70,7 +50,7 @@ ActiveRecord::Schema.define(version: 20170723152138) do
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "phone",                  default: "", null: false
-    t.string   "nickname",                            null: false
+    t.string   "nickname",               default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

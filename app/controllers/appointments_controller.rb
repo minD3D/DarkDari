@@ -1,4 +1,4 @@
-class MoneyAppsController < ApplicationController
+class AppointmentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_money_app, only: [:show, :edit, :update, :destroy]
   before_action :builder?, only: [:edit, :update, :destroy]
@@ -12,8 +12,11 @@ class MoneyAppsController < ApplicationController
   end
 
   def new
-    @money_app = MoneyApp.new
+    @type = params[:type]
+    @appointment = Appointment.new
   end
+
+  # TODO: 통합하는 과정 new까지만 완료함, create, edit, show, destroy 미완
 
   def edit
 

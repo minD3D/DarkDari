@@ -1,9 +1,6 @@
 class User < ApplicationRecord
-  has_many :location_infos
-  has_many :location_apps, through: :location_infos
-
-  has_many :money_infos
-  has_many :money_apps, through: :money_infos
+  has_many :infos
+  has_many :appointments, through: :infos
 
   has_many :notifications
 

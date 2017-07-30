@@ -1,3 +1,0 @@
-class MoneyApp < Appointment
-
-end

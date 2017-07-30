@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170729074747) do
     t.text     "content",                 null: false
     t.datetime "deadline",                null: false
     t.string   "location",   default: "", null: false
-    t.string   "type",                    null: false
+    t.string   "app_type",                null: false
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end

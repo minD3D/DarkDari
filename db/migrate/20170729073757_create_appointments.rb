@@ -5,7 +5,7 @@ class CreateAppointments < ActiveRecord::Migration[5.0]
       t.text :content,        null: false
       t.datetime :deadline,   null: false
       t.string :location,     null: false, default: ""
-      t.string :type,         null: false
+      t.string :app_type,     null: false
       t.timestamps
     end
   end

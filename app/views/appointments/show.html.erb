@@ -17,7 +17,7 @@
       <tr>
         <th>유저</th>
         <th>완료여부</th>
-        <% if @appointment.type == 'MoneyApp' %>
+        <% if @appointment.app_type == 'MoneyApp' %>
             <th>채무액</th>
         <% end %>
       </tr>
@@ -36,7 +36,7 @@
                                   data: {confirm: '완료 시키겠습니까?'} %>
                       (클릭시완료)
                     </td>
-                    <% if @appointment.type == 'MoneyApp' %>
+                    <% if @appointment.app_type == 'MoneyApp' %>
                         <td id="money-container<%= i %>">
                           <span id="money<%= i %>"><%= @infos[i].money %></span>원
                           <button onclick="moneyForm(<%= i %>)">금액 수정</button>
@@ -46,7 +46,7 @@
             <% else %>
                 <!-- 일반 유저 화면 -->
                 <td><%= @infos[i].done %></td>
-                <% if @appointment.type == 'MoneyApp' %>
+                <% if @appointment.app_type == 'MoneyApp' %>
                     <td><%= @infos[i].money %>원</td>
                 <% end %>
             <% end %>

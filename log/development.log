@@ -14676,3 +14676,121 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-30 20:27:53 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_aboutcontact.html.erb (400.6ms)
+  Rendered home/index.html.erb within layouts/application (403.9ms)
+Completed 200 OK in 482ms (Views: 466.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-30 20:27:56 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 92ms (Views: 69.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-30 20:27:59 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CTP7paKu0qdCZUSTfnJKqwYF3fMFJ6cvHykB52OvSoQxyT0lDdzJ9s/AKE9gefoBxHESgY3kS++tRb0wQn1M4w==", "user"=>{"email"=>"ssr@ssr.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ssr@ssr.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-07-30 11:27:59.382333"], ["last_sign_in_at", "2017-07-30 11:04:25.827166"], ["sign_in_count", 10], ["updated_at", "2017-07-30 11:27:59.383345"], ["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 160ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-30 20:27:59 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_aboutcontact.html.erb (1.2ms)
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home/appointments" for 127.0.0.1 at 2017-07-30 20:28:02 +0900
+Processing by HomeController#appointments as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/appointments.html.erb within layouts/application
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered home/_notifications.html.erb (4.2ms)
+  Rendered home/appointments.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 145ms (Views: 50.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/appointments/1" for 127.0.0.1 at 2017-07-30 20:28:03 +0900
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering appointments/show.html.erb within layouts/application
+  [1m[36mInfo Load (0.5ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 1], ["appointment_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?[0m  [["appointment_id", 1]]
+  Rendered appointments/_search_form.html.erb (8.1ms)
+  Rendered appointments/show.html.erb within layouts/application (29.0ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: notifications.appointment_id: SELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?):
+    29:   <%# TODO: 초대요청 보낸 유저들 보여주기 %>
+    30:   <h4>초대 중인 유저</h4>
+    31:   <% @inviting_user.each do |iu| %>
+    32:       <p>
+    33:         <%= iu.nickname %>
+    34:         <%= link_to '초대취소', notification_path(get_notification_id(iu.id, appointment.id)), method: :delete %>
+    35:       </p>
+  
+app/views/appointments/_search_form.html.erb:32:in `_app_views_appointments__search_form_html_erb__2107065055933362530_70274164514300'
+app/views/appointments/show.html.erb:11:in `_app_views_appointments_show_html_erb__2147132634593424475_70274165377960'
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.3ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.9ms)
+Started GET "/home/appointments" for 127.0.0.1 at 2017-07-30 20:28:07 +0900
+Processing by HomeController#appointments as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/appointments.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered home/_notifications.html.erb (2.9ms)
+  Rendered home/appointments.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 56ms (Views: 48.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/home/appointments" for 127.0.0.1 at 2017-07-30 20:28:07 +0900
+Processing by HomeController#appointments as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/appointments.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered home/_notifications.html.erb (8.7ms)
+  Rendered home/appointments.html.erb within layouts/application (14.3ms)
+Started GET "/home/appointments" for 127.0.0.1 at 2017-07-30 20:28:07 +0900
+Processing by HomeController#appointments as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 51.5ms | ActiveRecord: 0.6ms)
+
+
+  Rendering home/appointments.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered home/_notifications.html.erb (2.0ms)
+  Rendered home/appointments.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 39ms (Views: 32.7ms | ActiveRecord: 1.1ms)
+
+

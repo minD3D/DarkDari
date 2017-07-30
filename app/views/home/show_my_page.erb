@@ -117,7 +117,7 @@
                 <p>내용: <%= app.content %></p>
                 <p>마감일: <%= app.deadline %></p>
                 </p>
-                <a href="#" class="btn btn-default">상세보기(나중에 모달로 appointments/show)</a>
+                <%= link_to '상세보기(나중에 모달로 appointments/show)', appointment_path(app) %>
               </div>
             </div>
           </div>

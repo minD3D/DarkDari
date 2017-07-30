@@ -1,0 +1,78 @@
+<h4>제목 : <%= @appointment.title %></h4>
+<p>내용 : <%= @appointment.content %></p>
+<p>마감기한 : <%= @appointment.deadline %></p>
+
+
+<section>
+  <h3>참여현황</h3>
+
+  <% if builder?(current_user) %>
+      <!-- 유저 검색 -->
+      <%= render 'search_form', appointment: @appointment %>
+  <% end %>
+
+  <article>
+    <h4>참여자들</h4>
+    <table width="1000px">
+      <tr>
+        <th>유저</th>
+        <th>완료여부</th>
+        <% if @appointment.app_type == 'MoneyApp' %>
+            <th>채무액</th>
+        <% end %>
+      </tr>
+      <% @users.each_with_index do |u, i| %>
+          <tr>
+            <td><%= u.nickname %></td>
+            <% if builder?(current_user) %>
+                <!-- 약속 생성한 유저 화면-->
+                <% if @infos[i].done %>
+                    <td>완료!</td>
+                    <td><%= @infos[i].money %>원</td>
+                <% else %>
+                    <td>
+                      <%= link_to "미완료", done_info_path(@infos[i]),
+                                  method: :patch,
+                                  data: {confirm: '완료 시키겠습니까?'} %>
+                      (클릭시완료)
+                    </td>
+                    <% if @appointment.app_type == 'MoneyApp' %>
+                        <td id="money-container<%= i %>">
+                          <span id="money<%= i %>"><%= @infos[i].money %></span>원
+                          <button onclick="moneyForm(<%= i %>)">금액 수정</button>
+                        </td>
+                    <% end %>
+                <% end %>
+            <% else %>
+                <!-- 일반 유저 화면 -->
+                <td><%= @infos[i].done %></td>
+                <% if @appointment.app_type == 'MoneyApp' %>
+                    <td><%= @infos[i].money %>원</td>
+                <% end %>
+            <% end %>
+      <% end %>
+      </tr>
+    </table>
+  </article>
+</section>
+
+<%#= TODO: 채무액 변경기능, 완료 했으면 변경 불가 / 전송해서 수정하기 %>
+<%#= TODO: notification이 있으면 몇개 있는지 숫자 띄워주는(?) 알림 %>
+
+<% if builder?(current_user) %>
+    <%= link_to '수정', edit_appointment_path(@appointment) %>
+    <%= link_to '삭제', appointment_path(@appointment), method: :delete, data: {confirm: 'Are you sure?'} %>
+<% end %>
+<%= link_to '목록', home_appointments_path %>
+
+
+<script>
+    function moneyForm(i) {
+        var containerId = 'money-container' + i;
+        var id = 'money' + i;
+        var money = document.getElementById(id).textContent;
+
+        document.getElementById(containerId).innerHTML
+            = '<input type="number" min="0" name="money_change" value="' + money + '">';
+    }
+</script>

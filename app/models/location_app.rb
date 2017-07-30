@@ -1,0 +1,2 @@
+class LocationApp < Appointment
+end

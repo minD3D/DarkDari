@@ -1,3 +1,0 @@
-class AppNote < Notification
-
-end

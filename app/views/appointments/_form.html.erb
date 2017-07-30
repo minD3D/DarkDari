@@ -1,4 +1,4 @@
-<%= form_for @money_app do |f| %>
+<%= form_for(@appointment) do |f| %>
     <div>
       <%= f.label :title %>
       <%= f.text_field :title %>
@@ -10,13 +10,13 @@
     </div>
 
     <div>
-      <%= f.label :time %>
-      <%= datetime_local_field(:money_app, :deadline) %>
+      <%= f.label :deadline %>
+      <%= datetime_local_field(:appointment, :deadline) %>
     </div>
 
-    <div>
-      <%= f.label :total_money %>
-      <%= f.number_field :total_money %>
-    </div>
+    <%= yield f %>
+
+    <%= hidden_field_tag(:type, @type) %>
+
     <%= f.submit 'submit' %>
 <% end %>

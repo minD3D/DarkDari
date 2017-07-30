@@ -6,10 +6,9 @@ class HomeController < ApplicationController
 
   def appointments
     user = User.find(current_user.id)
-    @location_apps = user.location_apps
-    @money_apps = user.money_apps
+    @appointments = user.appointments
 
-    @notification = user.notifications
+    @notifications = user.notifications
   end
 
   # showMyPage 최혁 추가 부분

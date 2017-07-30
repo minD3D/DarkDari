@@ -1,7 +1,6 @@
-<h4><%= @money_app.title %></h4>
-<p><%= @money_app.content %></p>
-<p><%= @money_app.deadline %></p>
-<p><%= @money_app.total_money %></p>
+<h4>제목 : <%= @appointment.title %></h4>
+<p>내용 : <%= @appointment.content %></p>
+<p>마감기한 : <%= @appointment.deadline %></p>
 
 
 <section>
@@ -9,7 +8,7 @@
 
   <% if builder?(current_user) %>
       <!-- 유저 검색 -->
-      <%= render 'layouts/search_form', app: @money_app, type: 'AppNote' %>
+      <%= render 'search_form', appointment: @appointment %>
   <% end %>
 
   <article>
@@ -17,40 +16,42 @@
     <table width="1000px">
       <tr>
         <th>유저</th>
-        <th>채무액</th>
         <th>완료여부</th>
+        <% if @appointment.app_type == 'MoneyApp' %>
+            <th>채무액</th>
+        <% end %>
       </tr>
       <% @users.each_with_index do |u, i| %>
           <tr>
             <td><%= u.nickname %></td>
             <% if builder?(current_user) %>
-
                 <!-- 약속 생성한 유저 화면-->
                 <% if @infos[i].done %>
                     <td>완료!</td>
                     <td><%= @infos[i].money %>원</td>
                 <% else %>
                     <td>
-                      <%= link_to "미완료", done_money_info_path(@infos[i]),
+                      <%= link_to "미완료", done_info_path(@infos[i]),
                                   method: :patch,
                                   data: {confirm: '완료 시키겠습니까?'} %>
                       (클릭시완료)
                     </td>
-                    <td id="money-container<%= i %>">
-                      <span id="money<%= i %>"><%= @infos[i].money %></span>원
-                      <button onclick="moneyForm(<%= i %>)">금액 수정</button>
-                    </td>
+                    <% if @appointment.app_type == 'MoneyApp' %>
+                        <td id="money-container<%= i %>">
+                          <span id="money<%= i %>"><%= @infos[i].money %></span>원
+                          <button onclick="moneyForm(<%= i %>)">금액 수정</button>
+                        </td>
+                    <% end %>
                 <% end %>
-
             <% else %>
-
                 <!-- 일반 유저 화면 -->
-                <td><%= @infos[i].money %>원</td>
                 <td><%= @infos[i].done %></td>
-
+                <% if @appointment.app_type == 'MoneyApp' %>
+                    <td><%= @infos[i].money %>원</td>
+                <% end %>
             <% end %>
-          </tr>
       <% end %>
+      </tr>
     </table>
   </article>
 </section>
@@ -59,8 +60,8 @@
 <%#= TODO: notification이 있으면 몇개 있는지 숫자 띄워주는(?) 알림 %>
 
 <% if builder?(current_user) %>
-    <%= link_to '수정', edit_money_app_path(@money_app) %>
-    <%= link_to '삭제', money_app_path(@money_app), method: :delete, data: {confirm: 'Are you sure?'} %>
+    <%= link_to '수정', edit_appointment_path(@appointment) %>
+    <%= link_to '삭제', appointment_path(@appointment), method: :delete, data: {confirm: 'Are you sure?'} %>
 <% end %>
 <%= link_to '목록', home_appointments_path %>
 

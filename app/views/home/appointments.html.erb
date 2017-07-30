@@ -1,35 +1,12 @@
 <article>
-  <h3>장소약속</h3>
-  <% @location_apps.each do |la| %>
-      <p><%= link_to "#{la.title}", location_app_path(la) %></p>
+  <h3>약속</h3>
+  <% @appointments.each do |app| %>
+      <p><%= link_to "#{app.title}", appointment_path(app) %></p>
   <% end %>
-  <%= link_to '장소약속 하기', new_location_app_path %>
-</article>
-
-<article>
-  <h3>돈약속</h3>
-  <% @money_apps.each do |ma| %>
-      <p><%= link_to "#{ma.title}", money_app_path(ma) %></p>
-  <% end %>
-  <%= link_to '돈약속 하기', new_money_app_path %>
+  <%= link_to '약속 하기', new_appointment_path(type: 'MoneyApp') %>
 </article>
 
 <article>
   <h3>알림</h3>
-  <% @notification.each do |n| %>
-      <div class="notification">
-        <p><%= n.requester.nickname %>님의 초대</p>
-        <p><%= raw(n.message) %></p>
-        <% case n.type %>
-        <% when 'AppNote' %>
-            <%= link_to '수락', money_infos_path(note_id: n.id), method: :post %>
-        <% when 'LocationNote' %>
-            <%= link_to '수락', '/' %>
-            <%# location_info 생성 %>
-        <% else %>
-            ...
-        <% end %>
-        <%= link_to '거절', notification_path(n), method: :delete %>
-      </div>
-  <% end %>
+  <%= render 'notifications', notifications: @notifications %>
 </article>

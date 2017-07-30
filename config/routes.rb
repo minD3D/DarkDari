@@ -9,10 +9,9 @@ Rails.application.routes.draw do
 
   get 'home/appointments'
 
-  resources :location_apps, except: :index
-  resources :money_apps, except: :index
+  resources :appointments, except: :index
 
-  resources :money_infos, only: :create do
+  resources :infos, only: :create do
     member do
       patch 'done'
       patch 'change_money'

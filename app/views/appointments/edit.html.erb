@@ -1,0 +1,17 @@
+<article>
+  <% if @type == 'MoneyApp' %>
+
+      <h3>돈 약속</h3>
+      <%= render 'form' %>
+
+  <% elsif @type == 'LocationApp' %>
+
+      <h3>장소 약속</h3>
+      <%= render 'form' do |f| %>
+          <div>
+            <%= f.label :location %>
+          </div>
+      <% end %>
+
+  <% end %>
+</article>

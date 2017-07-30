@@ -3,9 +3,9 @@ class InfosController < ApplicationController
   before_action :builder?, only: :done
 
   def create
-    notification = Notification.find(params[:note_id])
+    notification = Notification.find(params[:notification_id])
     user = notification.user
-    info = user.money_infos.new(money_app_id: notification.app_id)
+    info = user.infos.new(appointment_id: notification.appointment_id)
 
     info.save
     notification.destroy
@@ -23,7 +23,7 @@ class InfosController < ApplicationController
   private
 
   def set_info
-    @info = MoneyInfo.find(params[:id])
+    @info = Info.find(params[:id])
   end
 
   # 완료 시킬 때, 빌더인지 확인

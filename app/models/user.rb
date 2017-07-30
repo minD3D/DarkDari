@@ -9,6 +9,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
+  # TODO: 닉네임, 전화번호 유효성검사(에러메세지 출력)
+
   def self.search(search)
     if search.present?
       where("nickname like ?", "%" + search + "%")

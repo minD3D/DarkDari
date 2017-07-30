@@ -1,12 +1,13 @@
 class AppointmentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_money_app, only: [:show, :edit, :update, :destroy]
+  before_action :set_appointment, only: [:show, :edit, :update, :destroy]
   before_action :builder?, only: [:edit, :update, :destroy]
-  after_action :money_info, only: :create
+  after_action :set_info, only: :create
 
   def show
-    @users = @money_app.users
-    @infos = @money_app.money_infos
+    @users = @appointment.users
+    @infos = @appointment.infos
+    @inviting_user = @appointment.inviting_users
 
     @search_users = User.search(params[:s_nickname])
   end
@@ -23,10 +24,16 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @money_app = MoneyApp.new(money_params)
-    @money_app.save
-
-    redirect_to money_app_path(@money_app)
+    type = params[:type]
+    case type
+      when 'MoneyApp'
+        @appointment = MoneyApp.new(appointment_params)
+      when 'LocationApp'
+        @appointment = LocationApp.new(appointment_params)
+        @appointment.location = params[:appointment][:location].permit
+    end
+    @appointment.save
+    redirect_to home_appointments_path
   end
 
   def update
@@ -46,12 +53,12 @@ class AppointmentsController < ApplicationController
 
   private
 
-  def set_money_app
-    @money_app = MoneyApp.find(params[:id])
+  def set_appointment
+    @appointment = Appointment.find(params[:id])
   end
 
-  def money_params
-    params.require(:money_app).permit(:title, :content, :deadline, :total_money)
+  def appointment_params
+    params.require(:appointment).permit(:title, :content, :deadline)
   end
 
   # 수정, 삭제 본인 확인
@@ -64,10 +71,10 @@ class AppointmentsController < ApplicationController
 
   # 만든 사람의 id와 글 아이디로 관계 생성, builder: true
   # TODO: 모델 콜백으로 옮기든 엑티브잡으로 옮기든 해야할듯
-  def money_info
-    MoneyInfo.create(user_id: current_user.id,
-                     money_app_id: @money_app.id,
-                     builder: true)
+  def set_info
+    Info.create(user_id: current_user.id,
+                appointment_id: @appointment.id,
+                builder: true)
   end
 
 end

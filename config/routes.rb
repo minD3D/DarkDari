@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'home/index'
 
   # showMyPage 최혁 추가 부분
-  get 'home/showMyPage'
+  get 'home/show_my_page'
 
   get 'home/appointments'
 

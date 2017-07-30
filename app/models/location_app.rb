@@ -1,2 +1,0 @@
-class LocationApp < Appointment
-end

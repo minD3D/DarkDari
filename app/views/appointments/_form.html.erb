@@ -1,0 +1,22 @@
+<%= form_for(@appointment) do |f| %>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+
+    <div>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+    </div>
+
+    <div>
+      <%= f.label :deadline %>
+      <%= datetime_local_field(:appointment, :deadline) %>
+    </div>
+
+    <%= yield f %>
+
+    <%= hidden_field_tag(:type, @type) %>
+
+    <%= f.submit 'submit' %>
+<% end %>

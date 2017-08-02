@@ -13,5 +13,6 @@
 //= require jquery/jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery/jquery
 //= require bootstrap/bootstrap
+//= require jqBootstrapValidation
+//= require contact_me

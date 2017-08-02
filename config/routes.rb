@@ -5,14 +5,21 @@ Rails.application.routes.draw do
   get 'home/index'
 
   # showMyPage 최혁 추가 부분
-  get 'home/showMyPage'
+  get 'home/show_my_page'
 
   get 'home/appointments'
 
-  resources :location_apps, except: :index
-  resources :money_apps, except: :index
+  resources :appointments, except: :index
 
-  post 'invite/money_done' => 'invite#money_done'
+  resources :infos, only: :create do
+    member do
+      patch 'done'
+      patch 'change_money'
+    end
+  end
+
+
+  resources :notifications, only: [:create, :destroy]
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -17,6 +17,7 @@
 @import 'font-awesome/font-awesome';
 @import 'bootstrap/bootstrap';
 @import 'landing-page';
+@import 'modern-business';
 
 
 
@@ -119,6 +120,7 @@ hr {
   -webkit-box-sizing: content-box;
      -moz-box-sizing: content-box;
           box-sizing: content-box;
+
 }
 pre {
   overflow: auto;
@@ -3079,20 +3081,21 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
-  color: #333;
-  background-color: #fff;
-  border-color: #ccc;
+  color: white;
+  background-color: #f20912;
+//  border-color: white;
+
 }
 .btn-default:focus,
 .btn-default.focus {
-  color: #333;
-  background-color: #e6e6e6;
-  border-color: #8c8c8c;
+  color: #f20912;
+  background-color: white;
+  //border-color: #f20912;
 }
 .btn-default:hover {
-  color: #333;
-  background-color: #e6e6e6;
-  border-color: #adadad;
+  color: #f20912;
+  background-color: white;
+  border-color: #f20912;
 }
 .btn-default:active,
 .btn-default.active,
@@ -4187,9 +4190,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  min-height: 50px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
+  //min-height: 50px;
+  height: 60px;
+  //margin-bottom: 20px;
+  border: 3px solid #730E15;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -4295,8 +4299,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand {
   float: left;
-  height: 50px;
-  padding: 15px 15px;
+  height: 60px;
+  padding: 3px  20px 20px 20px;
   font-size: 18px;
   line-height: 20px;
 }
@@ -4344,8 +4348,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-nav {
   margin: 7.5px -15px;
+
+
 }
 .navbar-nav > li > a {
+
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
@@ -4515,8 +4522,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+  background-color: white;
+  color:black;
+  height: 80px;
+margin : 0px 0px 3px 0px;
+  border-bottom: 10px solid #d60b10;
+
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -4529,8 +4540,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-text {
   color: #777;
 }
-.navbar-default .navbar-nav > li > a {
-  color: #777;
+.navbar-default .navbar-nav > li > a {  //170731 _최혁수정
+  color:black;
+  border-bottom: solid #d60b10 ;
+
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {

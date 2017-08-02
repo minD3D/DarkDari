@@ -8,7 +8,7 @@
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 
 <!-- Custom Fonts -->
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,16 +18,11 @@
 <![endif]-->
 <!--수진 끝-->
 
-
-
-
 <script>
     $(function () {
         $("#testDatepicker").datepicker({});
     });
 </script>
-
-
 
 <!--수진-->
 <style>
@@ -56,8 +51,6 @@
   }
 </style>
 <!--수진끝-->
-
-
 
 <!-- Header -->
 
@@ -88,9 +81,9 @@
 </div>
 </div> -->
 
-
 <!--   수진mypage  수정수정수정수정수정수정수정수정수정    -->
 <!-- Page Content -->
+
 <article class="container">
   <h3>알림</h3>
   <%= render 'notifications', notifications: @notifications %>
@@ -117,11 +110,51 @@
                 <p>내용: <%= app.content %></p>
                 <p>마감일: <%= app.deadline %></p>
                 </p>
+                <ul class="list-inline intro-social-buttons">
+                  <li>
+                    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#detail_app">
+                      <span class="network-name">상세보기</span>
+                    </button>
+                  </li>
+                </ul>
                 <%= link_to '상세보기(나중에 모달로 appointments/show)', appointment_path(app) %>
               </div>
             </div>
           </div>
-      <% end %>
+
+          <!-- appointment detail Modal -->
+          <div class="modal fade" id="detail_app" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">약속 상세보기</h4>
+                </div>
+                <div class="modal-body">
+                  <article>
+                    <h3>약속</h3>
+                    <% @appointments.each do |app| %>
+                        <p><%= link_to "#{app.title}", appointment_path(app) %></p>
+                    <% end %>
+                    <%= link_to '약속 하기', new_appointment_path(type: 'MoneyApp') %>
+                  </article>
+
+                  <article>
+                    <h3>알림</h3>
+                    <!-- we need rander notifications i will connect all things about notification and appointments so connect on this page plz-->
+                    <%= render 'notifications', notifications: @notifications %>
+                  </article>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+    <% end %>
     </div>
   </article>
 
@@ -143,7 +176,6 @@
           <h2>B. 생성된 닥달이 내역들</h2>
           </div>
         </br>
-
 
 
 

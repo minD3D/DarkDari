@@ -35,12 +35,12 @@ class AppointmentsController < ApplicationController
         @appointment.app_type = type
     end
     @appointment.save
-    redirect_to home_appointments_path
+    redirect_to home_show_my_page_path
   end
 
   def update
-    if @money_app.update(money_params)
-      redirect_to @money_app
+    if @appointment.update(appointment_params)
+      redirect_to @appointment
     else
       render 'edit'
     end

@@ -17,8 +17,6 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new
   end
 
-  # TODO: 통합하는 과정 new까지만 완료함, create, edit, show, destroy 미완
-
   def edit
     @app_type = @appointment.app_type
   end

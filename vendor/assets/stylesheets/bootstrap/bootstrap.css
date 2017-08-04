@@ -4367,8 +4367,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 30px;
+    padding-bottom: 0px;
   }
 }
 .navbar-form {
@@ -4502,12 +4502,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default {
   background-color: white;
   color:black;
-  height: 100px;
+  height: 80px;
   margin : 0px 0px 3px 0px;
   border-bottom: 10px solid #d60b10;
 
-}
-.navbar-default .navbar-brand {
+}.navbar-nav > li > a
+ .navbar-default .navbar-brand {
   color: #777;
 }
 .navbar-default .navbar-brand:hover,
@@ -4518,10 +4518,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-text {
   color: #777;
 }
-.navbar-default .navbar-nav > li > a {  //170731 _최혁수정
+.navbar-default .navbar-nav > li > a {
 color:black;
-  border-bottom: solid #d60b10 ;
-
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {

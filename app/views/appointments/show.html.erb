@@ -18,8 +18,8 @@
     <p>마감기한 : <%= @appointment.deadline %></p>
     <% if @appointment.app_type == 'LocationApp' %>
         <div id="google-map"></div>
+        <button onclick="currentLocation()">도착</button>
     <% end %>
-    <button onclick="currentLocation()">도착</button>
   </section>
 
 
@@ -45,13 +45,15 @@
                     <em id="money<%= i %>"><%= @infos[i].money %>원</em>
                     <% if builder?(current_user, @appointment.id) %>
                         <span class="money-edit" onclick="moneyForm(<%= i %>)">수정</span>
-                        </p>
                     <% end %>
-                    <!-- 완료여부 -->
-                    <p>
-                      <% if @infos[i].done %>
-                          완료!
-                      <% else %>
+                  </p>
+              <% end %>
+
+              <!-- 완료여부 -->
+              <p>
+                <% if @infos[i].done %>
+                    완료!
+                <% else %>
                           <% if builder?(current_user, @appointment.id) %>
                               <%= link_to "미완료", done_info_path(@infos[i]),
                                           method: :patch,
@@ -63,7 +65,7 @@
                     </p>
                     </div>
               <% end %>
-        <% end %>
+
               </div>
               </article>
               </section>

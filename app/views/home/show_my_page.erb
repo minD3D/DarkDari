@@ -56,7 +56,7 @@
                 </p>
                 <ul class="list-inline intro-social-buttons">
                   <li>
-                    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#detail_app">
+                    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#detail_app<%= app.id %>">
                       <span class="network-name">상세보기</span>
                     </button>
                   </li>
@@ -70,7 +70,7 @@
           </div>
 
           <!-- appointment detail Modal -->
-          <div class="modal fade" id="detail_app" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal fade" id="detail_app<%= app.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">

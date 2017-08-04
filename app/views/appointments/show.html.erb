@@ -1,5 +1,34 @@
-<%# TODO: 뷰에 있는 스타일 태그들 에셋으로 옮길지 남겨둘지 판단해서 정리하기 %>
+<style>
+  /* MoneyApp */
+  .money-edit {
+    cursor: pointer;
+    color: #337ab7;
+  }
 
+  #money-edit-field {
+    width: 100%;
+  }
+
+  /* LocationApp */
+  #google-map {
+    width: 500px;
+    height: 500px;
+  }
+
+  #home-control {
+    padding: 5px;
+  }
+
+  #control-ui {
+    background-color: yellowgreen;
+    border: 1px solid;
+    cursor: pointer;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    padding: 0 4px;
+  }
+</style>
 
 
 <div class="container">
@@ -11,6 +40,7 @@
     <% if @appointment.app_type == 'LocationApp' %>
         <div id="google-map"></div>
     <% end %>
+    <button onclick="currentLocation()">도착</button>
   </section>
 
 
@@ -81,6 +111,7 @@
         }
     </script>
 <% when 'LocationApp' %>
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script>
         var map;
         var myLocation = {lat: <%= @location[0] %>, lng: <%= @location[1] %>};
@@ -129,6 +160,34 @@
                 crossDomain: true,
                 dataType: 'script'
             });
+        }
+
+
+        function currentLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('Location found.');
+                    map.setCenter(pos);
+                }, function () {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
         }
     </script>
 <% else %>

@@ -75,18 +75,9 @@
                   <h4 class="modal-title" id="myModalLabel">약속 상세보기</h4>
                 </div>
                 <div class="modal-body">
-                  <article>
-                    <h3>약속</h3>
-                    <% @appointments.each do |app| %>
-                        <p><%= link_to "#{app.title}", appointment_path(app) %></p>
-                    <% end %>
-                    <%= link_to '약속 하기', new_appointment_path(type: 'MoneyApp') %>
-                  </article>
-                  <article>
-                    <h3>알림</h3>
-                    <!-- we need rander notifications i will connect all things about notification and appointments so connect on this page plz-->
-                    <%= render 'notifications', notifications: @notifications %>
-                  </article>
+
+                  <iframe src="/appointments/<%= app.id %>"></iframe>
+
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -10,6 +10,7 @@ class AppointmentsController < ApplicationController
 
     @inviting_user = @appointment.inviting_users
     @search_users = User.search(params[:s_nickname])
+    render layout: false
   end
 
   def new

@@ -1,3 +1,24 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*show my page*/
+@import url('https://fonts.googleapis.com/css?family=News+Cycle|Quicksand|Rubik');
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+h4 {
+  font-family: 'Nanum Gothic Coding', sans-serif;
+}
+
+.panel-body {
+  font-family: 'Nanum Gothic Coding', sans-serif;
+  color: black;
+}
+
+.myPage-header {
+  background-color: #f8f8f8;
+}
+
+.page-header {
+  font-family: 'Rubik', sans-serif;
+  font-family: 'News Cycle', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  color: #42434a;
+  font-size: 50px;
+}

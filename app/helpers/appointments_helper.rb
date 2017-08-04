@@ -1,6 +1,6 @@
 module AppointmentsHelper
-  def builder?(user)
-    user.infos.find_by(appointment_id: @appointment.id).builder
+  def builder?(user, appointment_id)
+    user.infos.find_by(appointment_id: appointment_id).builder
   end
 
   def invited?(invited_user, appointment_id)

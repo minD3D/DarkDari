@@ -1,4 +1,5 @@
 <div class="container">
+<section>
   <p>
     <%= link_to '돈 약속하기', new_appointment_path(app_type: 'MoneyApp') %>
     <%= link_to '장소 약속하기', new_appointment_path(app_type: 'LocationApp') %>
@@ -16,7 +17,7 @@
         <% end %>
     <% end %>
   </article>
-
+</section>
 
 <%# TODO: API키 받아서 환경변수에 설정해주기 %>
 <% if @app_type == 'LocationApp' %>

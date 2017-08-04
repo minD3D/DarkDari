@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require bootstrap/bootstrap
 //= require jqBootstrapValidation
+//= require twitter/bootstrap

@@ -1,4 +1,4 @@
-<div class="container"><h2>Log in</h2>
+<div class="border-form-div"><h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -24,4 +24,35 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+
+<div id="login">
+  <h1><i class="ico spr"></i><span>로그인</span></h1>
+  <form class="form-signin form-horizontal" method="POST">
+    <fieldset>
+      <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='Z2o9rjgtJNY6GvBSXHnkka0kZoCw7rOz' /></div>
+
+      <br>
+      <div class="control-group">
+        <label class="control-label" for="username">아이디</label>
+        <div class="input-wrap">
+          <i class="ico spr ico-id"></i>
+          <input type="text" id="username" name="username" class="input-block-level">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="password">비밀번호</label>
+        <div class="input-wrap">
+          <i class="ico spr ico-pw"></i>
+          <input type="password" id="password" name="password" class="input-block-level">
+        </div>
+      </div>
+      <div class="controls">
+        <button type="submit" class="button">로그인</button>
+      </div>
+      <div class="control-group center">
+        <a class="register" href="/owner/registration/1/">회원가입 / 아이디 변경</a>
+      </div>
+    </fieldset>
+  </form>
 </div>

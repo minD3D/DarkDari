@@ -53,21 +53,6 @@
   }
 </style>
 
-
-<div class="container">
-  <form action="/appointments/new">
-    <div class="form-group">
-      <label for="sel1">Select list:</label>
-      <select class="form-control" name="app_type">
-        <option value="MoneyApp">돈 약속</option>
-        <option value="LocationApp">장소 약속</option>
-        <option>시간 약속</option>
-        <option>의견 약속</option>
-      </select>
-    </div>
-    <input type="submit">
-  </form>
-
   <p>
     <%= link_to '돈 약속하기', new_appointment_path(app_type: 'MoneyApp') %>
     <%= link_to '장소 약속하기', new_appointment_path(app_type: 'LocationApp') %>

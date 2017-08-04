@@ -15,4 +15,3 @@
 //= require turbolinks
 //= require bootstrap/bootstrap
 //= require jqBootstrapValidation
-//= require_tree .

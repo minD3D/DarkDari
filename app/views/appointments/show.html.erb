@@ -1,80 +1,166 @@
+<style>
+  /* MoneyApp */
+  .money-edit {
+    cursor: pointer;
+    color: #337ab7;
+  }
+
+  #money-edit-field {
+    width: 100%;
+  }
+
+  /* LocationApp */
+  #google-map {
+    width: 500px;
+    height: 500px;
+  }
+
+  #home-control {
+    padding: 5px;
+  }
+
+  #control-ui {
+    background-color: yellowgreen;
+    border: 1px solid;
+    cursor: pointer;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    padding: 0 4px;
+  }
+</style>
+<%# TODO: 뷰에 있는 스타일 태그들 에셋으로 옮길지 남겨둘지 판단해서 정리하기 %>
+
+
+
 <div class="container">
-<h4>제목 : <%= @appointment.title %></h4>
-<p>내용 : <%= @appointment.content %></p>
-<p>마감기한 : <%= @appointment.deadline %></p>
+
+  <section>
+    <h3>제목 : <%= @appointment.title %></h3>
+    <p>내용 : <%= @appointment.content %></p>
+    <p>마감기한 : <%= @appointment.deadline %></p>
+    <% if @appointment.app_type == 'LocationApp' %>
+        <div id="google-map"></div>
+    <% end %>
+  </section>
 
 
-<section>
-  <h3>참여현황</h3>
+  <section>
+    <h3>참여현황</h3>
 
-  <% if builder?(current_user) %>
-      <!-- 유저 검색 -->
-      <%= render 'search_form', appointment: @appointment %>
-  <% end %>
+    <% if builder?(current_user) %>
+        <!-- 유저 검색 -->
+        <%= render 'search_form', appointment: @appointment %>
+    <% end %>
 
-  <article>
-    <h4>참여자들</h4>
-    <table width="1000px">
-      <tr>
-        <th>유저</th>
-        <th>완료여부</th>
-        <% if @appointment.app_type == 'MoneyApp' %>
-            <th>채무액</th>
-        <% end %>
-      </tr>
-      <% @users.each_with_index do |u, i| %>
-          <tr>
-            <td><%= u.nickname %></td>
-            <% if builder?(current_user) %>
-                <!-- 약속 생성한 유저 화면-->
+    <article>
+      <h4>참여자들</h4>
+      <div class="row">
+        <% @appointment.users.each_with_index do |u, i| %>
+            <div class="col-xs-2">
+              <!-- 닉네임-->
+              <p><%= u.nickname %></p>
+              <!-- 돈 -->
+              <% if @appointment.app_type == 'MoneyApp' %>
+                  <p id="money-container<%= i %>">
+                    <em id="money<%= i %>"><%= @infos[i].money %>원</em>
+                    <span class="money-edit" onclick="moneyForm(<%= i %>)">수정</span>
+                  </p>
+              <% end %>
+              <!-- 완료여부 -->
+              <p>
                 <% if @infos[i].done %>
-                    <td>완료!</td>
-                    <td><%= @infos[i].money %>원</td>
+                    완료!
                 <% else %>
-                    <td>
-                      <%= link_to "미완료", done_info_path(@infos[i]),
-                                  method: :patch,
-                                  data: {confirm: '완료 시키겠습니까?'} %>
-                      (클릭시완료)
-                    </td>
-                    <% if @appointment.app_type == 'MoneyApp' %>
-                        <td id="money-container<%= i %>">
-                          <span id="money<%= i %>"><%= @infos[i].money %></span>원
-                          <button onclick="moneyForm(<%= i %>)">금액 수정</button>
-                        </td>
+                    <% if builder?(current_user) %>
+                        <%= link_to "미완료", done_info_path(@infos[i]),
+                                    method: :patch,
+                                    data: {confirm: '완료 시키겠습니까?'} %>
+                    <% else %>
+                        미완료
                     <% end %>
                 <% end %>
-            <% else %>
-                <!-- 일반 유저 화면 -->
-                <td><%= @infos[i].done %></td>
-                <% if @appointment.app_type == 'MoneyApp' %>
-                    <td><%= @infos[i].money %>원</td>
-                <% end %>
-            <% end %>
-      <% end %>
-      </tr>
-    </table>
-  </article>
-</section>
+              </p>
+            </div>
+        <% end %>
+      </div>
+    </article>
+  </section>
 
 <%#= TODO: 채무액 변경기능, 완료 했으면 변경 불가 / 전송해서 수정하기 %>
 <%#= TODO: notification이 있으면 몇개 있는지 숫자 띄워주는(?) 알림 %>
 
-<% if builder?(current_user) %>
-    <%= link_to '수정', edit_appointment_path(@appointment) %>
-    <%= link_to '삭제', appointment_path(@appointment), method: :delete, data: {confirm: 'Are you sure?'} %>
-<% end %>
-<%= link_to '목록', home_appointments_path %>
+  <% if builder?(current_user) %>
+      <%= link_to '수정', edit_appointment_path(@appointment) %>
+      <%= link_to '삭제', appointment_path(@appointment), method: :delete, data: {confirm: 'Are you sure?'} %>
+  <% end %>
+  <%= link_to '목록', home_show_my_page_path %>
 
-
-<script>
-    function moneyForm(i) {
-        var containerId = 'money-container' + i;
-        var id = 'money' + i;
-        var money = document.getElementById(id).textContent;
-
-        document.getElementById(containerId).innerHTML
-            = '<input type="number" min="0" name="money_change" value="' + money + '">';
-    }
-</script>
 </div>
+
+
+<% case @appointment.app_type %>
+<% when 'MoneyApp' %>
+    <script>
+        function moneyForm(i) {
+            var containerId = 'money-container' + i;
+            var id = 'money' + i;
+            var money = document.getElementById(id).textContent;
+
+            document.getElementById(containerId).innerHTML
+                = '<input id="money-edit-field" type="number" min="0" name="money_change" value="' + money + '">';
+        }
+    </script>
+<% when 'LocationApp' %>
+    <script>
+        var map;
+        var myLocation = {lat: <%= @location[0] %>, lng: <%= @location[1] %>};
+
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('google-map'), {
+                zoom: 16,
+                center: myLocation,
+                mapTypeId: "roadmap",
+                scaleControl: true
+            });
+
+
+            // Add a Home control that returns the user to myLocation
+            var homeControlDiv = document.createElement('div');
+            homeControlDiv.setAttribute("id", "home-control");
+
+            var controlUI = document.createElement("div");
+            controlUI.setAttribute("id", "control-ui");
+            controlUI.innerHTML = "<b>Home<b>";
+            homeControlDiv.appendChild(controlUI);
+
+            // Setup click-event listener: simply set the map to myLocation
+            google.maps.event.addDomListener(controlUI, 'click', function () {
+                map.setCenter(myLocation)
+            });
+            map.controls[google.maps.ControlPosition.TOP_RIGHT].push(homeControlDiv);
+
+
+            // 위치 마커 생성
+            new google.maps.Marker({
+                position: myLocation,
+                map: map
+            });
+        }
+
+
+        //            google.maps.event.addDomListener(window, 'load', initMap);
+        //            google.maps.event.addDomListener(window, 'page:load', initMap);
+
+        if (window.google) {
+            initMap();
+        } else {
+            $.ajax('https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap', {
+                crossDomain: true,
+                dataType: 'script'
+            });
+        }
+    </script>
+<% else %>
+<% end %>

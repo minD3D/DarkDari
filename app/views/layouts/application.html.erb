@@ -4,13 +4,18 @@
   <title>DarkDari</title>
   <%= csrf_meta_tags %>
 
+
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   <style>
     body {
       padding-top: 51px;
     }
   </style>
+
+
+  <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 </head>
 
 <body>
@@ -54,6 +59,7 @@
   <!-- /.container -->
 </nav>
 
+
 <%= yield %>
 
 <!-- Footer -->
@@ -81,9 +87,5 @@
     </div>
   </div>
 </footer>
-
-
-<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
 </body>
 </html>

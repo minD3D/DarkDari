@@ -1,55 +1,43 @@
 class AppointmentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
-  before_action :builder?, only: [:edit, :update, :destroy]
+  before_action :builder?, only: [:show, :edit, :update, :destroy]
+  before_action :get_location, only: [:show, :edit]
   after_action :set_info, only: :create
 
   def show
-    @users = @appointment.users
     @infos = @appointment.infos
-    @inviting_user = @appointment.inviting_users
 
+    @inviting_user = @appointment.inviting_users
     @search_users = User.search(params[:s_nickname])
   end
 
   def new
-    @type = params[:type]
+    @app_type = params[:app_type]
     @appointment = Appointment.new
   end
 
   # TODO: 통합하는 과정 new까지만 완료함, create, edit, show, destroy 미완
 
   def edit
-    @type = @appointment.app_type
+    @app_type = @appointment.app_type
   end
 
   def create
-    type = params[:type]
-    case type
-      when 'MoneyApp'
-        @appointment = Appointment.new(appointment_params)
-        @appointment.app_type = type
-      when 'LocationApp'
-        @appointment = Appointment.new(appointment_params)
-        @appointment.location = params[:appointment][:location].permit
-        @appointment.app_type = type
-    end
+    @appointment = Appointment.new(appointment_params)
+    @appointment.app_type = params[:app_type]
     @appointment.save
-    redirect_to home_appointments_path
+    redirect_to home_show_my_page_path
   end
 
   def update
-    if @money_app.update(money_params)
-      redirect_to @money_app
-    else
-      render 'edit'
-    end
-
+    @appointment.update(appointment_params)
+    redirect_to @appointment
   end
 
   def destroy
     @appointment.destroy
-    redirect_to home_appointments_path
+    redirect_to home_show_my_page_path
   end
 
 
@@ -59,8 +47,14 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
 
+  def get_location
+    if @appointment.app_type == 'LocationApp'
+      @location = @appointment.location.delete('()').split(', ')
+    end
+  end
+
   def appointment_params
-    params.require(:appointment).permit(:title, :content, :deadline)
+    params.require(:appointment).permit(:title, :content, :deadline, :location)
   end
 
   # 수정, 삭제 본인 확인

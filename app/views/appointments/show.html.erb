@@ -18,8 +18,8 @@
     <p>마감기한 : <%= @appointment.deadline %></p>
     <% if @appointment.app_type == 'LocationApp' %>
         <div id="google-map"></div>
+        <button onclick="currentLocation()">도착</button>
     <% end %>
-    <button onclick="currentLocation()">도착</button>
   </section>
 
 
@@ -43,8 +43,9 @@
               <% if @appointment.app_type == 'MoneyApp' %>
                   <p id="money-container<%= i %>">
                     <em id="money<%= i %>"><%= @infos[i].money %>원</em>
-                    <% if builder?(current_user, @appointment.id %>
-                    <span class="money-edit" onclick="moneyForm(<%= i %>)">수정</span>
+                    <% if builder?(current_user, @appointment.id) %>
+                        <span class="money-edit" onclick="moneyForm(<%= i %>)">수정</span>
+                    <% end %>
                   </p>
               <% end %>
 

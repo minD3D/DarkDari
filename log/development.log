@@ -48274,3 +48274,830 @@ puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
   Rendering /home/mind/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /home/mind/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
   Rendered /home/mind/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.6ms)
+Started GET "/" for 127.0.0.1 at 2017-08-05 02:57:56 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_aboutcontact.html.erb (3659.1ms)
+  Rendered home/index.html.erb within layouts/application (3675.3ms)
+Completed 200 OK in 3886ms (Views: 3835.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-05 02:58:03 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 109ms (Views: 79.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/media/images/owners/spr.png" for 127.0.0.1 at 2017-08-05 02:58:03 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/media/images/owners/spr.png"):
+  
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [31 times] (11.6ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (123.1ms)
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-08-05 02:58:06 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 108ms (Views: 106.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-05 02:58:20 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PfawFBS9qXPttAmGjEUDKFFQ8RsdlwSm9EQABHucUmt3Vfb7aWpaXt5XYMbIxiS+v3ISFFta3WMYKFH0jNsHaA==", "user"=>{"email"=>"ssr@ssr.com", "nickname"=>"ssr", "phone"=>"01011111111", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ssr@ssr.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "phone", "nickname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ssr@ssr.com"], ["encrypted_password", "$2a$11$vcJCi4yHwv2begjd8FM93.RbsCqb3/zwQG9suTL2SdRXh0rWo.Bnu"], ["phone", "01011111111"], ["nickname", "ssr"], ["created_at", "2017-08-04 17:58:20.273076"], ["updated_at", "2017-08-04 17:58:20.273076"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-08-04 17:58:20.276111"], ["last_sign_in_at", "2017-08-04 17:58:20.276111"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2017-08-04 17:58:20.276835"], ["id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 169ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-05 02:58:20 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_aboutcontact.html.erb (1.4ms)
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 58ms (Views: 55.6ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-05 02:58:22 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zbU83hAE92fgE99JB4WlY5qLwI70I5rpFbU3+BxVAntvK2OW0hl4DUK33ECcvUrr0a3QTNXbAwg5iJBDJA6V1Q=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-05 02:58:22 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_aboutcontact.html.erb (1.3ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-05 02:58:22 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 70ms (Views: 68.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/media/images/owners/spr.png" for 127.0.0.1 at 2017-08-05 02:58:23 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/media/images/owners/spr.png"):
+  
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [31 times] (13.7ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (104.7ms)
+Started GET "/owner/registration/1/" for 127.0.0.1 at 2017-08-05 02:58:45 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/owner/registration/1"):
+  
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered collection of /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [31 times] (6.4ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (93.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-05 02:58:47 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 160ms (Views: 156.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/media/images/owners/spr.png" for 127.0.0.1 at 2017-08-05 02:58:48 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/media/images/owners/spr.png"):
+  
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [31 times] (8.2ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (120.7ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-05 02:59:07 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kVcpbhpj2uN6gz+JAYRCQiF/23+mxCHLiXH+8xkf9VeYS+/MI0/xweIuF4SLChBhWMGSXsZ0MeMf2wdOaTpcOg==", "user"=>{"email"=>"ssr@ssr.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ssr@ssr.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-04 17:59:07.899973"], ["sign_in_count", 2], ["updated_at", "2017-08-04 17:59:07.900817"], ["id", 2]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 151ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-05 02:59:07 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_aboutcontact.html.erb (1.5ms)
+  Rendered home/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home/show_my_page" for 127.0.0.1 at 2017-08-05 02:59:11 +0900
+Processing by HomeController#show_my_page as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/show_my_page.erb within layouts/application
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered home/_notifications.html.erb (6.5ms)
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered home/show_my_page.erb within layouts/application (15.0ms)
+Completed 200 OK in 112ms (Views: 59.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/appointments/new?app_type=MoneyApp" for 127.0.0.1 at 2017-08-05 02:59:15 +0900
+Processing by AppointmentsController#new as HTML
+  Parameters: {"app_type"=>"MoneyApp"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (8.6ms)
+  Rendered appointments/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 71ms (Views: 56.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/appointments" for 127.0.0.1 at 2017-08-05 02:59:25 +0900
+Processing by AppointmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wq4NovCBlk0J1hkuQe0kWSJhfGdNNos7a2eF5GeLs/2Z51qzFj5K+FveZekoxqq7Cq+MguRkkI1EFOfocqGwVQ==", "appointment"=>{"title"=>"test", "content"=>"test", "deadline"=>"2017-08-22T13:00"}, "app_type"=>"MoneyApp", "commit"=>"submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "appointments" ("title", "content", "deadline", "app_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "test"], ["content", "test"], ["deadline", "2017-08-22 13:00:00"], ["app_type", "MoneyApp"], ["created_at", "2017-08-04 17:59:25.884323"], ["updated_at", "2017-08-04 17:59:25.884323"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/home/show_my_page
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "infos" ("user_id", "appointment_id", "builder", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["appointment_id", 3], ["builder", "t"], ["created_at", "2017-08-04 17:59:25.904565"], ["updated_at", "2017-08-04 17:59:25.904565"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 302 Found in 28ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/home/show_my_page" for 127.0.0.1 at 2017-08-05 02:59:25 +0900
+Processing by HomeController#show_my_page as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/show_my_page.erb within layouts/application
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered home/_notifications.html.erb (1.5ms)
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  Rendered home/show_my_page.erb within layouts/application (6.7ms)
+Completed 200 OK in 55ms (Views: 51.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/appointments/3" for 127.0.0.1 at 2017-08-05 02:59:26 +0900
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 3], ["builder", "t"], ["LIMIT", 1]]
+  Rendering appointments/show.html.erb
+  Rendered appointments/show.html.erb (1.9ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (/Users/ssr/Documents/workspace/DarkDari/app/views/appointments/show.html.erb:47: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.safe_append='               ...
+              ^):
+  
+app/views/appointments/show.html.erb:47: syntax error, unexpected tIVAR, expecting ')'
+app/controllers/appointments_controller.rb:13:in `show'
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.4ms)
+Started GET "/appointments/3/edit" for 127.0.0.1 at 2017-08-05 02:59:42 +0900
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 3], ["builder", "t"], ["LIMIT", 1]]
+  Rendering appointments/edit.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (5.9ms)
+  Rendered appointments/edit.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 68ms (Views: 58.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/appointments/3" for 127.0.0.1 at 2017-08-05 02:59:44 +0900
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 3], ["builder", "t"], ["LIMIT", 1]]
+  Rendering appointments/show.html.erb
+  Rendered appointments/show.html.erb (2.3ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/Users/ssr/Documents/workspace/DarkDari/app/views/appointments/show.html.erb:47: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.safe_append='               ...
+              ^):
+  
+app/views/appointments/show.html.erb:47: syntax error, unexpected tIVAR, expecting ')'
+app/controllers/appointments_controller.rb:13:in `show'
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.3ms)
+Started GET "/home/show_my_page" for 127.0.0.1 at 2017-08-05 03:00:30 +0900
+Processing by HomeController#show_my_page as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/show_my_page.erb within layouts/application
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered home/_notifications.html.erb (1.6ms)
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  Rendered home/show_my_page.erb within layouts/application (7.2ms)
+Completed 200 OK in 52ms (Views: 48.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/appointments/3" for 127.0.0.1 at 2017-08-05 03:00:31 +0900
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 3], ["builder", "t"], ["LIMIT", 1]]
+  Rendering appointments/show.html.erb
+  Rendered appointments/show.html.erb (2.2ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/Users/ssr/Documents/workspace/DarkDari/app/views/appointments/show.html.erb:47: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.safe_append='               ...
+              ^):
+  
+app/views/appointments/show.html.erb:47: syntax error, unexpected tIVAR, expecting ')'
+app/controllers/appointments_controller.rb:13:in `show'
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.0ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.8ms)
+Started GET "/home/show_my_page" for 127.0.0.1 at 2017-08-05 03:00:40 +0900
+Processing by HomeController#show_my_page as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/show_my_page.erb within layouts/application
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered home/_notifications.html.erb (2.7ms)
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  Rendered home/show_my_page.erb within layouts/application (11.6ms)
+Completed 200 OK in 94ms (Views: 86.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/appointments/3" for 127.0.0.1 at 2017-08-05 03:00:40 +0900
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 3], ["builder", "t"], ["LIMIT", 1]]
+  Rendering appointments/show.html.erb
+  Rendered appointments/show.html.erb (4.9ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/ssr/Documents/workspace/DarkDari/app/views/appointments/show.html.erb:47: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.safe_append='               ...
+              ^):
+  
+app/views/appointments/show.html.erb:47: syntax error, unexpected tIVAR, expecting ')'
+app/controllers/appointments_controller.rb:13:in `show'
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.2ms)
+Started GET "/home/show_my_page" for 127.0.0.1 at 2017-08-05 03:03:18 +0900
+Processing by HomeController#show_my_page as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/show_my_page.erb within layouts/application
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered home/_notifications.html.erb (1.9ms)
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  Rendered home/show_my_page.erb within layouts/application (8.0ms)
+Completed 200 OK in 52ms (Views: 48.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/appointments/3" for 127.0.0.1 at 2017-08-05 03:03:18 +0900
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 3], ["builder", "t"], ["LIMIT", 1]]
+  Rendering appointments/show.html.erb
+  Rendered appointments/show.html.erb (2.1ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/Users/ssr/Documents/workspace/DarkDari/app/views/appointments/show.html.erb:47: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.safe_append='               ...
+              ^
+/Users/ssr/Documents/workspace/DarkDari/app/views/appointments/show.html.erb:175: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/appointments/show.html.erb:47: syntax error, unexpected tIVAR, expecting ')'
+app/views/appointments/show.html.erb:175: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/appointments_controller.rb:13:in `show'
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ssr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.9ms)
+Started GET "/home/show_my_page" for 127.0.0.1 at 2017-08-05 03:03:37 +0900
+Processing by HomeController#show_my_page as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/show_my_page.erb within layouts/application
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered home/_notifications.html.erb (1.5ms)
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mInfo Load (0.1ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  Rendered home/show_my_page.erb within layouts/application (6.8ms)
+Completed 200 OK in 48ms (Views: 44.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/appointments/3" for 127.0.0.1 at 2017-08-05 03:03:37 +0900
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 3], ["builder", "t"], ["LIMIT", 1]]
+  Rendering appointments/show.html.erb
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  Rendered appointments/_search_form.html.erb (12.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "infos" ON "users"."id" = "infos"."user_id" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT "infos".* FROM "infos" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mCACHE (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  Rendered appointments/show.html.erb (103.8ms)
+Completed 200 OK in 112ms (Views: 104.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/home/show_my_page" for 127.0.0.1 at 2017-08-05 03:05:17 +0900
+Processing by HomeController#show_my_page as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/show_my_page.erb within layouts/application
+  [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered home/_notifications.html.erb (1.6ms)
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  Rendered home/show_my_page.erb within layouts/application (7.9ms)
+Completed 200 OK in 52ms (Views: 46.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/appointments/3" for 127.0.0.1 at 2017-08-05 03:05:18 +0900
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 3], ["builder", "t"], ["LIMIT", 1]]
+  Rendering appointments/show.html.erb
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  Rendered appointments/_search_form.html.erb (7.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "infos" ON "users"."id" = "infos"."user_id" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT "infos".* FROM "infos" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  Rendered appointments/show.html.erb (65.3ms)
+Completed 200 OK in 71ms (Views: 66.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/appointments/new?app_type=MoneyApp" for 127.0.0.1 at 2017-08-05 03:05:24 +0900
+Processing by AppointmentsController#new as HTML
+  Parameters: {"app_type"=>"MoneyApp"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (3.2ms)
+  Rendered appointments/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 68ms (Views: 62.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/appointments/new?app_type=LocationApp" for 127.0.0.1 at 2017-08-05 03:05:25 +0900
+Processing by AppointmentsController#new as HTML
+  Parameters: {"app_type"=>"LocationApp"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (6.3ms)
+  Rendered appointments/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 82ms (Views: 77.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/appointments" for 127.0.0.1 at 2017-08-05 03:05:39 +0900
+Processing by AppointmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ewMnF9ICD3nnLChxNlhmM3+17vALe+xWSrFqa98DE4UgSnAGNL3TzLUkVLZfc+jRV3seFaIp9+BlwghnyikQLQ==", "appointment"=>{"title"=>"eee", "content"=>"eee", "deadline"=>"2017-08-16T13:00", "location"=>"(37.61423141542417, 127.0513916015625)"}, "app_type"=>"LocationApp", "commit"=>"submit"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "appointments" ("title", "content", "deadline", "location", "app_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "eee"], ["content", "eee"], ["deadline", "2017-08-16 13:00:00"], ["location", "(37.61423141542417, 127.0513916015625)"], ["app_type", "LocationApp"], ["created_at", "2017-08-04 18:05:39.709611"], ["updated_at", "2017-08-04 18:05:39.709611"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/home/show_my_page
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "infos" ("user_id", "appointment_id", "builder", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["appointment_id", 4], ["builder", "t"], ["created_at", "2017-08-04 18:05:39.718644"], ["updated_at", "2017-08-04 18:05:39.718644"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 302 Found in 16ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/home/show_my_page" for 127.0.0.1 at 2017-08-05 03:05:39 +0900
+Processing by HomeController#show_my_page as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/show_my_page.erb within layouts/application
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered home/_notifications.html.erb (2.4ms)
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mInfo Load (0.1ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.1ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  Rendered home/show_my_page.erb within layouts/application (10.2ms)
+Completed 200 OK in 59ms (Views: 55.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/appointments/3" for 127.0.0.1 at 2017-08-05 03:05:39 +0900
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/appointments/4" for 127.0.0.1 at 2017-08-05 03:05:39 +0900
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by AppointmentsController#show as HTML
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 3], ["builder", "t"], ["LIMIT", 1]]
+  Parameters: {"id"=>"4"}
+  Rendering appointments/show.html.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 4], ["builder", "t"], ["LIMIT", 1]]
+  Rendering appointments/show.html.erb
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  Rendered appointments/_search_form.html.erb (5.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "infos" ON "users"."id" = "infos"."user_id" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT "infos".* FROM "infos" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  Rendered appointments/show.html.erb (104.5ms)
+Completed 200 OK in 116ms (Views: 107.1ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  Rendered appointments/_search_form.html.erb (3.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "infos" ON "users"."id" = "infos"."user_id" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT "infos".* FROM "infos" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  Rendered appointments/show.html.erb (143.5ms)
+Completed 200 OK in 155ms (Views: 147.5ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" ORDER BY "appointments"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/home/show_my_page" for 127.0.0.1 at 2017-08-05 03:08:35 +0900
+Processing by HomeController#show_my_page as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/show_my_page.erb within layouts/application
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered home/_notifications.html.erb (2.2ms)
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.1ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  Rendered home/show_my_page.erb within layouts/application (8.7ms)
+Completed 200 OK in 52ms (Views: 48.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/appointments/3" for 127.0.0.1 at 2017-08-05 03:08:35 +0900
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 3], ["builder", "t"], ["LIMIT", 1]]
+Started GET "/appointments/4" for 127.0.0.1 at 2017-08-05 03:08:35 +0900
+  Rendering appointments/show.html.erb
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 4], ["builder", "t"], ["LIMIT", 1]]
+  Rendering appointments/show.html.erb
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  Rendered appointments/_search_form.html.erb (6.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "infos" ON "users"."id" = "infos"."user_id" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mInfo Load (0.1ms)[0m  [1m[34mSELECT "infos".* FROM "infos" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  Rendered appointments/show.html.erb (157.0ms)
+Completed 200 OK in 172ms (Views: 161.2ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  Rendered appointments/_search_form.html.erb (2.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "infos" ON "users"."id" = "infos"."user_id" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  [1m[36mInfo Load (0.4ms)[0m  [1m[34mSELECT "infos".* FROM "infos" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  Rendered appointments/show.html.erb (128.4ms)
+Completed 200 OK in 145ms (Views: 134.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-05 03:11:08 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_aboutcontact.html.erb (2.7ms)
+  Rendered home/index.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 76.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home/show_my_page" for 127.0.0.1 at 2017-08-05 03:11:10 +0900
+Processing by HomeController#show_my_page as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/show_my_page.erb within layouts/application
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered home/_notifications.html.erb (3.8ms)
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  Rendered home/show_my_page.erb within layouts/application (19.5ms)
+Completed 200 OK in 147ms (Views: 139.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/appointments/3" for 127.0.0.1 at 2017-08-05 03:11:10 +0900
+Started GET "/appointments/4" for 127.0.0.1 at 2017-08-05 03:11:10 +0900
+Processing by AppointmentsController#show as HTML
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 3], ["builder", "t"], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.4ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 4], ["builder", "t"], ["LIMIT", 1]]
+  Rendering appointments/show.html.erb
+  Rendering appointments/show.html.erb
+Started GET "/appointments/3" for 127.0.0.1 at 2017-08-05 03:11:10 +0900
+Started GET "/appointments/4" for 127.0.0.1 at 2017-08-05 03:11:10 +0900
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+Processing by AppointmentsController#show as HTML
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"id"=>"4"}
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mInfo Load (3.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 3], ["builder", "t"], ["LIMIT", 1]]
+  Rendered appointments/_search_form.html.erb (21.3ms)
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered appointments/_search_form.html.erb (11.2ms)
+  Rendering appointments/show.html.erb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "infos" ON "users"."id" = "infos"."user_id" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 4], ["builder", "t"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "infos" ON "users"."id" = "infos"."user_id" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT "infos".* FROM "infos" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  Rendering appointments/show.html.erb
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT "infos".* FROM "infos" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  Rendered appointments/show.html.erb (274.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+Completed 200 OK in 349ms (Views: 334.2ms | ActiveRecord: 2.0ms)
+
+
+  Rendered appointments/show.html.erb (334.3ms)
+Completed 200 OK in 359ms (Views: 345.9ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  Rendered appointments/_search_form.html.erb (6.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "infos" ON "users"."id" = "infos"."user_id" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  [1m[36mInfo Load (0.1ms)[0m  [1m[34mSELECT "infos".* FROM "infos" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  Rendered appointments/show.html.erb (90.0ms)
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+Completed 200 OK in 190ms (Views: 149.2ms | ActiveRecord: 2.0ms)
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  Rendered appointments/_search_form.html.erb (3.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "infos" ON "users"."id" = "infos"."user_id" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT "infos".* FROM "infos" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  Rendered appointments/show.html.erb (174.0ms)
+Completed 200 OK in 217ms (Views: 184.1ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/home/show_my_page" for 127.0.0.1 at 2017-08-05 03:12:19 +0900
+Processing by HomeController#show_my_page as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/show_my_page.erb within layouts/application
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered home/_notifications.html.erb (2.1ms)
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "infos" ON "appointments"."id" = "infos"."appointment_id" WHERE "infos"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  Rendered home/show_my_page.erb within layouts/application (9.5ms)
+Completed 200 OK in 58ms (Views: 51.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/appointments/3" for 127.0.0.1 at 2017-08-05 03:12:19 +0900
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 3], ["builder", "t"], ["LIMIT", 1]]
+Started GET "/appointments/4" for 127.0.0.1 at 2017-08-05 03:12:19 +0900
+Processing by AppointmentsController#show as HTML
+  Rendering appointments/show.html.erb
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mInfo Load (0.2ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."appointment_id" = ? AND "infos"."builder" = ? LIMIT ?[0m  [["appointment_id", 4], ["builder", "t"], ["LIMIT", 1]]
+  Rendering appointments/show.html.erb
+  [1m[36mInfo Load (0.4ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  Rendered appointments/_search_form.html.erb (13.4ms)
+  [1m[36mInfo Load (0.3ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "infos" ON "users"."id" = "infos"."user_id" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  [1m[36mInfo Load (0.1ms)[0m  [1m[34mSELECT "infos".* FROM "infos" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "notifications" ON "users"."id" = "notifications"."user_id" WHERE "notifications"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 4], ["LIMIT", 1]]
+  Rendered appointments/_search_form.html.erb (4.7ms)
+  Rendered appointments/show.html.erb (159.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "infos" ON "users"."id" = "infos"."user_id" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+Completed 200 OK in 172ms (Views: 163.7ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mInfo Load (0.1ms)[0m  [1m[34mSELECT "infos".* FROM "infos" WHERE "infos"."appointment_id" = ?[0m  [["appointment_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "infos".* FROM "infos" WHERE "infos"."user_id" = ? AND "infos"."appointment_id" = ? LIMIT ?[0m  [["user_id", 2], ["appointment_id", 3], ["LIMIT", 1]]
+  Rendered appointments/show.html.erb (181.9ms)
+Completed 200 OK in 192ms (Views: 184.4ms | ActiveRecord: 1.2ms)
+
+

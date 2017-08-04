@@ -91,7 +91,6 @@ iframe {
   height:24px;
   margin:-3px 5px 0 0;
   vertical-align:middle;
-  background: url(../image/ico_check.png) left top no-repeat;
   background-size: 24px;
   cursor:pointer;
 }
@@ -164,7 +163,6 @@ iframe {
     margin-top: 9px;
     display: block;
     padding-left: 17px;
-    background: url(../image/ico-caution.png) 0 2px no-repeat;
   }
   .login-wrap .form-control {
     width: 312px;
@@ -260,7 +258,6 @@ fieldset {
 }
 .spr {
   display: inline-block;
-  background: url(/media/images/owners/spr.png) no-repeat 0 0;
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
@@ -542,16 +539,7 @@ img {
   font-size:32px;
   font-weight:bold;
 }
-.login .logo {
-  background-image: url(/media/images/owners/img-logo-mob.png);
-  background-repeat: no-repeat;
-  background-size: 153px auto;
-  width: 153px;
-  height: 90px;
-  text-indent: -999em;
-  overflow: hidden;
-  margin: 45px auto;
-}
+
 .login-form-wrap {
   padding: 0 15px;
 }
@@ -584,7 +572,6 @@ img {
   padding: 18px;
 }
 .login li {
-  background-image: url(/media/images/owners/bu_rect.png);
   background-position: 0 6px;
   background-repeat: no-repeat;
   background-size: 2px auto;
@@ -707,7 +694,6 @@ img {
 #login.mall h1 {
   margin: 17px auto;
   padding: 0;
-  background: url(/media/images/owners/logo_ygyshop.png) no-repeat;
   width: 200px;
   height: 45px;
   text-indent: -999em;
@@ -764,5 +750,5 @@ img {
   font-size: 14px;
   color: #999;
   line-height: 1.2;
-  background: url(/media/images/owners/ico-caution.png) no-repeat 0 2px;
+
 }

@@ -1,34 +1,13 @@
-<style>
-  /* MoneyApp */
-  .money-edit {
-    cursor: pointer;
-    color: #337ab7;
-  }
+<!DOCTYPE html>
+<html>
+<head>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%# TODO: 스타일태그 application 전채 말고 appointment 하나만 포함시키는 방향으로 %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  #money-edit-field {
-    width: 100%;
-  }
-
-  /* LocationApp */
-  #google-map {
-    width: 500px;
-    height: 500px;
-  }
-
-  #home-control {
-    padding: 5px;
-  }
-
-  #control-ui {
-    background-color: yellowgreen;
-    border: 1px solid;
-    cursor: pointer;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    padding: 0 4px;
-  }
-</style>
+<body>
 
 
 <div class="container">
@@ -47,7 +26,7 @@
   <section>
     <h3>참여현황</h3>
 
-    <% if builder?(current_user) %>
+    <% if builder?(current_user, @appointment.id) %>
         <!-- 유저 검색 -->
         <%= render 'search_form', appointment: @appointment %>
     <% end %>
@@ -59,19 +38,22 @@
             <div class="col-xs-2">
               <!-- 닉네임-->
               <p><%= u.nickname %></p>
+
               <!-- 돈 -->
               <% if @appointment.app_type == 'MoneyApp' %>
                   <p id="money-container<%= i %>">
                     <em id="money<%= i %>"><%= @infos[i].money %>원</em>
+                    <% if builder?(current_user, @appointment.id %>
                     <span class="money-edit" onclick="moneyForm(<%= i %>)">수정</span>
                   </p>
               <% end %>
+
               <!-- 완료여부 -->
               <p>
                 <% if @infos[i].done %>
                     완료!
                 <% else %>
-                    <% if builder?(current_user) %>
+                    <% if builder?(current_user, @appointment.id) %>
                         <%= link_to "미완료", done_info_path(@infos[i]),
                                     method: :patch,
                                     data: {confirm: '완료 시키겠습니까?'} %>
@@ -89,11 +71,6 @@
 <%#= TODO: 채무액 변경기능, 완료 했으면 변경 불가 / 전송해서 수정하기 %>
 <%#= TODO: notification이 있으면 몇개 있는지 숫자 띄워주는(?) 알림 %>
 
-  <% if builder?(current_user) %>
-      <%= link_to '수정', edit_appointment_path(@appointment) %>
-      <%= link_to '삭제', appointment_path(@appointment), method: :delete, data: {confirm: 'Are you sure?'} %>
-  <% end %>
-  <%= link_to '목록', home_show_my_page_path %>
 
 </div>
 
@@ -192,3 +169,5 @@
     </script>
 <% else %>
 <% end %>
+</body>
+</html>

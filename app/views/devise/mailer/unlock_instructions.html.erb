@@ -1,8 +1,19 @@
-<div class="border-form-div"><p>Hello <%= @resource.email %>!</p>
+
+<div id="wrapper">
+  <div id="logo_container">
+    <div class="pulse_off"><img src="http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/login_pulse.png" /> </div>
+    <div id="logo"><img src="http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/login_logo.png" /> </div>
+  </div>
+</div>
+<div  id="login" >
+  <fieldset class="form-signin form-horizontal">
+    <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='Z2o9rjgtJNY6GvBSXHnkka0kZoCw7rOz' /></div>
+    <br><p>Hello <%= @resource.email %>!</p>
 
 <p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
 
 <p>Click the link below to unlock your account:</p>
 
 <p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
+  </fieldset>
 </div>

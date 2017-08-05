@@ -1,4 +1,14 @@
-<div class="border-form-div"><h2>Forgot your password?</h2>
+
+<div id="wrapper">
+  <div id="logo_container">
+    <div class="pulse_off"><img src="http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/login_pulse.png" /> </div>
+    <div id="logo"><img src="http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/login_logo.png" /> </div>
+  </div>
+</div>
+<div  id="login" >
+  <fieldset class="form-signin1 form-horizontal">
+    <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='Z2o9rjgtJNY6GvBSXHnkka0kZoCw7rOz' /></div>
+    <br><h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
@@ -14,4 +24,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+  </fieldset>
 </div>

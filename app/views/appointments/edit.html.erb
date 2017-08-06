@@ -19,7 +19,7 @@
 
         var map;
         var tempMarker = [];
-        var myLocation = {lat: <%= @location[0] %>, lng: <%= @location[1] %>};
+        var appLocation = {lat: <%= @location[0] %>, lng: <%= @location[1] %>};
         var hiddenLocation = document.getElementById("appointment_location");
 
 
@@ -91,7 +91,7 @@
             });
 
             tempMarker.push(new google.maps.Marker({
-                position: myLocation,
+                position: appLocation,
                 map: map
             }));
 

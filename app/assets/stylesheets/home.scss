@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=News+Cycle|Quicksand|Rubik');
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 
-h4 {
+*{
   font-family: 'Nanum Gothic Coding', sans-serif;
 }
 
@@ -34,6 +34,10 @@ iframe {
   border: 0px;
 }
 
+.section-padding{
+  font-family: 'Nanum Gothic Coding', sans-serif;
+  border-bottom: 1px solid black;
+}
 
 /*devise*/
 
@@ -1054,4 +1058,165 @@ input:-webkit-autofill{
   background: #fff;
   box-shadow: 0 0 5px 3px #d0d0d0;
   padding: 0 0 10% 10% ;
+}
+
+/*index*/
+.intro-header{
+  background-image: none;
+  background-color: white;
+}
+
+.intro-message{
+  
+}
+
+.navbar-default{
+  border-bottom: 10px solid #f20912;
+}
+
+.navbar-default .navbar-nav > li > a{
+  border-bottom: none;
+}
+
+/* Button */
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+
+@mixin button($bcolor,
+$url,
+$x1,
+$y1,
+$bor,
+$col) {
+ background: $bcolor;
+ -webkit-mask: url($url);
+ mask: url($url);
+ -webkit-mask-size: $x1 $y1;
+ mask-size: $x1 $y1;
+ border: $bor;
+ color: $col;
+}
+
+.header {
+ text-align: center;
+ font-family: 'Roboto', sans-serif;
+ font-size: 34px;
+ margin-top: 12vh;
+}
+
+.footer {
+ text-align: center;
+ font-family: 'Lato', sans-serif;
+ font-weight: 300;
+ font-size: 20px;
+ margin-top: 15vh;
+}
+
+.button-container-2 {
+ position: relative;
+ width: 100px;
+ height: 50px;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 7vh;
+ overflow: hidden;
+ border: 1px solid #f20912;
+ font-family: 'Lato', sans-serif;
+ font-weight: 300;
+ transition: 0.5s;
+ letter-spacing: 1px;
+
+ button {
+  width: 101%;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 1px;
+
+  @include button(#f20912,
+  "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
+  3000%,
+  100%,
+  none,
+  #fff);
+  cursor: pointer;
+  -webkit-animation: ani2 0.7s steps(29) forwards;
+  animation: ani2 0.7s steps(29) forwards;
+
+  &:hover {
+   -webkit-animation: ani 0.7s steps(29) forwards;
+   animation: ani 0.7s steps(29) forwards;
+  }
+ }
+}
+
+.mas {
+ position: absolute;
+ color: #000;
+ text-align: center;
+ width: 101%;
+ font-family: 'Lato', sans-serif;
+ font-weight: 300;
+ position: absolute;
+ font-size: 20px;
+ margin-top: 12px;
+ overflow: hidden;
+}
+
+@-webkit-keyframes ani {
+ from {
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+ }
+
+ to {
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+ }
+}
+
+@keyframes ani {
+ from {
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+ }
+
+ to {
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+ }
+}
+
+@-webkit-keyframes ani2 {
+ from {
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+ }
+
+ to {
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+ }
+}
+
+@keyframes ani2 {
+ from {
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+ }
+
+ to {
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+ }
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover { 
+  color: red;
+  text-decoration: none;
 }

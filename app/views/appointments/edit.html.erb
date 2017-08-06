@@ -25,7 +25,7 @@
 
         function initMap() {
             map = new google.maps.Map(document.getElementById('google-map'), {
-                center: myLocation,
+                center: appLocation,
                 zoom: 16,
                 mapTypeId: 'roadmap',
                 scaleControl: true
@@ -121,8 +121,8 @@
         }
 
 
-        //        google.maps.event.addDomListener(window, 'load', initMap);
-        //        google.maps.event.addDomListener(window, 'page:load', initMap);
+                google.maps.event.addDomListener(window, 'load', initMap);
+                google.maps.event.addDomListener(window, 'page:load', initMap);
 
         if (window.google) {
             initMap();

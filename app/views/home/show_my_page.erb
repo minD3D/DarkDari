@@ -1,5 +1,5 @@
 <style>
-  button > a{
+  button > a {
     color: white;
   }
 </style>
@@ -8,13 +8,14 @@
 <div class="container">
   <div class="row section-padding">
     <div class="col-xs-12 col-sm-6">
-        <h2 class="subs-title"><i class="fa fa-bell-o" aria-hidden="true"></i> 알림</br></br></h2>
-        <h5>저희 닦달 서비스를 이용해주셔서 감사합니다.</h5></br>
-    </div></br>
+      <h2 class="subs-title"><i class="fa fa-bell-o" aria-hidden="true"></i> 알림</br></br></h2>
+      <h5>저희 닦달 서비스를 이용해주셔서 감사합니다.</h5></br>
+    </div>
+    </br>
     <article class="container">
-        <div class="col-xs-6 col-sm-6">
-            <%= render 'notifications', notifications: @notifications %>
-        </div>
+      <div class="col-xs-6 col-sm-6">
+        <%= render 'notifications', notifications: @notifications %>
+      </div>
     </article>
   </div>
 </div></br>
@@ -30,24 +31,26 @@
     <% @appointments.each do |app| %>
         <div class="col-md-4">
           <div class="panel panel-default">
-            <div class="panel-heading"><h4>
-              <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-8">
-                  <% if app.app_type == 'MoneyApp' %>
-                      <i class="fa fa-usd" aria-hidden="true"></i><%= app.title %>
+            <div class="panel-heading">
+              <h4>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-md-8">
+                    <% if app.app_type == 'MoneyApp' %>
+                        <i class="fa fa-usd" aria-hidden="true"></i><%= app.title %>
                     <% end %>
                     <% if app.app_type == 'LocationApp' %>
-                      <i class="fa fa-map-marker" aria-hidden="true"></i><%= app.title %>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i><%= app.title %>
                     <% end %>
+                  </div>
+                  <div class="col-xs-6 col-md-4">
+                    <a data-toggle="modal" data-target="#detail_app<%= app.id %>"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
+                    <% if builder?(current_user, app.id) %>
+                        <a href="/appointments/<%= app.id %>/edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a href="/appointments/<%= app.id %>" data-method="delete" data-confirm="삭제하시겠습니까?"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    <% end %>
+                  </div>
                 </div>
-                <div class="col-xs-6 col-md-4">
-                  <a data-toggle="modal" data-target="#detail_app<%= app.id %>"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                  <% if builder?(current_user, app.id) %>
-                    <a href="/appointments/<%= app.id %>/edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                    <a href="/appointments/<%= app.id %>" data-method="delete" data-confirm="삭제하시겠습니까?"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                  <% end %>
-                </div>
-              </div></h4>
+              </h4>
             </div>
             <div class="panel-body">
               <p>내용: <%= app.content %></p>
@@ -63,7 +66,8 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">약속 상세보기</h4>
               </div>
               <div class="modal-body">
@@ -77,7 +81,7 @@
           </div>
         </div>
 
-  <% end %>
+    <% end %>
   </div>
 </article>
 </div>
@@ -85,19 +89,21 @@
 <!--   수진mypage  수정수정수정수정수정수정수정수정수정 끝   -->
 
 </br>
-    <div id="contact-info">
-      <div class="container">
-        <div class="button-container-2">
-          <span class="mas">약속하기</span>
-          <button type="button" name="Hover"><%= link_to '약속하기', new_appointment_path(type: 'MoneyApp') %></button>
-        </div>
-          <!--<div class="contact col-md-6 wow fadeIn delay-08s">
+<div id="contact-info">
+  <div class="container">
+    <div class="button-container-2">
+      <span class="mas">약속하기</span>
+      <a href="/appointments/new?app_type=MoneyApp">
+        <button type="button" name="Hover">약속하기</button>
+      </a>
+    </div>
+    <!--<div class="contact col-md-6 wow fadeIn delay-08s">
             <div class="col-md-10 col-md-offset-1">
               <%#= link_to '약속 하기', new_appointment_path(type: 'MoneyApp') %>
             </div>
           </div>-->
-      </div>
-    </div>
+  </div>
+</div>
 <!-- /.container -->
 
 <!--</div>-->

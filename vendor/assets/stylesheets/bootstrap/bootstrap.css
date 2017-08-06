@@ -6766,3 +6766,11 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+.page-menu {
+  font-family: 'Rubik', sans-serif;
+  font-family: 'News Cycle', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  color: #42434a;
+  font-size: 25px;
+}

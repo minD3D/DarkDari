@@ -66,6 +66,7 @@
               </p>
             </div>
         <% end %>
+
       </div>
     </article>
   </section>
@@ -129,6 +130,7 @@
             });
         }
 
+        <%# TODO: 현재위치 계산하는 동안 메세지 같은거 띄울 수 있으면 좋을듯 %>
         function currentLocation() {
             myLocation = 0;
             var infoWindow = new google.maps.InfoWindow({map: map});
@@ -171,7 +173,6 @@
                 'Error: Your browser doesn\'t support geolocation.');
         }
 
-        <%# TODO: 현재 위치 받아온 좌표랑 약속장소 좌표랑 거리구해서 일정거리 이하일 때만 완료하기 버튼 띄워주기 %>
         function calDistance(lat1, lon1, lat2, lon2) {
             var earth, rad, radLat1, radLat2, radDist;
             var distance, ret;

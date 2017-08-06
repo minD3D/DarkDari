@@ -1,7 +1,18 @@
-<div class="border-form-div">
+
+<div id="wrapper">
+  <div id="logo_container">
+    <div class="pulse_off"><img src="http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/login_pulse.png" /> </div>
+    <div id="logo"><img src="http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/login_logo.png" /> </div>
+  </div>
+</div>
+<div  id="login" >
+  <fieldset class="form-signin1 form-horizontal">
+    <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='Z2o9rjgtJNY6GvBSXHnkka0kZoCw7rOz' /></div>
+    <br>
 <p>Welcome <%= @email %>!</p>
 
 <p>You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+  </fieldset>
 </div>

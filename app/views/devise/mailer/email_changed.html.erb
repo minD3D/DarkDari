@@ -1,8 +1,18 @@
-<div class="border-form-div"><p>Hello <%= @email %>!</p>
+
+<div id="wrapper">
+  <div id="logo_container">
+    <div class="pulse_off"><img src="http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/login_pulse.png" /> </div>
+    <div id="logo"><img src="http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/login_logo.png" /> </div>
+  </div>
+</div>
+<div  id="login" >
+  <fieldset class="form-signin1 form-horizontal">
+    <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='Z2o9rjgtJNY6GvBSXHnkka0kZoCw7rOz' /></div>
+    <br><p>Hello <%= @email %>!</p>
 
 <% if @resource.try(:unconfirmed_email?) %>
   <p>We're contacting you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
 <% else %>
   <p>We're contacting you to notify you that your email has been changed to <%= @resource.email %>.</p>
-<% end %>
+    <% end %></fieldset>
 </div>

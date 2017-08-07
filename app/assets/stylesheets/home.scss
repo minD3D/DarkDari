@@ -1221,8 +1221,7 @@ a:hover {
   margin-top: 10px;
   
 }
-.icons{
-  margin-top: 10px;
+.noti-buttons{
   text-align: center;
   font-size: 30px;
   
@@ -1231,18 +1230,6 @@ a:hover {
   color: green;
 }
 
-.apptitle{
- float: left; 
-}
-
 .app-buttons{
   float: right;
-  font-size: 20px;
-  padding-top: 9px;
-}
-
-.panel-heading::after {
-  display: block;
-  clear: both;
-  content: "";
 }

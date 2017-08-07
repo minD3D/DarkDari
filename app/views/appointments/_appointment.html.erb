@@ -14,11 +14,13 @@
             <% end %>
           </div>
           <div class="col-xs-6 col-md-4">
-            <a data-toggle="modal" data-target="#detail_app<%= appointment.id %>"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
-            <% if builder?(current_user, appointment.id) %>
-                <a href="/appointments/<%= appointment.id %>/edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                <a href="/appointments/<%= appointment.id %>" data-method="delete" data-remote="true" data-confirm="삭제하시겠습니까?"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-            <% end %>
+            <div class="app-buttons">
+              <a data-toggle="modal" data-target="#detail_app<%= appointment.id %>"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
+              <% if builder?(current_user, appointment.id) %>
+                  <a href="/appointments/<%= appointment.id %>/edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  <a href="/appointments/<%= appointment.id %>" data-method="delete" data-remote="true" data-confirm="삭제하시겠습니까?"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+              <% end %>
+            </div>
           </div>
         </div>
       </h4>

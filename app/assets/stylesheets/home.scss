@@ -1214,6 +1214,7 @@ a:hover {
 .mask {
   color: white;
   font-family: 'Lato', sans-serif;
+}
 
 /*notification*/
 .notification{
@@ -1240,7 +1241,7 @@ a:hover {
   padding-top: 9px;
 }
 
-.panel-heading::after{
+.panel-heading::after {
   display: block;
   clear: both;
   content: "";

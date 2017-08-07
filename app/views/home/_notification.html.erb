@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="notification">
+    <div class="col-xs-6 col-sm-6">
+      <p><%= notification.requester.nickname %>님의 초대</p>
+      <p><%= raw(notification.message) %></p>
+    </div>
+    <div class="col-xs-6 col-sm-6">
+      <% case notification.type %>
+      <% when 'AppNote' %>
+          <a href="/infos?notification_id=<%= notification.id %>" data-method="post">
+            <h3><i class="fa fa-check-circle" aria-hidden="true"></i></a>
+      <% when 'FriendNote' %>
+          <%= link_to '수락', '/' %>
+      <% else %>
+          ...
+      <% end %>
+      <a href="/notifications/<%= notification.id %>" data-method="delete"><i class="fa fa-times-circle" aria-hidden="true"></i></h3>
+      </a>
+    </div>
+  </div>
+</div>

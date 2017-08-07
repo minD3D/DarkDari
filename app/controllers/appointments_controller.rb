@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
-  before_action :builder?, only: [:show, :edit, :update, :destroy]
+  before_action :builder?, only: [:edit, :update, :destroy]
   before_action :get_location, only: [:show, :edit]
   after_action :set_info, only: :create
 
@@ -35,8 +35,12 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    @appointment.destroy
-    redirect_to home_show_my_page_path
+    if @appointment.destroy
+      respond_to do |format|
+        format.js
+      end
+    end
+    # redirect_to home_show_my_page_path
   end
 
 

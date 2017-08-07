@@ -1,16 +1,16 @@
-
 <div id="wrapper">
   <div id="logo_container">
     <div class="pulse_off"><img src="http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/login_pulse.png" /> </div>
     <div id="logo"><img src="http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/login_logo.png" /> </div>
   </div>
 </div>
+
 <div  id="login" >
   <fieldset class="form-signin form-horizontal">
     <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='Z2o9rjgtJNY6GvBSXHnkka0kZoCw7rOz' /></div>
     <br><h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
     <div class="field">
@@ -44,7 +44,7 @@
     <div class="actions">
       <%= f.submit "Sign up" %>
     </div>
-<% end %>
+  <% end %>
 
 <%= render "devise/shared/links" %>
   </fieldset>

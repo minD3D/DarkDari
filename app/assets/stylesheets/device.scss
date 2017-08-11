@@ -11,3 +11,241 @@
   width: 100%;
 
 }
+
+/* STYLES */
+
+#wrapper {
+  width:400px;
+  margin:0 auto;
+}
+
+#logo_container {
+  position:relative;
+  width:400px;
+  height:240px;
+  margin:0 auto;
+}
+
+.pulse_off {
+  position:absolute;
+  z-index:5;
+  left: 154px;
+  top: 41px;
+  visibility:hidden;
+}
+
+.pulse_on {
+  position:absolute;
+  z-index:5;
+  left: 154px;
+  top: 41px;
+  -webkit-animation-name:pulse;
+  -webkit-animation-duration:1.5s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:linear;
+  -moz-animation-name:pulse;
+  -moz-animation-duration:1.5s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function:linear;
+  animation-name:pulse;
+  animation-duration:1.5s;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+  -ms-animation-name:pulse;
+  -ms-animation-duration:1.5s;
+  -ms-animation-iteration-count:infinite;
+  -ms-animation-timing-function:linear;
+  visibility:visible;
+}
+
+#logo {
+  text-align:center;
+  margin:70px 0px;
+  position:absolute;
+  z-index:10;
+  left: 114px;
+  top: -11px;
+
+  -moz-animation-duration: 2s;
+  -moz-animation-name: slideup;
+  -moz-animation-fill-mode: forwards;
+  animation-duration: 2s;
+  animation-name: slideup;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: slideup;
+  -webkit-animation-fill-mode: forwards;
+  -ms-animation-duration: 2s;
+  -ms-animation-name: slideup;
+  -ms-animation-fill-mode: forwards;
+}
+
+.white_box {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  border-radius:5px;
+  padding:15px;
+
+  -moz-animation-delay: 2s;
+  -moz-animation-duration: 2s;
+  -moz-animation-name: fadein;
+  -moz-animation-fill-mode: forwards;
+  animation-delay: 2s;
+  animation-duration: 2s;
+  animation-name: fadein;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: fadein;
+  -webkit-animation-fill-mode: forwards;
+  -ms-animation-delay: 2s;
+  -ms-animation-duration: 2s;
+  -ms-animation-name: fadein;
+  -ms-animation-fill-mode: forwards;
+  opacity:0;
+  opacity:1\9;
+}
+
+.login_button_big {
+  color:#ffffff;
+  cursor:pointer;
+  font-weight:500;
+  text-shadow: 0 1px 1px #5a0e0e;
+  text-align:center;
+  font-size:1.5em;
+  border-radius:6px;
+  padding:10px 12px;
+  margin-top:15px;
+  -webkit-box-shadow: 0px 1px 2px rgba(50, 50, 50, 0.35);
+  -moz-box-shadow:    0px 1px 2px rgba(50, 50, 50, 0.35);
+  box-shadow:         0px 1px 2px rgba(50, 50, 50, 0.35);
+  border:1px solid #154f7f;
+  background: #a1c8dd; /* Old browsers */
+  background: -moz-linear-gradient(top, #a1c8dd 0%, #1caadf 3%, #126cbb 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a1c8dd), color-stop(3%,#1caadf), color-stop(100%,#126cbb)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #a1c8dd 0%,#1caadf 3%,#126cbb 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #a1c8dd 0%,#1caadf 3%,#126cbb 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #a1c8dd 0%,#1caadf 3%,#126cbb 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #a1c8dd 0%,#1caadf 3%,#126cbb 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1c8dd', endColorstr='#126cbb',GradientType=0 ); /* IE */
+}
+
+.login_button_big2 {
+  display:none;
+  color:#ffffff;
+  cursor:pointer;
+  font-weight:500;
+  text-shadow: 0 1px 1px #5a0e0e;
+  text-align:center;
+  font-size:1.5em;
+  border-radius:6px;
+  padding:10px 12px;
+  margin-top:15px;
+  -webkit-box-shadow: 0px 1px 2px rgba(50, 50, 50, 0.35);
+  -moz-box-shadow:    0px 1px 2px rgba(50, 50, 50, 0.35);
+  box-shadow:         0px 1px 2px rgba(50, 50, 50, 0.35);
+  border:1px solid #154f7f;
+  background: #a1c8dd; /* Old browsers */
+  background: -moz-linear-gradient(top, #a1c8dd 0%, #1caadf 3%, #126cbb 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a1c8dd), color-stop(3%,#1caadf), color-stop(100%,#126cbb)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #a1c8dd 0%,#1caadf 3%,#126cbb 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #a1c8dd 0%,#1caadf 3%,#126cbb 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #a1c8dd 0%,#1caadf 3%,#126cbb 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #a1c8dd 0%,#1caadf 3%,#126cbb 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1c8dd', endColorstr='#126cbb',GradientType=0 ); /* IE */
+}
+
+.username_bgfield {
+  background-color: #FFFFFF;
+  border: 2px solid #dbdbdb;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 48px;
+  padding-left: 15px;
+}
+
+.password_bgfield {
+  height:48px;
+  padding-left:15px;
+  background-color:#FFF;
+  border-bottom-left-radius:0px;
+  border-bottom-right-radius:0px;
+  border:2px solid #dbdbdb;
+  border-top: 0px solid #FFF;
+}
+
+.scode_bgfield {
+  height:48px;
+  padding-left:15px;
+  background-color:#FFF;
+  border-bottom-left-radius:8px;
+  border-bottom-right-radius:8px;
+  border:2px solid #dbdbdb;
+  border-top: 0px solid #FFF;
+}
+
+.textfield {
+  border:1px solid #FFF;
+  font-family: 'Roboto', "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  outline:none;
+  border:none;
+  font-size: 18px;
+  font-weight: 300;
+  height: 33px;
+  color:#878787;
+  margin-top:5px;
+  background-color:transparent;
+}
+
+input:-webkit-autofill {
+  background-color: white;
+}
+
+/* KEYFRAMES */
+
+.button1> input{
+  display: inline-block;
+  height: 93px;
+  width:93px;
+  text-align: center;
+  background-color: #e61c13;
+  color: #fff;
+  border: none;
+  box-shadow: inset 0 1px 0 #eb8c8f;
+  font-weight: bold;
+}
+
+input:-webkit-autofill{
+  padding :5px;
+}
+
+.form-signin1form-signin1{
+  position: relative;
+  width: 580px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+  box-shadow: 0 0 5px 3px #d0d0d0;
+  padding: 0 0 10% 10% ;
+}
+
+
+/* Button */
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+
+@mixin button($bcolor,
+$url,
+$x1,
+$y1,
+$bor,
+$col) {
+  background: $bcolor;
+  -webkit-mask: url($url);
+  mask: url($url);
+  -webkit-mask-size: $x1 $y1;
+  mask-size: $x1 $y1;
+  border: $bor;
+  color: $col;
+}

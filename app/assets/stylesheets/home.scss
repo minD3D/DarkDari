@@ -693,7 +693,6 @@ img {
 
 }
 
-//////////////////////////////////////////////////////////
 @charset "UTF-8";
 /* CSS Document */
 
@@ -929,107 +928,6 @@ input:-webkit-autofill {
 
 /* KEYFRAMES */
 
-/*Pulse*/
-
-@-moz-keyframes pulse {
-  0% {opacity: 0; -moz-transform:scale(1)}
-  50% {opacity: 1.0; -moz-transform:scale(1.25)}
-  100% {opacity: 0; -moz-transform:scale(1)}
-}
-
-@keyframes pulse {
-  0% {opacity: 0; transform:scale(1)}
-  50% {opacity: 1.0; transform:scale(1.25)}
-  100% {opacity: 0; transform:scale(1)}
-}
-
-@-webkit-keyframes pulse {
-  0% {opacity: 0; -webkit-transform:scale(1)}
-  50% {opacity: 1.0; -webkit-transform:scale(1.25)}
-  100% {opacity: 0; -webkit-transform:scale(1)}
-}
-
-@-ms-keyframes pulse {
-  0% {opacity: 0; -ms-transform:scale(1)}
-  50% {opacity: 1.0; -ms-transform:scale(1.25)}
-  100% {opacity: 0; -ms-transform:scale(1)}
-}
-
-/*Fade in */
-
-@-moz-keyframes fadein {
-  0% {opacity: 0;}
-  100% {opacity: 1.0;}
-}
-
-@keyframes fadein {
-  0% {opacity: 0;}
-  100% {opacity: 1.0;}
-}
-
-@-webkit-keyframes fadein {
-  0% {opacity: 0;}
-  100% {opacity: 1.0;}
-}
-
-@-ms-keyframes fadein {
-  0% {opacity: 0;}
-  100% {opacity: 1.0;}
-}
-
-/*Slide up */
-
-@-moz-keyframes slideup {
-  from {
-    padding-top:70px;
-    opacity: 0;
-  }
-
-
-  to {
-    padding-top:0px;
-    opacity: 1.0;
-  }
-}
-
-@keyframes slideup {
-  from {
-    padding-top:70px;
-    opacity: 0;
-  }
-
-
-  to {
-    padding-top:0px;
-    opacity: 1.0;
-  }
-}
-
-@-webkit-keyframes slideup {
-  from {
-    padding-top:70px;
-    opacity: 0;
-  }
-
-
-  to {
-    padding-top:0px;
-    opacity: 1.0;
-  }
-}
-
-@-ms-keyframes slideup {
-  from {
-    padding-top:70px;
-    opacity: 0;
-  }
-
-
-  to {
-    padding-top:0px;
-    opacity: 1.0;
-  }
-}
 
 
 .button1> input{
@@ -1059,21 +957,14 @@ input:-webkit-autofill{
   padding: 0 0 10% 10% ;
 }
 
+
 /*index*/
-
-
 .navbar-default{
   border-bottom: 10px solid #f20912;
 }
 
 .navbar-default .navbar-nav > li > a{
   border-bottom: none;
-}
-
-.logo{
-  position: fixed;
-  width: 220px;
-  height: 400px;
 }
 
 .intro-header{
@@ -1087,6 +978,7 @@ input:-webkit-autofill{
 .list-inline{
   text-align: center;
 }
+
 
 /* Button */
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
@@ -1119,7 +1011,6 @@ $col) {
  font-family: 'Lato', sans-serif;
  font-weight: 300;
  font-size: 20px;
- margin-top: 15vh;
 }
 
 .button-container-2 {
@@ -1255,22 +1146,38 @@ a:hover {
 a.ok-button:hover{
   color: green;
 }
-a{
-  text-decoration: none;
-  color: black;
-}
 a:hover { 
   color: red;
   text-decoration: none;
 }
+a{
+  text-decoration: none;
+  color: black;
+}
+
+
+/*buttons*/
+.btn{
+  margin: 30px 0 0 0;
+  width: 200px;
+  height: 50px;
+  background-color: #0d8141;
+  border: 1px solid #0d8141;
+  box-shadow: none;
+}
+.btn:hover {
+  color: #0d8141;
+  border-color: #0d8141;
+  background-color: #76b852;
+}
+.titletext{
+  color: white;
+  font-size: 25px;
+}
+
+
 
 body{
   min-height:100%;
-}
-
-footer{
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  margin: 50px 0 0 0;
+  padding-bottom: 50px;
 }

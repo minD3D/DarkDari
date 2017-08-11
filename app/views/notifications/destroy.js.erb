@@ -1,0 +1,3 @@
+$('#notification<%= @notification.id %>').bind('ajax:success', function() {
+    $(this).remove();
+});

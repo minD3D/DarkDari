@@ -1,32 +1,36 @@
 <div class="container">
-<section>
-  <p>
-    <%= link_to '돈 약속하기', new_appointment_path(app_type: 'MoneyApp') %>
-    <%= link_to '장소 약속하기', new_appointment_path(app_type: 'LocationApp') %>
-  </p>
+  <section>
+    <p>
+      <%= link_to '돈 약속하기', new_appointment_path(app_type: 'MoneyApp') %>
+      <%= link_to '장소 약속하기', new_appointment_path(app_type: 'LocationApp') %>
+    </p>
 
-  <article>
-    <%= render 'form' do |f| %>
-        <% if @app_type == 'LocationApp' %>
-            <div>
-              <%= f.label :location %>
-              <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-              <div id="google-map"></div>
-              <%= f.hidden_field(:location) %>
-            </div>
-        <% end %>
-    <% end %>
-  </article>
+    <article>
+      <%= render 'form' do |f| %>
+          <% if @app_type == 'LocationApp' %>
+              <div>
+                <%= f.label :location %>
+                <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+                <div id="google-map"></div>
+                <%= f.hidden_field(:location) %>
+              </div>
+          <% end %>
+      <% end %>
+    </article>
 
-  <div class="button-container-2">
-    <span class="mas">약속하기</span>
-    <a href="/home/show_my_page" class="mask">
-      <button type="button" name="Hover">목룍</button>
-    </a>
-  </div>
-</section>
+    <div class="button-container-2">
+      <span class="mas">목록</span>
+      <a href="/home/show_my_page" class="mask">
+        <button type="button" name="Hover">목룍</button>
+      </a>
+    </div>
+
+  </section>
+</div>
 
 <%# TODO: API키 받아서 환경변수에 설정해주기 %>
+<%# TODO: new, edit, show에 있는 script 태그들 가능하면 js파일로 떼어내기 %>
+
 <% if @app_type == 'LocationApp' %>
     <script>
 
@@ -143,5 +147,4 @@
 
     </script>
 <% end %>
-</div>
 

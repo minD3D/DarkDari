@@ -1,42 +1,57 @@
-<div class="intro-header" >
+
+<div class="intro-header">
   <div class="container">
-
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-xs-6 col-sm-4"><%= image_tag 'dd_logo_3.png', class: 'img' %></div>
+      <div class="col-xs-6 col-sm-8">
         <div class="intro-message">
-
-          <h2> 당신 대신, 세상의 모든 약속관리</h2><h1>닦달(x) 닥달(o)</h1>
+          <h2> 당신 대신, 세상의 모든 약속관리</h2>
+          <h1>닦달(x) 닥달(o)</h1>
 
           <hr class="intro-divider">
 
 
           <ul class="list-inline intro-social-buttons">
             <li>
-              <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#newapp">
-                <span class="network-name">약속생성</span>
-              </button>
+              <div class="button-container-2">
+                <span class="mas">CREATE</span>
+                <button type="button" name="Hover" data-toggle="modal" data-target="#newapp">CREATE</button>
+              </div>
+              <!--<button type="button" class="button-container-2" data-toggle="modal" data-target="#newapp">
+                <span>약속생성</span>
+              </button>-->
             </li>
             <li>
-              <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">
-                <span class="network-name">약속참여 [PIN번호]</span>
-              </button>
+              <div class="button-container-2">
+                <span class="mas">JOIN</span>
+                <button type="button" name="Hover" data-toggle="modal" data-target="#myModal">JOIN</button>
+              </div>
+              <!--<button type="button" class="button-container-2" data-toggle="modal" data-target="#myModal">
+                <span>약속참여 [PIN번호]</span>
+              </button>-->
             </li>
             <li>
-              <a href="/home/show_my_page" class="btn btn-default btn-lg"> <span class="network-name">약속 List</span></a>
+              <div class="button-container-2">
+                <span class="mas">LIST</span>
+                <a href="/home/show_my_page" class="mask">
+                  <button type="button" name="Hover"><span>LIST</span></button>
+                </a>
+              </div>
+              <!--<button class="button-container-2"><a href="/home/show_my_page"> <span>약속 List</span></a> </button>-->
             </li>
           </ul>
 
           <!--&lt;!&ndash;최혁 임시 추가부분_이미지_슬라이드쇼.&ndash;&gt;-->
           <!--<div class="cycle-slideshow">-->
-            <!--<img src="clock_1.png" style="width:30%;height:70%;">-->
-            <!--<img src="temp_inha_logo.png" style="width:30%;height:70%;">-->
-            <!--<img src="bird_1.jpg" style="width:30%;height:70%;">-->
+          <!--<img src="clock_1.png" style="width:30%;height:70%;">-->
+          <!--<img src="temp_inha_logo.png" style="width:30%;height:70%;">-->
+          <!--<img src="bird_1.jpg" style="width:30%;height:70%;">-->
           <!--</div>-->
 
           <!--<div class="cycle-slideshow">-->
-            <!--<img src="temp_inha_logo.png" style="width:30%;height:70%;">-->
-            <!--<img src="bird_1.jpg" style="width:30%;height:70%;">-->
-            <!--<img src="clock_1.png" style="width:30%;height:70%;">-->
+          <!--<img src="temp_inha_logo.png" style="width:30%;height:70%;">-->
+          <!--<img src="bird_1.jpg" style="width:30%;height:70%;">-->
+          <!--<img src="clock_1.png" style="width:30%;height:70%;">-->
           <!--</div>-->
 
 
@@ -45,7 +60,8 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
                   <h4 class="modal-title" id="myModalLabel">약속 생성</h4>
                 </div>
                 <div class="modal-body">
@@ -58,7 +74,7 @@
                         <option value="LocationApp">장소 약속</option>
                       </select>
                     </div>
-                    <input type="submit" >
+                    <input type="submit">
                   </form>
 
                 </div>
@@ -73,12 +89,10 @@
         </div>
       </div>
     </div>
-
   </div>
-  <!-- /.container -->
-
 </div>
-<!-- /.intro-header -->
+<!-- /.container -->
+
 
 <%= render '/layouts/aboutcontact' %>
 <!-- layouts에 about과 contact분리함 -->

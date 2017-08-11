@@ -59,11 +59,11 @@ footer {
 
 
 .main-textlogo {
-  width: 100%;
+  width: auto;
   height: 100%;
   display: flex;
   overflow: hidden;
-  margin-top: 130px;
+  margin-top: 30px;
 }
 
 h1 {
@@ -76,6 +76,7 @@ h1 span {
   display: inline-block;
   animation: bounce .3s ease infinite alternate;
   font-family: 'Titan One', cursive;
+  font-family: 'Nanum Gothic Coding', sans-serif;
   font-size: 80px;
   color: #FFF;
   text-shadow: 0 1px 0 #CCC,
@@ -120,4 +121,5 @@ h1 span:nth-child(8) { animation-delay: .7s; }
 
 .logoimg1{
   width: 230px;
+  position: fixed;
 }

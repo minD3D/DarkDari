@@ -10,15 +10,18 @@
     <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='Z2o9rjgtJNY6GvBSXHnkka0kZoCw7rOz' /></div>
     <br>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="control-group">
+    <div class="control-group" >
       <label class="control-label" for="username">아이디</label>
-      <div class="input-wrap input-block-level">
+
+      <div  class="input-wrap input-block-level" style="
+      padding-right: 0px">
         <%= f.email_field :email, autofocus: true %>
-      </div>
+        </div>
     </div>
-    <div class="control-group">
-      <label class="control-label" for="password">비밀번호</label>
-      <div class="input-wrap">
+    <div class="control-group" >
+      <label class="control-label" for="password" >비밀번호</label>
+      <div class="input-wrap" style="
+      padding-right: 0px">
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
     </div>

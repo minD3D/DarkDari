@@ -13,26 +13,104 @@
       padding-top: 150px;
     }
   </style>
-
+  <link rel="stylesheet" type="text/css" href="/assets/jquery.datetimepicker.css" >
+  <script src="/assets/jquery.js"></script>
+  <script src="/assets/jquery.datetimepicker.full.min.js"></script>
   <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 </head>
 
 <body>
+  
+<nav class="navbar navbar-default navbar-fixed-top topnav navigation" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        navbar
+      </button>
+      <a class="navbar-brand topnav" href="/"> <img src="/logo.png" , style="width:180px; height:130px; padding-top: 10px;" ,alt="로고"></a>
+
+      <div class="main-textlogo">
+        <!--<div class="intro-message">-->
+        <h1>
+          <span><img src="/assets/charecterup.png" class="logoimg1"></span>
+        </h1>
+        <!--</div>-->
+      </div>
+    </div>
+    <ul class="nav navbar-nav navbar-right menu">
+      <li class="menu__item">
+          <a href="/#about" class="menu__link">
+              <span class="menu__title">
+                  <span class="menu__first-word" data-hover="About">
+                      About
+                  </span>
+                  <span class="menu__second-word" data-hover="Us">
+                      Us
+                  </span>
+              </span>
+          </a>
+      </li>
+      <li class="menu__item">
+          <a href="/home/show_my_page" class="menu__link">
+              <span class="menu__title">
+                  <span class="menu__first-word" data-hover="My">
+                      My
+                  </span>
+                  <span class="menu__second-word" data-hover="Page">
+                      Page
+                  </span>
+              </span>
+          </a>
+      </li>
+      
+      <% if current_user %>
+        <li class="menu__item">
+          <%= link_to "#{current_user.nickname}", edit_user_registration_path, class: 'menu__link' %>
+        </li>
+        <li class="menu__item">
+          <a href="/users/sign_out" data-method="delete" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Sign">
+                  Sign
+              </span>
+              <span class="menu__second-word" data-hover="Out">
+                  Out
+              </span>
+            </span>
+          </a>
+          <%#= link_to 'SignOut', destroy_user_session_path, method: :delete, class: 'menu__item page-menu' %>
+        </li>
+      <% else %>
+        <li class="menu__item">
+          <a href="/users/sign_in" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Sign">
+                  Sign
+              </span>
+              <span class="menu__second-word" data-hover="In">
+                  In
+              </span>
+            </span>
+          </a>
+          <%#= link_to 'SignIn', new_user_session_path, class: 'menu__item page-menu' %>
+        </li>
+      <% end %>
+    </ul>
+</nav>
 
 
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-  <div class="container topnav">
+<!--<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+  <div class="container topnav">-->
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <!--<div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         navbar
       </button>
       <a class="navbar-brand topnav" href="/"> <img src="/logo.png" , style="width:180px; height:130px; padding-top: 10px;" ,alt="로고">
       </a>
-    </div>
+    </div>-->
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
           <a href="/#about" class="page-menu">About</a>
@@ -40,24 +118,24 @@
         <li>
           <a href="/home/show_my_page" class="page-menu">MyPage</a>
         </li>
-        <% if current_user %>
+        <%# if current_user %>
             <li>
-              <%= link_to "#{current_user.nickname}", edit_user_registration_path %>
+              <%#= link_to "#{current_user.nickname}", edit_user_registration_path, class: 'page-menu' %>
             </li>
             <li>
-              <%= link_to 'SignOut', destroy_user_session_path, method: :delete %>
+              <%#= link_to 'SignOut', destroy_user_session_path, method: :delete, class: 'page-menu' %>
             </li>
-        <% else %>
+        <%# else %>
             <li>
-              <%= link_to 'SignIn', new_user_session_path %>
+              <%#= link_to 'SignIn', new_user_session_path,class: 'page-menu' %>
             </li>
-        <% end %>
+        <%# end %>
       </ul>
-    </div>
+    </div>-->
     <!-- /.navbar-collapse -->
-  </div>
+  <!--</div>
   <!-- /.container -->
-</nav>
+<!--</nav>-->
 
 
 <%= yield %>

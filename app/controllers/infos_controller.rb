@@ -1,6 +1,6 @@
 class InfosController < ApplicationController
-  before_action :set_info, only: :done
-  before_action :builder?, only: :done
+  before_action :set_info, only: [:done, :change_money]
+  before_action :builder?, only: [:done, :change_money]
 
   def create
     @notification = Notification.find(params[:notification_id])
@@ -19,7 +19,18 @@ class InfosController < ApplicationController
     @info.done = true
     @info.save
 
-    redirect_to :back
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def change_money
+    @info.money = params[:money]
+    @info.save
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

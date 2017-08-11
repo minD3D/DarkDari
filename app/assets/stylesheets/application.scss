@@ -20,13 +20,9 @@
 @import 'modern-business';
 @import 'appointments';
 @import 'home';
-<<<<<<< HEAD
-@import 'device';
-body {
-  background-image: none;
-  min-height:100%;
-=======
 @import 'nav';
+
+@import 'device';
 
 body{
     background-image: none;
@@ -94,6 +90,5 @@ h1 span:nth-child(8) { animation-delay: .7s; }
                  0 8px 0 #CCC,
                  0 9px 0 #CCC,
                  0 50px 25px rgba(0, 0, 0, .2);
->>>>>>> 05cd3b09b309a58565765f2c70f9262e55b784fc
   }
 }

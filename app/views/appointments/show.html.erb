@@ -81,11 +81,8 @@
     </article>
   </section>
 </div>
-<%#= TODO: 채무액 변경기능, 완료 했으면 변경 불가 / 전송해서 수정하기 %>
 
-
-<% case @appointment.app_type %>
-<% when 'MoneyApp' %>
+<% if @appointment.app_type == 'MoneyApp' %>
     <script>
         function moneyForm(index) {
             var money = document.getElementById(id = 'money' + index).textContent;
@@ -98,9 +95,11 @@
                 + '</form>';
         }
     </script>
-<% when 'LocationApp' %>
+<% elsif @appointment.app_type == 'LocationApp' %>
     <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script>
+
+
         var map;
         var appLocation = {lat: <%= @location[0] %>, lng: <%= @location[1] %>};
         var marker;
@@ -208,9 +207,7 @@
                 dataType: 'script'
             });
         }
-
     </script>
-<% else %>
 <% end %>
 </body>
 </html>

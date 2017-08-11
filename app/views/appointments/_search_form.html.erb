@@ -11,11 +11,11 @@
         <p>
           <%= su.nickname %>
           <% case invited?(su.id, appointment.id) %>
-          <% when 1 %>
+          <% when 'participating' %>
               참여중
-          <% when 2 %>
+          <% when 'inviting' %>
               <%= link_to '초대취소', notification_path(get_notification_id(su.id, appointment.id)), method: :delete %>
-          <% when 3 %>
+          <% else %>
               <%= link_to '초대', notifications_path(type: 'AppNote',
                                                    user_id: su.id,
                                                    appointment_id: appointment.id), method: :post %> <%# 페북 참고해 보니까 id같은거 암호화해서 보내는듯 %>

@@ -19,8 +19,8 @@
 
       <div>
         <%= f.label :deadline %>
-        <%= datetime_local_field(:appointment, :deadline) %>
-        <input type="text" value="" id="datetimepicker"/>
+        <%= f.text_field :deadline, id: 'datetimepicker' %>
+        <!--<input name="appointmet[deadline]" type="datetime-local" id="datetimepicker">-->
       </div>
 
       <%= yield f %>
@@ -31,29 +31,3 @@
   <% end %>
 
 </div>
-<script>/*
- window.onerror = function(errorMsg) {
- $('#console').html($('#console').html()+'<br>'+errorMsg)
- }*/
-
-$.datetimepicker.setLocale('en');
-
-$('#datetimepicker_format').datetimepicker({value:'2015/04/15 05:03', format: $("#datetimepicker_format_value").val()});
-console.log($('#datetimepicker_format').datetimepicker('getValue'));
-
-$("#datetimepicker_format_change").on("click", function(e){
-    $("#datetimepicker_format").data('xdsoft_datetimepicker').setOptions({format: $("#datetimepicker_format_value").val()});
-});
-$("#datetimepicker_format_locale").on("change", function(e){
-    $.datetimepicker.setLocale($(e.currentTarget).val());
-});
-
-$('#datetimepicker').datetimepicker({
-    dayOfWeekStart : 1,
-    lang:'en',
-    disabledDates:['1986/01/08','1986/01/09','1986/01/10'],
-    startDate:	'1986/01/05'
-});
-$('#datetimepicker').datetimepicker({value:'2015/04/15 05:03',step:10});
-
-</script>

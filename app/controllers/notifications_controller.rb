@@ -20,10 +20,12 @@ class NotificationsController < ApplicationController
   end
 
   def destroy
-    notification = Notification.find(params[:id])
-    notification.destroy
-
-    redirect_to :back
+    @notification = Notification.find(params[:id])
+    if @notification.destroy
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
 end

@@ -1,0 +1,13 @@
+//$('#notification<%#= @notification.id %>').bind('ajax:success', function() {
+//    $(this).remove();
+//});
+
+(function($){
+    $("#notification<%= @notification.id %>").remove();
+    $("#appointments").append("<%= j render 'appointments/appointment', appointment: @info.appointment %>");
+                               // js.erb 파일에서 렌더할 때는 앞에 escape_javascript 붙여야함. 줄여서 j
+})(jQuery)
+
+//$('#appointments').bind('ajax:success', function() {
+//    $(this).append(<%#= render 'appointments/appointment', appointment: @info.appointment %>)
+//});

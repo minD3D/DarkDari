@@ -11,6 +11,7 @@
 
     <article class="container">
       <div class="col-xs-6 col-sm-6">
+        <!-- home/_notification.html.erb -->
         <%= render partial: 'notification', collection: @notifications %>
       </div>
     </article>
@@ -20,8 +21,7 @@
 <br>
 
 <article class="container">
-  <!-- Marketing Icons Section -->
-  <div class="row">
+  <div class="row" id="appointments">
     <!-- appointments/_appointment.html.erb -->
     <%= render @appointments %>
   </div>
@@ -29,14 +29,12 @@
 
 <br>
 
-<div id="contact-info">
-  <div class="container">
-    <div class="button-container-2">
-      <span class="mas">약속하기</span>
-      <a href="/appointments/new?app_type=MoneyApp" class="mask">
-        <button type="button" name="Hover">약속하기</button>
-      </a>
-    </div>
+<div class="container">
+  <div class="button-container-2">
+    <span class="mas">약속하기</span>
+    <a href="/appointments/new?app_type=MoneyApp" class="mask">
+      <button type="button" name="Hover">약속하기</button>
+    </a>
   </div>
 </div>
 

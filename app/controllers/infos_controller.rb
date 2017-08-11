@@ -3,14 +3,16 @@ class InfosController < ApplicationController
   before_action :builder?, only: :done
 
   def create
-    notification = Notification.find(params[:notification_id])
-    user = notification.user
-    info = user.infos.new(appointment_id: notification.appointment_id)
+    @notification = Notification.find(params[:notification_id])
+    @user = @notification.user
+    @info = @user.infos.new(appointment_id: @notification.appointment_id)
+    @appointment = @info.appointment
 
-    info.save
-    notification.destroy
-
-    redirect_to :back
+    if @notification.destroy && @info.save
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   def done

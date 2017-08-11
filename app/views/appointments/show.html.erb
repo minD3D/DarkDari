@@ -2,16 +2,17 @@
 <html>
 <head>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%# TODO: 스타일태그 application 전채 말고 appointment 하나만 포함시키는 방향으로 %>
-  <%= javascript_include_tag 'application' %>
+  <!-- appointments/show.html.erb 파일 스타일링은 appointments.scss 파일만 적용 됨 -->
+  <%= stylesheet_link_tag 'appointments' %>
+  <%= stylesheet_link_tag 'bootstrap/bootstrap' %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
 
 
 <div class="container">
-
   <section>
     <h3>제목 : <%= @appointment.title %></h3>
     <p>내용 : <%= @appointment.content %></p>
@@ -35,6 +36,7 @@
     <article>
       <h4>참여자들</h4>
       <div class="row">
+        <%# TODO: 파셜로 뗴어내기 %>
         <% @appointment.users.each_with_index do |u, i| %>
             <div class="col-xs-2">
               <!-- 닉네임-->

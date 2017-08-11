@@ -29,3 +29,4 @@ $(".toggle_btn").click(function () {
     $(".login_button_big").toggle();
     $(".login_button_big2").toggle();
 });
+

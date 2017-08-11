@@ -9,7 +9,7 @@
         <!-- 수락 -->
         <% case notification.type %>
         <% when 'AppNote' %>
-            <a href="/infos?notification_id=<%= notification.id %>" data-remote="true" data-method="post">
+            <a class="ok-button" href="/infos?notification_id=<%= notification.id %>" data-remote="true" data-method="post">
               <i class="fa fa-check-circle" aria-hidden="true"></i>
             </a>
         <% when 'FriendNote' %>

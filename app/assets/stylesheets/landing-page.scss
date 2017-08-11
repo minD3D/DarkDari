@@ -180,12 +180,17 @@ footer {
   padding: 50px 0;
   //background-color: darkred;
   background-color: #31935d;
-  position: relative;
+ // position: relative;
   bottom: 0;
   width: 100%;
-  margin: 0 0 0 0;
+  margin: 0px 0 0 0;
 }
 p.copyright {
     margin: 15px 0 0;
   color: #d2dbd3;
+}
+
+
+body{
+  min-height:100%;
 }

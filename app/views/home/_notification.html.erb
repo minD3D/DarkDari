@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="notification<%= notification.id %>">
   <div class="notification">
     <div class="col-xs-6 col-sm-6">
       <p><%= notification.requester.nickname %>님의 초대</p>
@@ -6,9 +6,10 @@
     </div>
     <div class="col-xs-6 col-sm-6">
       <div class="noti-buttons">
+        <!-- 수락 -->
         <% case notification.type %>
         <% when 'AppNote' %>
-            <a href="/infos?notification_id=<%= notification.id %>" data-method="post">
+            <a href="/infos?notification_id=<%= notification.id %>" data-remote="true" data-method="post">
               <i class="fa fa-check-circle" aria-hidden="true"></i>
             </a>
         <% when 'FriendNote' %>
@@ -16,7 +17,8 @@
         <% else %>
             ...
         <% end %>
-        <a href="/notifications/<%= notification.id %>" data-method="delete">
+        <!-- 거절 -->
+        <a href="/notifications/<%= notification.id %>" data-remote="true" data-confirm="거절하시겠습니까?" data-method="delete">
           <i class="fa fa-times-circle" aria-hidden="true">
           </i>
         </a>

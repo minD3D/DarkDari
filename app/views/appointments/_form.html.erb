@@ -66,7 +66,7 @@
           <%= yield f %>
           <%= hidden_field_tag(:app_type, @app_typ,class:'') %>
       <!-- Success message -->
-      <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up">
+      <div class="alert alert-success" role="alert" id="success_message"><i class="glyphicon glyphicon-thumbs-up">
 
       </i> 목록을 빠짐없이 작성해 주셔야 약속이 생성됩니다. </div>
 
@@ -74,7 +74,7 @@
       <div class="form-group">
         <label class="col-md-4 control-label"></label>
         <div class="col-md-4">
-          <%= f.submit '만들기',class:'btn btn-default btn-lg' %>
+          <%= f.submit '만들기',class:'btn btn btn-primary btn-lg' %>
           <a href="/home/show_my_page" class="mask">
             <button class="btn btn-default btn-lg">약속목록</button>
           </a>
@@ -113,7 +113,7 @@ $('#datetimepicker').datetimepicker({value:'2017/08/18 05:03',step:10});
 
 
 $(document).ready(function() {
-    $('#contact_form').bootstrapValidator({
+    $('#new_appointment').bootstrapValidator({
         // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -216,7 +216,7 @@ $(document).ready(function() {
     })
         .on('success.form.bv', function(e) {
             $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
-            $('#contact_form').data('bootstrapValidator').resetForm();
+            $('#new_appointment').data('bootstrapValidator').resetForm();
 
             // Prevent form submission
             e.preventDefault();

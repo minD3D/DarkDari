@@ -8,17 +8,16 @@
       <div class="noti-buttons">
         <% case notification.type %>
         <% when 'AppNote' %>
-            <a href="/infos?notification_id=<%= notification.id %>" data-method="post">
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-            </a>
+          <a href="/infos?notification_id=<%= notification.id %>" data-method="post">
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+          </a>
         <% when 'FriendNote' %>
             <%= link_to '수락', '/' %>
         <% else %>
             ...
         <% end %>
-        <a href="/notifications/<%= notification.id %>" data-method="delete">
-          <i class="fa fa-times-circle" aria-hidden="true">
-          </i>
+        <a href="/notifications/<%= notification.id %>" data-method="delete" class>
+          <i class="fa fa-times-circle" aria-hidden="true"></i>
         </a>
       </div>
     </div>

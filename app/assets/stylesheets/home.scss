@@ -6,10 +6,6 @@
 @import url('https://fonts.googleapis.com/css?family=News+Cycle|Quicksand|Rubik');
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 
-*{
-  font-family: 'Nanum Gothic Coding', sans-serif;
-}
-
 .panel-body {
   font-family: 'Nanum Gothic Coding', sans-serif;
   color: black;
@@ -34,9 +30,14 @@ iframe {
 }
 
 .section-padding{
-  font-family: 'Nanum Gothic Coding', sans-serif;
-  border-bottom: 1px solid black;
+    font-family: 'Nanum Gothic Coding', sans-serif;
+    border-bottom: 1px solid black;
 }
+
+.panel-heading{
+   font-family: 'Nanum Gothic Coding', sans-serif; 
+}
+
 
 /*devise*/
 
@@ -1059,12 +1060,32 @@ input:-webkit-autofill{
 }
 
 /*index*/
+
+
 .navbar-default{
   border-bottom: 10px solid #f20912;
 }
 
 .navbar-default .navbar-nav > li > a{
   border-bottom: none;
+}
+
+.logo{
+  position: fixed;
+  width: 220px;
+  height: 400px;
+}
+
+.intro-header{
+  background-image: none;
+}
+
+.intro-message{
+  padding-top: 0px;
+}
+
+.list-inline{
+  text-align: center;
 }
 
 /* Button */
@@ -1200,7 +1221,27 @@ $col) {
   mask-position: 0 0;
  }
 }
+.mask {
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
 
+
+/*notification*/
+.notification{
+  margin-top: 10px;
+}
+.noti-buttons{
+  text-align: center;
+  font-size: 30px;
+  padding-top: 8px;
+}
+.fa-check-circle:hover{
+  color: green;
+}
+.app-buttons{
+  float: right;
+}
 a{
   text-decoration: none;
   color: black;
@@ -1208,27 +1249,4 @@ a{
 a:hover { 
   color: red;
   text-decoration: none;
-}
-
-.mask {
-  color: white;
-  font-family: 'Lato', sans-serif;
-}
-
-/*notification*/
-.notification{
-  margin-top: 10px;
-  
-}
-.noti-buttons{
-  text-align: center;
-  font-size: 30px;
-  
-}
-.fa-check-circle:hover{
-  color: green;
-}
-
-.app-buttons{
-  float: right;
 }

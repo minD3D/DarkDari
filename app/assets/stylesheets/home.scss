@@ -929,107 +929,6 @@ input:-webkit-autofill {
 
 /* KEYFRAMES */
 
-/*Pulse*/
-
-@-moz-keyframes pulse {
-  0% {opacity: 0; -moz-transform:scale(1)}
-  50% {opacity: 1.0; -moz-transform:scale(1.25)}
-  100% {opacity: 0; -moz-transform:scale(1)}
-}
-
-@keyframes pulse {
-  0% {opacity: 0; transform:scale(1)}
-  50% {opacity: 1.0; transform:scale(1.25)}
-  100% {opacity: 0; transform:scale(1)}
-}
-
-@-webkit-keyframes pulse {
-  0% {opacity: 0; -webkit-transform:scale(1)}
-  50% {opacity: 1.0; -webkit-transform:scale(1.25)}
-  100% {opacity: 0; -webkit-transform:scale(1)}
-}
-
-@-ms-keyframes pulse {
-  0% {opacity: 0; -ms-transform:scale(1)}
-  50% {opacity: 1.0; -ms-transform:scale(1.25)}
-  100% {opacity: 0; -ms-transform:scale(1)}
-}
-
-/*Fade in */
-
-@-moz-keyframes fadein {
-  0% {opacity: 0;}
-  100% {opacity: 1.0;}
-}
-
-@keyframes fadein {
-  0% {opacity: 0;}
-  100% {opacity: 1.0;}
-}
-
-@-webkit-keyframes fadein {
-  0% {opacity: 0;}
-  100% {opacity: 1.0;}
-}
-
-@-ms-keyframes fadein {
-  0% {opacity: 0;}
-  100% {opacity: 1.0;}
-}
-
-/*Slide up */
-
-@-moz-keyframes slideup {
-  from {
-    padding-top:70px;
-    opacity: 0;
-  }
-
-
-  to {
-    padding-top:0px;
-    opacity: 1.0;
-  }
-}
-
-@keyframes slideup {
-  from {
-    padding-top:70px;
-    opacity: 0;
-  }
-
-
-  to {
-    padding-top:0px;
-    opacity: 1.0;
-  }
-}
-
-@-webkit-keyframes slideup {
-  from {
-    padding-top:70px;
-    opacity: 0;
-  }
-
-
-  to {
-    padding-top:0px;
-    opacity: 1.0;
-  }
-}
-
-@-ms-keyframes slideup {
-  from {
-    padding-top:70px;
-    opacity: 0;
-  }
-
-
-  to {
-    padding-top:0px;
-    opacity: 1.0;
-  }
-}
 
 
 .button1> input{
@@ -1059,21 +958,14 @@ input:-webkit-autofill{
   padding: 0 0 10% 10% ;
 }
 
+
 /*index*/
-
-
 .navbar-default{
   border-bottom: 10px solid #f20912;
 }
 
 .navbar-default .navbar-nav > li > a{
   border-bottom: none;
-}
-
-.logo{
-  position: fixed;
-  width: 220px;
-  height: 400px;
 }
 
 .intro-header{
@@ -1088,152 +980,8 @@ input:-webkit-autofill{
   text-align: center;
 }
 
-/* Button */
-@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
-@import url('https://fonts.googleapis.com/css?family=Roboto:100');
-
-@mixin button($bcolor,
-$url,
-$x1,
-$y1,
-$bor,
-$col) {
- background: $bcolor;
- -webkit-mask: url($url);
- mask: url($url);
- -webkit-mask-size: $x1 $y1;
- mask-size: $x1 $y1;
- border: $bor;
- color: $col;
-}
-
-.header {
- text-align: center;
- font-family: 'Roboto', sans-serif;
- font-size: 34px;
- margin-top: 12vh;
-}
-
-.footer {
- text-align: center;
- font-family: 'Lato', sans-serif;
- font-weight: 300;
- font-size: 20px;
- margin-top: 15vh;
-}
-
-.button-container-2 {
- position: relative;
- width: 100px;
- height: 50px;
- margin-left: auto;
- margin-right: auto;
- margin-top: 7vh;
- overflow: hidden;
- border: 1px solid #f20912;
- font-family: 'Lato', sans-serif;
- font-weight: 300;
- transition: 0.5s;
- letter-spacing: 1px;
-
- button {
-  width: 101%;
-  height: 100%;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-  letter-spacing: 1px;
-
-  @include button(#f20912,
-  "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
-  3000%,
-  100%,
-  none,
-  #fff);
-  cursor: pointer;
-  -webkit-animation: ani2 0.7s steps(29) forwards;
-  animation: ani2 0.7s steps(29) forwards;
-
-  &:hover {
-   -webkit-animation: ani 0.7s steps(29) forwards;
-   animation: ani 0.7s steps(29) forwards;
-  }
- }
-}
-
-.mas {
- position: absolute;
- color: #000;
- text-align: center;
- width: 101%;
- font-family: 'Lato', sans-serif;
- font-weight: 300;
- position: absolute;
- font-size: 20px;
- margin-top: 12px;
- overflow: hidden;
-}
-
-@-webkit-keyframes ani {
- from {
-  -webkit-mask-position: 0 0;
-  mask-position: 0 0;
- }
-
- to {
-  -webkit-mask-position: 100% 0;
-  mask-position: 100% 0;
- }
-}
-
-@keyframes ani {
- from {
-  -webkit-mask-position: 0 0;
-  mask-position: 0 0;
- }
-
- to {
-  -webkit-mask-position: 100% 0;
-  mask-position: 100% 0;
- }
-}
-
-@-webkit-keyframes ani2 {
- from {
-  -webkit-mask-position: 100% 0;
-  mask-position: 100% 0;
- }
-
- to {
-  -webkit-mask-position: 0 0;
-  mask-position: 0 0;
- }
-}
-
-@keyframes ani2 {
- from {
-  -webkit-mask-position: 100% 0;
-  mask-position: 100% 0;
- }
-
- to {
-  -webkit-mask-position: 0 0;
-  mask-position: 0 0;
- }
-}
-
-.mask {
-  color: white;
-  font-family: 'Lato', sans-serif;
-}
-
-a{
-  text-decoration: none;
-  color: black;
-}
-a:hover { 
-  color: red;
-  text-decoration: none;
+.mainlogo{
+  display: fixed;
 }
 
 
@@ -1255,13 +1003,13 @@ a:hover {
 a.ok-button:hover{
   color: green;
 }
-a{
-  text-decoration: none;
-  color: black;
-}
 a:hover { 
   color: red;
   text-decoration: none;
+}
+a{
+  text-decoration: none;
+  color: black;
 }
 
 body{
@@ -1273,4 +1021,17 @@ footer{
   bottom: 0;
   width: 100%;
   margin: 50px 0 0 0;
+}
+
+
+/*buttons*/
+.btn{
+  background-color: #0d8141;
+  border: 1px solid #0d8141;
+  box-shadow: none;
+}
+.btn:hover{
+  color: #0d8141;
+  border-color: #0d8141;
+  background-color: #76b852;
 }

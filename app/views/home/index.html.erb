@@ -1,5 +1,8 @@
 <div class="intro-header">
   <div class="container">
+    <div class="main-textlogo">
+        <h1><span><%= image_tag 'charecterup.png', class: 'logoimg1'%></span></h1>
+    </div>
     <div class="main-text">
       <html>
         <body>
@@ -13,59 +16,45 @@
         </body>
       </html>
     </div>
-    <div class="main-buttons">
-      <ul class="list-inline intro-social-buttons">
-        <li>
-          <div class="button-container-2">
-            <span class="mas">CREATE</span>
-            <button type="button" name="Hover" data-toggle="modal" data-target="#newapp">CREATE</button>
-          </div>
-        </li>
-        <li>
-          <div class="button-container-2">
-            <span class="mas">JOIN</span>
-            <button type="button" name="Hover" data-toggle="modal" data-target="#myModal">JOIN</button>
-          </div>
-        </li>
-        <li>
-          <div class="button-container-2">
-            <span class="mas">LIST</span>
-            <a href="/home/show_my_page" class="mask">
-              <button type="button" name="Hover">LIST</button>
-            </a>
-          </div>
-        </li>
-      </ul>
-      <!-- Modal -->
-          <div class="modal fade" id="newapp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">약속 생성</h4>
-                </div>
-                <div class="modal-body">
 
-                  <form action="/appointments/new">
-                    <div class="form-group">
-                      <label for="sel1">Select list:</label>
-                      <select class="form-control" name="app_type">
-                        <option value="MoneyApp">돈 약속</option>
-                        <option value="LocationApp">장소 약속</option>
-                      </select>
-                    </div>
-                    <input type="submit">
-                  </form>
-
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+    <ul class="list-inline intro-social-buttons">
+      <li>
+        <button class="btn btn-default btn-lg" data-toggle="modal" data-target="#newapp">CREATE</button>
+      </li>
+      <li>
+        <button class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">JOIN</button>
+      </li>
+      <li>
+        <a href="/home/show_my_page"><button class="btn btn-default btn-lg">LIST</button></a>
+      </li>
+    </ul>
+    <!-- Modal -->
+    <div class="modal fade" id="newapp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">약속 생성</h4>
+          </div>
+          <div class="modal-body">
+            <form action="/appointments/new">
+              <div class="form-group">
+                <label for="sel1">Select list:</label>
+                <select class="form-control" name="app_type">
+                  <option value="MoneyApp">돈 약속</option>
+                  <option value="LocationApp">장소 약속</option>
+                </select>
               </div>
-            </div>
+              <input type="submit">
+            </form>
           </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

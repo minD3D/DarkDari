@@ -122,4 +122,11 @@ h1 span:nth-child(8) { animation-delay: .7s; }
 .logoimg1{
   width: 230px;
   position: fixed;
+  left: 10px;
+  top: 20px;
+  display: inline-block;
+  animation: bounce .3s ease infinite alternate;
+  margin-top: 180px;
+  z-index: inherit;
 }
+

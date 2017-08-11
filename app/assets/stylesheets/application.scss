@@ -52,8 +52,8 @@ h1 span {
   display: inline-block;
   animation: bounce .3s ease infinite alternate;
   font-family: 'Titan One', cursive;
-  font-family: 'Nanum Gothic Coding', sans-serif; 
-  font-size: 80px;
+  
+  font-size: 100px;
   color: #FFF;
   text-shadow: 0 1px 0 #CCC,
                0 2px 0 #CCC,
@@ -89,7 +89,4 @@ h1 span:nth-child(8) { animation-delay: .7s; }
                  0 9px 0 #CCC,
                  0 50px 25px rgba(0, 0, 0, .2);
   }
-}
-.imgimg{
-    height: 80px;
 }

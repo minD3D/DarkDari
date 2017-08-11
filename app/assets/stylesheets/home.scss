@@ -1119,7 +1119,15 @@ $col) {
  font-family: 'Lato', sans-serif;
  font-weight: 300;
  font-size: 20px;
- margin-top: 15vh;
+}
+footer {
+  padding: 50px 0;
+  //background-color: darkred;
+  background-color: #31935d;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin: 0 0 0 0;
 }
 
 .button-container-2 {
@@ -1268,9 +1276,8 @@ body{
   min-height:100%;
 }
 
-footer{
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  margin: 50px 0 0 0;
+
+.titletext{
+  color: white;
+  font-size: 25px;
 }

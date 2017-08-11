@@ -1236,8 +1236,6 @@ a:hover {
   text-decoration: none;
 }
 
->>>>>>> 6eedd3559677ff0ed77c407816c101cf468ebb99
-
 
 /*notification*/
 .notification{
@@ -1254,7 +1252,9 @@ a:hover {
 .app-buttons{
   float: right;
 }
-
+a.ok-button:hover{
+  color: green;
+}
 a{
   text-decoration: none;
   color: black;

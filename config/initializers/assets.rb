@@ -8,7 +8,6 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.paths << Rails.root.join("app","assets","fonts")
 Rails.application.config.assets.precompile += %w(appointments.css)
 Rails.application.config.assets.precompile += %w(bootstrap/bootstrap.css)
-Rails.application.config.assets.precompile += %w(show_js.js.erb)
 
 # Precompile additional assets.
 # application.js, application.scss, and all non-JS/CSS in app/assets folder are already added.

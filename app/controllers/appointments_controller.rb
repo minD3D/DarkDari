@@ -25,6 +25,7 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     @appointment.app_type = params[:app_type]
+    @app_type = @appointment.app_type
 
     if @appointment.save
       redirect_to home_show_my_page_path
@@ -34,6 +35,7 @@ class AppointmentsController < ApplicationController
   end
 
   def update
+    @app_type = @appointment.app_type
     if @appointment.update(appointment_params)
       redirect_to @appointment
     else

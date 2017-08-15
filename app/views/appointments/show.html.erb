@@ -36,7 +36,6 @@
     <article>
       <h4>참여자들</h4>
       <div class="row">
-        <%# TODO: 파셜로 뗴어내기 %>
         <% @appointment.users.each_with_index do |u, i| %>
             <div class="col-xs-2">
               <!-- 닉네임-->
@@ -137,7 +136,6 @@
             });
         }
 
-        <%# TODO: 현재위치 계산하는 동안 메세지 같은거 띄울 수 있으면 좋을듯 %>
         function currentLocation() {
             myLocation = 0;
             var infoWindow = new google.maps.InfoWindow({map: map});

@@ -25,22 +25,10 @@
   </section>
 </div>
 
-<%# TODO: hidden tag가 안넘어가서 타입 저장이 안됨 %>
 <%# TODO: API키 받아서 환경변수에 설정해주기 %>
-<%# TODO: new, edit, show에 있는 script 태그들 가능하면 js파일로 떼어내기 %>
 
-<script>
-    $.datetimepicker.setLocale('ko');
+<%= javascript_include_tag 'datetimepicker' %>
 
-    $('#datetimepicker').datetimepicker({
-        dayOfWeekStart: 1,
-        lang: 'ko',
-        disabledDates: ['1986/01/08', '1986/01/09', '1986/01/10'],
-        startDate: new Date()
-    });
-    $('#datetimepicker').datetimepicker({value: new Date(), step: 10});
-
-</script>
 <% if @app_type == 'LocationApp' %>
     <script>
 

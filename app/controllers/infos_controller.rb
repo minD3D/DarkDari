@@ -1,6 +1,6 @@
 class InfosController < ApplicationController
   before_action :set_info, only: [:done, :change_money]
-  before_action :builder?, only: [:done, :change_money]
+  before_action :builder?, only: :change_money
 
   def create
     @notification = Notification.find(params[:notification_id])
@@ -39,8 +39,6 @@ class InfosController < ApplicationController
     @info = Info.find(params[:id])
   end
 
-  # 완료 시킬 때, 빌더인지 확인
-  # TODO: 빌더가 아니여도 장소에 도착했을 때는 완료 시킬 수 있게 하기
   def builder?
     builder = @info.find_builder
     redirect_to root_path unless current_user.id == builder.user_id

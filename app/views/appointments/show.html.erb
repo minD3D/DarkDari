@@ -200,7 +200,7 @@
         if (window.google) {
             initMap();
         } else {
-            $.ajax('http://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap', {
+            $.ajax('https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap', {
                 crossDomain: true,
                 dataType: 'script'
             });

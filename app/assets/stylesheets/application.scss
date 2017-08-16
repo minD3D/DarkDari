@@ -22,12 +22,11 @@
 @import 'nav';
 @import 'device';
 
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 body{
-  background-image: url('main.PNG');
-  background-size: cover;
-  background-repeat: no-repeat;
   background-color: white;
-  //min-height: 100%;
+  min-height: 70%;
 }
 
 footer {
@@ -65,7 +64,7 @@ footer {
 
 h1 {
   height: 120px;
-  margin-top: 90px;
+  margin-top: 100px;
 }
 
 h1 span {

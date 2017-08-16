@@ -1,14 +1,7 @@
-<div id="wrapper">
-  <div id="logo_container">
-    <div class="pulse_off"><img src="/assets/loginlogo.png">  </div>
-    <div id="logo"><img src="/assets/loginlogo.png"></div>
-  </div>
-</div>
-
 <div  id="login" >
   <fieldset class="form-signin form-horizontal">
     <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='Z2o9rjgtJNY6GvBSXHnkka0kZoCw7rOz' /></div>
-    <h2 class="signup"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</h2>
+    <h2 class="signup">Sign up</h2>
     
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>

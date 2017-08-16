@@ -1,28 +1,57 @@
-<div>
-  <% case @app_type %>
-  <% when 'MoneyApp' %>
-      <h3>돈 약속</h3>
-  <% when 'LocationApp' %>
-      <h3>장소 약속</h3>
-  <% end %>
+<div class="container">
+  <div class="well form-horizontal">
+    <fieldset>
 
-  <%= form_for(@appointment) do |f| %>
-      <div>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-      </div>
+      <!-- Form Name -->
+      <legend>
+        <% case @app_type %>
+        <% when 'MoneyApp' %>
+            <h3>돈 약속</h3>
+        <% when 'LocationApp' %>
+            <h3>장소 약속</h3>
+        <% end %>
+      </legend>
 
-      <div>
-        <%= f.label :content %>
-        <%= f.text_area :content %>
-      </div>
+      <% if @appointment.errors.present? %>
+          <div id="errors" class="well">
+            <ul>
+              <% @appointment.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
 
-      <div>
-        <%= f.label :deadline %>
-        <%= datetime_local_field(:appointment, :deadline) %>
-        <input type="text" value="" id="datetimepicker"/>
-      </div>
+      <%= form_for(@appointment, class: 'well form-horizontal') do |f| %>
+          <div class="form-group">
+            <%= f.label :title, class: 'col-md-4 control-label' %>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"></span>
+                <%= f.text_field :title, class: 'form-control', required: true %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :content, class: 'col-md-4 control-label' %>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"></span>
+                <%= f.text_field :content, class: 'form-control', required: true %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :deadline, class: 'col-md-4 control-label' %>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"></span>
+                <%= f.text_field :deadline, class: 'form-control', id: 'datetimepicker', required: true %>
+              </div>
+            </div>
+          </div>
 
+<<<<<<< HEAD
       <br>
 
       <div>
@@ -37,12 +66,41 @@
         <%= label_tag(:period, "3시간") %>
       </div>
       <%= yield f %>
+=======
+          <!-- radio checks -->
+          <div class="form-group">
+            <label class="col-md-4 control-label">닥달강도</label>
+            <div class="col-md-4">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hosting" value="1"/> 순한닥달이
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hosting" value="2"/> 급한닥달이
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hosting" value="3"/> 성격나쁜닥달이
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= yield f %>
+            <%= hidden_field_tag(:app_type, @app_type) %>
+          </div>
+>>>>>>> 66dbc4a881bc7413061ddf4612451abc1b52f8d2
 
-      <%= hidden_field_tag(:app_type, @app_type) %>
+          <!-- Success message -->
+          <div class="alert alert-success" role="alert" id="success_message"><i class="glyphicon glyphicon-thumbs-up">
 
-      <%= f.submit 'submit' %>
-  <% end %>
+          </i> 목록을 빠짐없이 작성해 주셔야 약속이 생성됩니다.
+          </div>
 
+<<<<<<< HEAD
 </div>
 <script>/*
  window.onerror = function(errorMsg) {
@@ -73,3 +131,19 @@ $('#datetimepicker').datetimepicker({
 $('#datetimepicker').datetimepicker({value: '2015/04/15 05:03', step: 10});
 
 </script>
+=======
+          <!-- Button -->
+          <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+              <%= f.submit '만들기', class: 'btn btn btn-primary btn-lg' %>
+              <a href="/home/show_my_page" class="mask">
+                <button class="btn btn-default btn-lg">약속목록</button>
+              </a>
+            </div>
+          </div>
+      <% end %>
+    </fieldset>
+  </div>
+</div>
+>>>>>>> 66dbc4a881bc7413061ddf4612451abc1b52f8d2

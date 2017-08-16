@@ -1,51 +1,46 @@
 <div id="wrapper">
   <div id="logo_container">
-    <div class="pulse_off"><img src="http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/login_pulse.png" /> </div>
-    <div id="logo"><img src="http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/login_logo.png" /> </div>
+    <div class="pulse_off"><img src="/assets/loginlogo.png">  </div>
+    <div id="logo"><img src="/assets/loginlogo.png"></div>
   </div>
 </div>
 
 <div  id="login" >
   <fieldset class="form-signin form-horizontal">
     <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='Z2o9rjgtJNY6GvBSXHnkka0kZoCw7rOz' /></div>
-    <br><h2>Sign up</h2>
-
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <h2 class="signup"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</h2>
+    
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
-
-    <div class="field">
-      <%= f.label :email %><br/>
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-
-    <div class="field">
-      <%= f.label :nickname %> <br />
-      <%= f.text_field :nickname %>
-    </div>
-
-    <div class="field">
-      <%= f.label :phone %> <br />
-      <%= f.telephone_field :phone %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br/>
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation %><br/>
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-  <% end %>
-
-<%= render "devise/shared/links" %>
+      
+      <div class="Field Field--half">
+        <label for="email2" class="control-label">E-mail</label>
+        <%= f.email_field :email, autofocus: true, class: 'form-control', id: 'email2' %>
+      </div>
+      <div class="Field Field--half">
+        <label for="name" class="control-label">NickName</label>
+        <%= f.text_field :nickname, class: 'form-control', id: 'name' %>
+      </div>
+      <div class="Field Field--half">
+        <label for="phone" class="control-label">Phone</label>
+        <%= f.telephone_field :phone, class: 'form-control' %>
+      </div>
+      <div class="Field Field--half">
+        <label for="password1" class="control-label">Password</label>
+        <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br/>
+        <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+      </div>
+      
+      <div class="Login-row">
+        <button class="Field-button Field-button--submit">Sign up</button>
+      </div>
+  
+      <div class="control-group center">
+        <div class="register"><%= render "devise/shared/links" %></div>
+      </div>
+      
+    <% end %>
   </fieldset>
 </div>

@@ -7,13 +7,13 @@ module AppointmentsHelper
 
     if Info.where(user_id: invited_user, appointment_id: appointment_id).present?
       # 참여 중
-      1
+      'participating'
     elsif Notification.where(user_id: invited_user, appointment_id: appointment_id).present?
       # 초대 중
-      2
+      'inviting'
     else
       # 암것도 아님
-      3
+      'not invited'
     end
 
   end

@@ -12,159 +12,88 @@
         <% end %>
       </legend>
 
-      <%= form_for(@appointment,class:'well form-horizontal') do |f| %>
+      <% if @appointment.errors.present? %>
+          <div id="errors" class="well">
+            <ul>
+              <% @appointment.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <%= form_for(@appointment, class: 'well form-horizontal') do |f| %>
           <div class="form-group">
-            <%= f.label :title ,class:'col-md-4 control-label' %>
+            <%= f.label :title, class: 'col-md-4 control-label' %>
             <div class="col-md-4 inputGroupContainer">
               <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <%= f.text_field :title ,class:'form-control'%>
+                <span class="input-group-addon"></span>
+                <%= f.text_field :title, class: 'form-control', required: true %>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <%= f.label :content ,class:'col-md-4 control-label' %>
+            <%= f.label :content, class: 'col-md-4 control-label' %>
             <div class="col-md-4 inputGroupContainer">
               <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <%= f.text_field :content ,class:'form-control'%>
+                <span class="input-group-addon"></span>
+                <%= f.text_field :content, class: 'form-control', required: true %>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <%= f.label :deadline ,class:'col-md-4 control-label' %>
+            <%= f.label :deadline, class: 'col-md-4 control-label' %>
             <div class="col-md-4 inputGroupContainer">
               <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <%= datetime_local_field(:appointment, :deadline,class:'form-control',id:'datepicker') %>
-                <input type="text" value="" id="datetimepicker"/>
+                <span class="input-group-addon"></span>
+                <%= f.text_field :deadline, class: 'form-control', id: 'datetimepicker', required: true %>
               </div>
             </div>
           </div>
 
-      <!-- radio checks -->
-      <div class="form-group">
-        <label class="col-md-4 control-label">닥달강도</label>
-        <div class="col-md-4">
-          <div class="radio">
-            <label>
-              <input type="radio" name="hosting" value="1" /> 순한닥달이
-            </label>
+          <!-- radio checks -->
+          <div class="form-group">
+            <label class="col-md-4 control-label">닥달강도</label>
+            <div class="col-md-4">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hosting" value="1"/> 순한닥달이
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hosting" value="2"/> 급한닥달이
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hosting" value="3"/> 성격나쁜닥달이
+                </label>
+              </div>
+            </div>
           </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="hosting" value="2" /> 급한닥달이
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="hosting" value="3" /> 성격나쁜닥달이
-            </label>
-          </div>
-        </div>
-      </div>
           <div class="form-group">
             <%= yield f %>
-            <%= hidden_field_tag(:app_type, @app_typ) %>
+            <%= hidden_field_tag(:app_type, @app_type) %>
           </div>
 
-      <!-- Success message -->
-      <div class="alert alert-success" role="alert" id="success_message"><i class="glyphicon glyphicon-thumbs-up">
+          <!-- Success message -->
+          <div class="alert alert-success" role="alert" id="success_message"><i class="glyphicon glyphicon-thumbs-up">
 
-      </i> 목록을 빠짐없이 작성해 주셔야 약속이 생성됩니다. </div>
+          </i> 목록을 빠짐없이 작성해 주셔야 약속이 생성됩니다.
+          </div>
 
-      <!-- Button -->
-      <div class="form-group">
-        <label class="col-md-4 control-label"></label>
-        <div class="col-md-4">
-          <%= f.submit '만들기',class:'btn btn btn-primary btn-lg' %>
-          <a href="/home/show_my_page" class="mask">
-            <button class="btn btn-default btn-lg">약속목록</button>
-          </a>
-        </div>
-       </div>
+          <!-- Button -->
+          <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+              <%= f.submit '만들기', class: 'btn btn btn-primary btn-lg' %>
+              <a href="/home/show_my_page" class="mask">
+                <button class="btn btn-default btn-lg">약속목록</button>
+              </a>
+            </div>
+          </div>
       <% end %>
     </fieldset>
   </div>
 </div>
-</div><!-- /.container -->
-
-<script>/*
- window.onerror = function(errorMsg) {
- $('#console').html($('#console').html()+'<br>'+errorMsg)
- }*/
-
-$.datetimepicker.setLocale('en');
-
-$('#datetimepicker_format').datetimepicker({value:'2017/08/18 05:03', format: $("#datetimepicker_format_value").val()});
-console.log($('#datetimepicker_format').datetimepicker('getValue'));
-
-$("#datetimepicker_format_change").on("click", function(e){
-    $("#datetimepicker_format").data('xdsoft_datetimepicker').setOptions({format: $("#datetimepicker_format_value").val()});
-});
-$("#datetimepicker_format_locale").on("change", function(e){
-    $.datetimepicker.setLocale($(e.currentTarget).val());
-});
-
-$('#datetimepicker').datetimepicker({
-    dayOfWeekStart : 1,
-    lang:'en',
-    disabledDates:['2017/08/18','2017/08/18','2017/08/18'],
-    startDate:	'2017/08/18'
-});
-$('#datetimepicker').datetimepicker({value:'2017/08/18 05:03',step:10});
-
-/*
-$(document).ready(function() {
-    $('#new_appointment').bootstrapValidator({
-        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            title: {
-                validators: {
-                    stringLength: {
-                        min: 2,
-                    },
-                    notEmpty: {
-                        message: 'Please supply your first name'
-                    }
-                }
-            },
-            content: {
-                validators: {
-                    stringLength: {
-                        min: 2,
-                    },
-                    notEmpty: {
-                        message: 'Please supply your last name'
-                    }
-                }
-            }
-        }
-    })
-        .on('success.form.bv', function(e) {
-            $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
-            $('#new_appointment').data('bootstrapValidator').resetForm();
-
-            // Prevent form submission
-            e.preventDefault();
-
-            // Get the form instance
-            var $form = $(e.target);
-
-            // Get the BootstrapValidator instance
-            var bv = $form.data('bootstrapValidator');
-
-            // Use Ajax to submit form data
-            $.post($form.attr('action'), $form.serialize(), function(result) {
-                console.log(result);
-            }, 'json');
-        });
-});
-
- */
-</script>

@@ -1,0 +1,3 @@
+document.getElementById("money-container<%= @info.id %>").innerHTML
+    = '<em id="money<%= @info.id %>"><%= @info.money %>원</em> '
+    + '<span class="money-edit" onclick="moneyForm(<%= @info.id %>)">수정</span>';

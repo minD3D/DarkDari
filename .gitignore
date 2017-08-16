@@ -1,5 +1,7 @@
 # Created by https://www.gitignore.io/api/ruby,macos,windows,rubymine
 
+*.bash_profile
+
 ### macOS ###
 *.DS_Store
 .AppleDouble

@@ -5,11 +5,13 @@
       <%= link_to '장소 약속하기', new_appointment_path(app_type: 'LocationApp') %>
     </p>
 
+
+
     <article>
       <%= render 'form' do |f| %>
           <% if @app_type == 'LocationApp' %>
               <div class="form-group">
-                <%= f.label :location ,class:'col-md-4 control-label' %>
+                <%= f.label :location, class: 'col-md-4 control-label' %>
                 <div class="col-md-4 inputGroupContainer">
                   <input id="pac-input" class="controls" type="text" placeholder="Search Box">
                   <div id="google-map"></div>
@@ -23,9 +25,10 @@
   </section>
 </div>
 
-<%# TODO: API키 받아서 환경변수에 설정해주기 %>
-<%# TODO: new, edit, show에 있는 script 태그들 가능하면 js파일로 떼어내기 %>
+<%# TODO: 갑자기 얘는 왜 안되니 %>
+<%= javascript_include_tag 'datetimepicker' %>
 
+<%# TODO: API키 받아서 환경변수에 설정해주기 %>
 <% if @app_type == 'LocationApp' %>
     <script>
 

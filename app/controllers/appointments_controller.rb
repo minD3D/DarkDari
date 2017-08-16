@@ -25,6 +25,7 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     @appointment.app_type = params[:app_type]
+    @app_type = @appointment.app_type
 
     if @appointment.save
       redirect_to home_show_my_page_path
@@ -34,6 +35,7 @@ class AppointmentsController < ApplicationController
   end
 
   def update
+    @app_type = @appointment.app_type
     if @appointment.update(appointment_params)
       redirect_to @appointment
     else
@@ -76,7 +78,6 @@ class AppointmentsController < ApplicationController
   end
 
   # 만든 사람의 id와 글 아이디로 관계 생성, builder: true
-  # TODO: 모델 콜백으로 옮기든 엑티브잡으로 옮기든 해야할듯
   def set_info
     Info.create(user_id: current_user.id,
                 appointment_id: @appointment.id,

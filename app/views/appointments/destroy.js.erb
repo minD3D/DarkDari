@@ -1,3 +1,5 @@
-$('#appointment<%= @appointment.id %>').bind('ajax:success', function() {
-    $(this).remove();
-});
+$('#appointment<%= @appointment.id %>').remove();
+
+//$('#appointment<%#= @appointment.id %>').bind('ajax:success', function() {
+//    $(this).remove();
+//});

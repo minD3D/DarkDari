@@ -57,12 +57,6 @@ class AppointmentsController < ApplicationController
     # redirect_to home_show_my_page_path
   end
 
-  def test
-    @appointment = Appointment.all
-
-  end
-
-
   private
 
   def set_appointment

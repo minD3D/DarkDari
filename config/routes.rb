@@ -11,11 +11,7 @@ Rails.application.routes.draw do
 
   get 'home/appointments'
 
-  resources :appointments, except: :index do
-    collection do
-      get 'test'
-    end
-  end
+  resources :appointments, except: :index
 
   resources :infos, only: :create do
     member do

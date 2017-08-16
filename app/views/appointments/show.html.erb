@@ -18,7 +18,7 @@
     <p>내용 : <%= @appointment.content %></p>
     <p>마감기한 : <%= @appointment.deadline %></p>
     <% if @appointment.app_type == 'LocationApp' %>
-        <div id="google-map"></div>
+        <div id="google-map" class="show-map"></div>
         <button onclick="currentLocation()">도착</button>
         <p id="distance-result"></p>
     <% end %>

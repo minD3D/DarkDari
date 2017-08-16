@@ -1,31 +1,31 @@
-<div id="wrapper">
-  <div id="logo_container">
-    <div class="pulse_off"><img src="/assets/loginlogo.png">  </div>
-    <div id="logo"><img src="/assets/loginlogo.png"></div>
-  </div>
-</div>
 
-<div  id="login" >
-    <fieldset class="form-signin form-horizontal">
-  <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='Z2o9rjgtJNY6GvBSXHnkka0kZoCw7rOz' /></div>
-  <h2 class="signup"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</h2>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  
-  <div class="Field Field--full">
-    <label for="email2" class="control-label">E-mail</label>
-    <%= f.email_field :email, autofocus: true, class: 'form-control', id: 'email2' %>
+
+<div id="login">
+  <div class="darkdari-logo">
+    <img src="/assets/loginlogo.png">
   </div>
-  <div class="Field Field--full">
-    <label for="password2" class="control-label">Password</label>
-    <%= f.password_field :password, autocomplete: "off", class: 'form-control', id: 'password2' %>
-  </div>
-  
-  <div class="Login-row">
-    <button class="Field-button Field-button--submit">Sign in</button>
-  </div>
-  <div class="control-group center">
-    <div class="register"><%= render "devise/shared/links" %></div>
-  </div>
-  <% end %>
+
+  <fieldset class="form-signin form-horizontal">
+    <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='Z2o9rjgtJNY6GvBSXHnkka0kZoCw7rOz'/>
+    </div>
+    <h2 class="signup"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <div class="Field Field--full">
+          <label for="email2" class="control-label">E-mail</label>
+          <%= f.email_field :email, autofocus: true, class: 'form-control', id: 'email2' %>
+        </div>
+        <div class="Field Field--full">
+          <label for="password2" class="control-label">Password</label>
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control', id: 'password2' %>
+        </div>
+
+        <div class="Login-row">
+          <button class="Field-button Field-button--submit">Sign in</button>
+        </div>
+        <div class="control-group center">
+          <div class="register"><%= render "devise/shared/links" %></div>
+        </div>
+    <% end %>
   </fieldset>
 </div

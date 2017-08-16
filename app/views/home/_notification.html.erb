@@ -9,7 +9,7 @@
         <!-- 수락 -->
         <% case notification.type %>
         <% when 'AppNote' %>
-            <a class="ok-button" href="/infos?notification_id=<%= notification.id %>&ajax=true" data-remote="true" data-method="post">
+            <a class="ok-button" href="/infos?notification_id=<%= notification.id %>" data-remote="true" data-method="post">
               <i class="fa fa-check-circle" aria-hidden="true"></i>
             </a>
         <% when 'FriendNote' %>
@@ -18,7 +18,7 @@
             ...
         <% end %>
         <!-- 거절 -->
-        <a href="/notifications/<%= notification.id %>" data-remote="true" data-confirm="거절하시겠습니까?" data-method="delete">
+        <a href="/notifications/<%= notification.id %>&ajax=true" data-remote="true" data-confirm="거절하시겠습니까?" data-method="delete">
           <i class="fa fa-times-circle" aria-hidden="true">
           </i>
         </a>

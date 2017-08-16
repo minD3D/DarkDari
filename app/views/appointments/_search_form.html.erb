@@ -14,7 +14,7 @@
           <% when 'participating' %>
               참여중
           <% when 'inviting' %>
-              <%= link_to '초대취소', notification_path(get_notification_id(su.id, appointment.id)), method: :delete %>
+              <%= link_to '초대취소', notification_path(get_notification_id(su.id, appointment.id), ajax: false), method: :delete %>
           <% else %>
               <%= link_to '초대', notifications_path(type: 'AppNote',
                                                    user_id: su.id,

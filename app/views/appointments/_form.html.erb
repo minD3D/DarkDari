@@ -23,6 +23,19 @@
         <input type="text" value="" id="datetimepicker"/>
       </div>
 
+      <br>
+
+      <div>
+        <p>주기 설정</p>
+        <%= radio_button_tag(:period,30) %>
+        <%= label_tag(:period, "30분") %>
+        <%= radio_button_tag(:period, 60) %>
+        <%= label_tag(:period, "1시간") %>
+        <%= radio_button_tag(:period, 120) %>
+        <%= label_tag(:period, "2시간") %>
+        <%= radio_button_tag(:period, 180) %>
+        <%= label_tag(:period, "3시간") %>
+      </div>
       <%= yield f %>
 
       <%= hidden_field_tag(:app_type, @app_type) %>
@@ -38,22 +51,25 @@
 
 $.datetimepicker.setLocale('en');
 
-$('#datetimepicker_format').datetimepicker({value:'2015/04/15 05:03', format: $("#datetimepicker_format_value").val()});
+$('#datetimepicker_format').datetimepicker({
+    value: '2015/04/15 05:03',
+    format: $("#datetimepicker_format_value").val()
+});
 console.log($('#datetimepicker_format').datetimepicker('getValue'));
 
-$("#datetimepicker_format_change").on("click", function(e){
+$("#datetimepicker_format_change").on("click", function (e) {
     $("#datetimepicker_format").data('xdsoft_datetimepicker').setOptions({format: $("#datetimepicker_format_value").val()});
 });
-$("#datetimepicker_format_locale").on("change", function(e){
+$("#datetimepicker_format_locale").on("change", function (e) {
     $.datetimepicker.setLocale($(e.currentTarget).val());
 });
 
 $('#datetimepicker').datetimepicker({
-    dayOfWeekStart : 1,
-    lang:'en',
-    disabledDates:['1986/01/08','1986/01/09','1986/01/10'],
-    startDate:	'1986/01/05'
+    dayOfWeekStart: 1,
+    lang: 'en',
+    disabledDates: ['1986/01/08', '1986/01/09', '1986/01/10'],
+    startDate: '1986/01/05'
 });
-$('#datetimepicker').datetimepicker({value:'2015/04/15 05:03',step:10});
+$('#datetimepicker').datetimepicker({value: '2015/04/15 05:03', step: 10});
 
 </script>

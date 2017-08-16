@@ -1,0 +1,22 @@
+<% @appointment.each do |app|  %>
+   <p>약속 정보</p>
+    <%= app.title %>
+   <%= app.content %>
+   <%= app.deadline %>
+   <%= app.period %>
+    <br>
+  <p>유저 이름</p>
+    <% app.users.each do |user|  %>
+
+        <p>id: <%= user.nickname %></p>
+
+        <p>message:  <%= user.message %> </p>
+    <% end %>
+    <p>패스 정보</p>
+
+    <% app.infos.each do |user|  %>
+
+        <%= user.done %>
+    <% end %>
+
+<% end  %>

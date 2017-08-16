@@ -25,12 +25,18 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     @appointment.app_type = params[:app_type]
+    @appointment.period = params[:period]
 
     if @appointment.save
+      #active job 부분
+       SendmessageJob.set(wait: ((Date.today..@appointment.deadline).to_a.size)-1.seconds).perform_later(@appointment.id,@appointment.period)
+     #SendmessageJob.set(wait: 10.seconds).perform_later(@appointment.id,@appointment.period)
+
       redirect_to home_show_my_page_path
     else
       render 'new'
     end
+
   end
 
   def update
@@ -48,6 +54,11 @@ class AppointmentsController < ApplicationController
       end
     end
     # redirect_to home_show_my_page_path
+  end
+
+  def test
+    @appointment = Appointment.all
+
   end
 
 
@@ -82,5 +93,7 @@ class AppointmentsController < ApplicationController
                 appointment_id: @appointment.id,
                 builder: true)
   end
+
+
 
 end

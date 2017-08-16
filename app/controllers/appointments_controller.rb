@@ -25,11 +25,8 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     @appointment.app_type = params[:app_type]
-<<<<<<< HEAD
     @appointment.period = params[:period]
-=======
     @app_type = @appointment.app_type
->>>>>>> 66dbc4a881bc7413061ddf4612451abc1b52f8d2
 
     if @appointment.save
       #active job 부분

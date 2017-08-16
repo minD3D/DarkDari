@@ -4,13 +4,13 @@
       <fieldset class="editusers form-signin form-horizontal">
         <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='Z2o9rjgtJNY6GvBSXHnkka0kZoCw7rOz' /></div>
         <br>
-        <p class="edituser" ><i class="fa fa-user" aria-hidden="true"></i> Edit <%= resource_name.to_s.humanize %> <%= link_to "Back", :back, class: 'backbutton' %></p>
+        <p class="edituser">Edit <%= resource_name.to_s.humanize %> <%= link_to "Back", :back, class: 'backbutton' %></p>
     
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}, class:'well form-horizontal') do |f| %>
         <%= devise_error_messages! %>
     
         <div class="Field Field--half">
-          <%= f.label :email, class:'editlabel', style:"margin-bottom: 0px;" %><br/>
+          <%= f.label :email, class:'editlabel' %><br/>
           <%= f.email_field :email, autofocus: true, class:'form-control' %>
         </div>
     
@@ -52,9 +52,9 @@
         </div>
     <% end %>
     
-    <p class="deleteuser"><i class="fa fa-user-times" aria-hidden="true"></i> Cancel my account<p>
+    <p class="deleteuser"> Cancel my account<p>
     
-    <p class="delete_user">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: {confirm: "Are you sure?"}, method: :delete, class: 'edit_button2 btn btn-default btn-lg' %></p>
+    <p class="delete_user"> <%= button_to "Cancel my account", registration_path(resource_name), data: {confirm: "Are you sure?"}, method: :delete, class: 'edit_button2 btn btn-default btn-lg' %></p>
     
       </fieldset>
       </div>

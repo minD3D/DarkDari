@@ -4,7 +4,7 @@
 
 /*show my page*/
 @import url('https://fonts.googleapis.com/css?family=News+Cycle|Quicksand|Rubik');
-
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 .panel-body {
   font-family: 'Nanum Gothic Coding', sans-serif;
   color: black;
@@ -59,7 +59,9 @@ iframe {
 }
 
 .intro-header{
-  background-image: none;
+  background-image: url('main.PNG');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .intro-message{

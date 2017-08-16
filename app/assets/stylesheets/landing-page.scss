@@ -3,7 +3,6 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-
 body,
 html {
     width: 100%;
@@ -118,17 +117,20 @@ h6 {
 }
 
 .section-heading {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    padding-left: 15px;
+    //font-family: 'Concert One', cursive;
 }
 
 .section-heading-spacer {
     float: left;
-    width: 200px;
-    border-top: 3px solid #e7e7e7;
+    width: 600px;
+    border-top: 2.8px solid #e7e7e7;
 }
 
 .banner {
-    padding: 100px 0;
+    padding: 70px 0;
     color: #f8f8f8;
 //  background: image-url("back_5.jpg") no-repeat center center;
     background-size: cover;
@@ -184,10 +186,13 @@ footer {
   margin: 0px 0 0 0;
 }
 p.copyright {
-    margin: 15px 0 0;
-  color: #d2dbd3;
+  margin: 15px 0 0;
+  color: black;
 }
 
+.synopsis{
+    padding-left: 0px;
+}
 
 body{
   min-height:100%;

@@ -1,19 +1,677 @@
-
 #user_email {
-  height: 100%;
   width: 100%;
+}
+#user_password {
+  width: 100%;
+}
+
+/*devise*/
+.login-wrap {
+  padding: 17px 10px 50px 10px;
+}
+.login-wrap input[type="checkbox"] {
+  display:none;
+}
+.login-wrap input[type="checkbox"] + label span {
+  display:inline-block;
+  width:24px;
+  height:24px;
+  margin:-3px 5px 0 0;
+  vertical-align:middle;
+  background-size: 24px;
+  cursor:pointer;
+}
+.login-wrap input[type="checkbox"]:checked + label span {
+  background-position: left bottom;
+}
+.login-wrap .form-group {
+  margin-bottom: 5px;
+}
+.login-wrap .form-control {
+  height: 44px;
+  width: 100%;
+}
+.login-wrap .txt {
+  display: none;
+}
+.btn_login,.btn_logout {
+  width: 100%;
+  height: 40px;
+  border-radius: 2px;
+  background-color: #dc1400;
+  font-size: 18px;
+  color: #FFF !important;
+  margin-top: 7px;
+}
+.login-wrap .checkbox {
+  margin-top: 10px;
+}
+.login-wrap .checkbox label {
+  padding-left: 0;
+}
+.login-status {
+  display: table;
+  width: 100%;
+  padding: 60px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  line-height: 1.4;
+}
+.login-status span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.login-status strong {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+  width: 300px;
+}
+.login-wrap strong {
+  color: #ff8a00;
+  font-weight: normal;
+}
+@media (min-width: 768px) {
+  .login-wrap {
+    position: relative;
+    border: 1px solid #e6e6e6;
+    background: #fff;
+    padding: 17px 50px 50px 50px;
+    margin: 50px auto;
+    width: 510px;
+    height: 257px;
+  }
+
+  .login-wrap .txt {
+    font-size: 13px;
+    color: #666;
+    margin-top: 9px;
+    display: block;
+    padding-left: 17px;
+  }
+  .login-wrap .form-control {
+    width: 312px;
+  }
+  .btn_login {
+    position: absolute;
+    top: 79px;
+    right: 49px;
+    width: 93px;
+    height: 93px;
+    margin-top: 0;
+  }
+}
+
+#login .form-signin {
+  position: relative;
+  width: 650px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  padding: 20px 0;
+  background: #fff;
+  box-shadow: 0 0 5px 3px #d0d0d0;
+}
+
+fieldset {
+  display: block;
+  -webkit-margin-start: 2px;
+  -webkit-margin-end: 2px;
+  -webkit-padding-before: 0.35em;
+  -webkit-padding-start: 0.75em;
+  -webkit-padding-end: 0.75em;
+  -webkit-padding-after: 0.625em;
+  min-width: -webkit-min-content;
 
 }
 
+#login .control-group {
+  padding: 0 190px 0 150px;
+  margin-bottom: 16px;
+  border: none;
+  overflow: hidden;
+}
+#login .control-group {
+  padding: 0 190px 0 150px;
+  margin-bottom: 16px;
+  border: none;
+  overflow: hidden;
+}
+.form-horizontal .control-group {
+  position: relative;
+  padding: 7px;
+  border-bottom: 1px solid #d0d0d0;
+}
+.form-horizontal .control-group {
+  position: relative;
+  padding: 7px;
+  border-bottom: 1px solid #d0d0d0;
+}
+#login label {
+  display: block;
+  top: 8px;
+  left: 80px;
+  width: auto;
+  padding: 0;
+  margin-bottom: 5px;
+  background: none;
+}
 
-#user_password {
-  height: 100%;
+#login .input-wrap .ico-id {
+  background-position: -207px -11px;
+}
+#login .input-wrap .ico {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 18px;
+  height: 20px;
+}
+.spr {
+  display: inline-block;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  vertical-align: middle;
+}
+.ico {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#login .input-wrap {
+  position: relative;
+  padding: 0 40px 0 0;
+}
+.input-wrap {
+  height: 37px;
+  border: 1px solid #afafaf;
+}
+.input-wrap {
+  height: 50px;
+  padding: 12px 12px 0 11px;
+  background: #fff;
+  border: 1px solid #afa89c;
+}
+
+#login .controls .button {
+  height: 94px;
+}
+#login .button {
+  display: block;
   width: 100%;
+  height: 94px;
+  line-height: 53px;
+  font-size: 20px;
+}
+.button {
+  text-decoration: none;
+}
+button, .button {
+  display: inline-block;
+  height: 47px;
+  text-align: center;
+  background-color: #e61c13;
+  color: #fff;
+  border: none;
+  border: 1px solid #b4060d;
+  box-shadow: inset 0 1px 0 #eb8c8f;
+  font-weight: bold;
+}
 
+button {
+  cursor: pointer;
+}
+
+
+.table td span {
+  display: block;
+  margin-top: 5px;
+}
+
+.table-sms-info {
+  table-layout: auto;
+}
+.table-sms-info td {
+  vertical-align: middle !important;
+  line-height: 1.5 !important;
+}
+
+.profile-restaurant th {
+  vertical-align: middle !important;
+}
+
+.sms-header {
+  position: relative;
+  margin-bottom: 5px;
+}
+.sms-header .btn-smsInfoAdd {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.file a {
+  color: #d7181f;
+  text-decoration: none;
+}
+.iframe-container iframe {
+  width: 100%;
+  height: 700px;
+  border: none;
+}
+.container-fluid {
+  width: 100%;
+}
+
+.location {
+  display: block;
+  padding: 0 14px 8px 0;
+  text-align: right;
+  font-size: 12px;
+  color: #9f9f9f;
+}
+.location h2 {
+  display: inline-block;
+  font-size: 13px;
+  color: #616161;
+}
+.form .table > thead > tr > th, .form .table > thead > tr > td, .form .table > tbody > tr > th, .form .table > tbody > tr > td, .form .table > tfoot > tr > th, .form .table > tfoot > tr > td {
+  vertical-align: middle;
+}
+.form input[type="text"], .form input.txt {
+  width: 320px;
+  font-size: 14px;
+}
+.form .table {
+  border-bottom: 1px solid #ddd;
+}
+.form .table th {
+  color: #616161;
+}
+.form .table td {
+  background: #fff;
+}
+.form .all-check {
+  display: block;
+  font-weight: bold;
+}
+.form label input {
+  display: inline-block;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+.form-horizontal {
+  border-top: 1px solid #d0d0d0;
+}
+.form-horizontal .control-group {
+  position: relative;
+  padding: 7px;
+  border-bottom: 1px solid #d0d0d0;
+}
+.form-horizontal .control-group .control-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 180px;
+  padding: 16px 0 0 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #616161;
+  background: #f1f1f1;
+  letter-spacing: -1px;
+}
+.form-horizontal .control-group .controls {
+  padding-left: 203px;
+}
+.form-horizontal textarea {
+  width: 96%;
+  border-radius: 0;
+  border-color: #cecece;
+}
+.form-horizontal .btn-wrapper {
+  margin-top: 25px;
+}
+.form-horizontal .error {
+  border-color: #d0d0d0 !important;
+}
+.form-horizontal .error input {
+  border-color: #e61c13 !important;
+}
+
+#id_name, #id_contact {
+  width: 300px;
+}
+
+#profileForm .control-group .control-label {
+  padding-top: 12px;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.input-wrap {
+  height: 37px;
+  border: 1px solid #afafaf;
+}
+.input-wrap input {
+  background: transparent;
+  border: none;
+}
+
+.button {
+  text-decoration: none;
+}
+.btn-sm {
+  padding: 0 10px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #666;
+  border: 1px solid #d0d0d0;
+  box-shadow: none;
+  text-decoration: none;
+}
+.btn-sm-primary {
+  border-color: #adcdad;
+  background: #fff;
+}
+.btn-smsInfoEdit, .btn-smsInfoAdd {
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  vertical-align: middle;
+}
+.btn-download {
+  box-shadow: 0 0;
+  background-position: -11px -567px;
+}
+.btn-loadmore {
+  box-shadow: 0 0;
+  background-position: -6px -539px;
+}
+b {
+  color: #e61c13;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.success {
+  color: #d7181f;
+}
+.primary {
+  color: #ff8600;
+}
+.primary2 {
+  color: #d7181f;
+}
+.none {
+  color: darkgray;
+}
+#gate {
+  background: #f5f5f5;
+}
+#gate #main {
+  padding: 0;
+}
+#login {
+  width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0 100px;
+}
+#login h1 {
+  margin-bottom: 22px;
+  text-align: left;
+  color:#d21900;
+  font-size:32px;
+  font-weight:bold;
+}
+
+.login-form-wrap {
+  padding: 0 15px;
+}
+.login-form-wrap input {
+  border: 1px solid #CCC;
+  width: 100%;
+  height: 50px;
+  color:#444;
+  font-size: 16px;
+  margin-bottom: 8px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.login-form-wrap button {
+  border: none;
+  background-color: #dc1400;
+  width: 100%;
+  height: 50px;
+  color: #FFF;
+  font-size: 16px;
+  margin: 20px 0 30px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.login ul {
+  border-top: 1px solid #CCC;
+  padding: 18px;
+}
+.login li {
+  background-position: 0 6px;
+  background-repeat: no-repeat;
+  background-size: 2px auto;
+  color: #888;
+  font-size: 13px;
+  line-height: 17px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+#login h1 .ico {
+  width: 178px;
+  height: 62px;
+  background-position: 0 -1px;
+}
+#login .form-signin {
+  position: relative;
+  width: 650px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  padding: 50px 0;
+  background: #fff;
+  box-shadow: 0 0 5px 3px #d0d0d0;
+}
+#login h2 {
+  position: relative;
+  padding-left: 30px;
+  font-size: 30px;
+  font-weight: normal;
+  color: black;
+}
+#login h2 span {
+  position: absolute;
+  top: 28px;
+  left: 24px;
+  font-size: 13px;
+}
+#login .control-group {
+  padding: 0 190px 0 150px;
+  margin-bottom: 16px;
+  border: none;
+  overflow:hidden;
+}
+#login .input-wrap {
+  position: relative;
+  padding: 0 40px 0 0;
+}
+#login .input-wrap .ico {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 18px;
+  height: 20px;
+}
+#login .input-wrap .ico-id {
+  background-position: -207px -11px;
+}
+#login .input-wrap .ico-pw {
+  background-position: -209px -37px;
+}
+#login .input-wrap .input-block-level {
+  width: 90%;
+}
+#login .controls {
+  padding: 0;
+  margin: 0;
+  width: 100px;
+  position:absolute;
+  top:71px;
+  right:80px;
+}
+#login .controls .button {
+  height: 94px;
+}
+#login .alert {
+  border:none;
+  background:none;
+  position:absolute;
+  bottom:15px;
+  left:70px;
+  margin:0;
+}
+
+#login .register {
+  text-align: center;
+  color: #e61c13;
+  font-size: 16px;
+}
+#login.mall{
+  width: 100%;
+  max-width: 600px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#login.mall h1 {
+  margin: 17px auto;
+  padding: 0;
+  width: 200px;
+  height: 45px;
+  text-indent: -999em;
+  overflow: hidden;
+}
+#login.mall form {
+  margin: 0;
+  padding: 0;
+}
+#login.mall .input_wrap {
+  margin: 0 0 5px 0;
+}
+#login.mall .input_wrap input {
+  width: 100%;
+  height: 44px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#login.mall .button {
+  width: 100%;
+  height: 44px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background-color: #dc1400;
+  font-size: 18px;
+  color: #FFF !important;
+  display: inline-block;
+  padding: 6px 12px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  box-shadow: none;
+  background-image: none;
+  border: 1px solid #dc1400;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#login.mall .info-txt {
+  margin: 15px 0 20px 0;
+  padding: 0 0 0 18px;
+  font-size: 14px;
+  color: #999;
+  line-height: 1.2;
+
+}
+
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(http://themes.googleusercontent.com/static/fonts/roboto/v8/Hgo13k-tfSpn0qi1SFdUfbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(http://themes.googleusercontent.com/static/fonts/roboto/v8/RxZJdnzeo3R5zSexge8UUbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+
+
+/*RESET*/
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: 'Roboto', "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  background-image:url(http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/bg_pattern.gif);
+  font-weight:300;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* STYLES */
-
 #wrapper {
   width:400px;
   margin:0 auto;
@@ -203,6 +861,8 @@ input:-webkit-autofill {
 
 /* KEYFRAMES */
 
+
+
 .button1> input{
   display: inline-block;
   height: 93px;
@@ -248,4 +908,201 @@ $col) {
   mask-size: $x1 $y1;
   border: $bor;
   color: $col;
+}
+
+
+/* edit user */
+@import url('https://fonts.googleapis.com/css?family=Concert+One');
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+#login .form-signin{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#login .editusers{
+  padding-top: 25px;
+}
+.edituser{
+  font-size: 40px;
+  font-family: 'Concert One', cursive;
+  margin-bottom: 47px;
+  padding-left: 50px;
+}
+
+.editusers{
+  font-family: 'Concert One', cursive;
+}
+
+.editlabel{
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.field{
+  margin-bottom: 18px;
+}
+
+.edit_user{
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.edit_button{
+  margin-top: 0px;
+}
+.edit_button2{
+  margin-top: 0px;
+  margin-left: 30px;
+}
+
+.deleteuser{
+  font-size: 40px;
+  font-family: 'Concert One', cursive;
+  margin-top: 45px;
+  margin-bottom: 0px;
+  padding-left: 50px;
+}
+
+.delete_user{
+  padding-left: 30px;
+}
+
+.backbutton{
+  padding-right: 30px;
+  padding-left: 30px;
+  float: right;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+/*new signin signup*/
+$normal-color: #a8b1b8;
+$active-color: #5cadd8;
+$field-focus-background: lighten($active-color, 30%);
+$base-spacing: 20px;
+$green: #7fa743;
+$blue: #617db7;
+
+
+@mixin centered() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: lightgrey;
+  font-family: sans-serif;
+}
+
+.Login-Wrap {
+  @include centered;
+  width: 450px;
+  height: 490px;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+}
+
+.Field {
+  position: relative;
+  padding: 5px 20px;
+
+  float: left;
+  height: 80px;
+}
+
+.Field--half {
+  width: 50%;
+}
+
+.Field--full {
+  width: 100%;
+}
+
+.Field-label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: $base-spacing;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 600;
+  overflow: hidden;
+  border: 1px solid transparent; 
+}
+
+.Field-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  border: none;
+  padding: $base-spacing;
+  height: 40px;
+  font-size: 13px;
+  width: 100%;
+  color: $normal-color;
+  border: 1px solid transparent;
+  
+  &:focus {
+    background: $field-focus-background;  
+    outline: none;
+    border: 1px solid $active-color;
+    border-top: 0;
+  }
+  
+  &:focus ~ .Field-label {
+   background: $field-focus-background;
+   color: $active-color;
+   border: 1px solid $active-color;
+  }
+}
+
+.Field-button {
+  width: 100%;
+  padding: 15px 30px;
+  border: none;
+}
+
+.Field-button--submit {
+  background: $green;
+  box-shadow: inset 0 -5px 0 darken($green, 10%);
+  color: white;
+}
+
+.Field-button--facebook {
+  background: $blue;
+  box-shadow: inset 0 -5px 0 darken($blue, 10%);
+  color: white;
+}
+
+.Login-row {
+  width: 100%;
+  padding: 0px 20px 20px 20px;
+  float: left;
+}
+
+.control-label{
+  float: left;
+  font-family: 'Concert One', cursive;
+  font-size: 16px;
+}
+
+.signup{
+  color: black;
+  font-size: 40px;
+  font-family: 'Concert One', cursive;
+  margin-top: 15px;
+  margin-bottom: 30px;
 }

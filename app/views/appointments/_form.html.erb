@@ -22,73 +22,77 @@
           </div>
       <% end %>
 
-      <%= form_for(@appointment, class:'well form-horizontal') do |f| %>
+      <%= form_for(@appointment, class: 'well form-horizontal') do |f| %>
           <div class="form-group">
-            <%= f.label :약속이름 ,class:'col-md-4 control-label' %>
+            <%= f.label :title, class: 'col-md-4 control-label' %>
             <div class="col-md-4 inputGroupContainer">
               <div class="input-group">
                 <span class="input-group-addon"></span>
-                <%= f.text_field :title , class:'form-control', required: true %>
+                <%= f.text_field :title, class: 'form-control', required: true %>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <%= f.label :content ,class:'col-md-4 control-label' %>
+            <%= f.label :content, class: 'col-md-4 control-label' %>
             <div class="col-md-4 inputGroupContainer">
               <div class="input-group">
                 <span class="input-group-addon"></span>
-                <%= f.text_field :content , class:'form-control', required: true%>
+                <%= f.text_field :content, class: 'form-control', required: true %>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <%= f.label :deadline ,class:'col-md-4 control-label' %>
+            <%= f.label :deadline, class: 'col-md-4 control-label' %>
             <div class="col-md-4 inputGroupContainer">
               <div class="input-group">
                 <span class="input-group-addon"></span>
-                <%= f.text_field :deadline, class:'form-control', id:'datetimepicker', required: true %>
+                <%= f.text_field :deadline, class: 'form-control', id: 'datetimepicker', required: true %>
               </div>
             </div>
           </div>
 
-      <!-- radio checks -->
-      <div class="form-group">
-        <label class="col-md-4 control-label">닥달강도</label>
-        <div class="col-md-4">
-          <div class="radio">
-            <label>
-              <input type="radio" name="hosting" value="1" /> 순한닥달이
-            </label>
+          <!-- radio checks -->
+          <div class="form-group">
+            <label class="col-md-4 control-label">닥달강도</label>
+            <div class="col-md-4">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hosting" value="1"/> 순한닥달이
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hosting" value="2"/> 급한닥달이
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hosting" value="3"/> 성격나쁜닥달이
+                </label>
+              </div>
+            </div>
           </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="hosting" value="2" /> 급한닥달이
-            </label>
+          <div class="form-group">
+            <%= yield f %>
+            <%= hidden_field_tag(:app_type, @app_type) %>
           </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="hosting" value="3" /> 성격나쁜닥달이
-            </label>
-          </div>
-        </div>
-      </div>
-          <%= yield f %>
-          <%= hidden_field_tag(:app_type, @app_type) %>
-      <!-- Success message -->
-      <div class="alert alert-success" role="alert" id="success_message"><i class="glyphicon glyphicon-thumbs-up">
 
-      </i> 목록을 빠짐없이 작성해 주셔야 약속이 생성됩니다. </div>
+          <!-- Success message -->
+          <div class="alert alert-success" role="alert" id="success_message"><i class="glyphicon glyphicon-thumbs-up">
 
-      <!-- Button -->
-      <div class="form-group">
-        <label class="col-md-4 control-label"></label>
-        <div class="col-md-4">
-          <%= f.submit '만들기',class:'btn btn btn-primary btn-lg' %>
-          <a href="/home/show_my_page" class="mask">
-            <button class="btn btn-default btn-lg">약속목록</button>
-          </a>
-        </div>
-       </div>
+          </i> 목록을 빠짐없이 작성해 주셔야 약속이 생성됩니다.
+          </div>
+
+          <!-- Button -->
+          <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+              <%= f.submit '만들기', class: 'btn btn btn-primary btn-lg' %>
+              <a href="/home/show_my_page" class="mask">
+                <button class="btn btn-default btn-lg">약속목록</button>
+              </a>
+            </div>
+          </div>
       <% end %>
     </fieldset>
   </div>

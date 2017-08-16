@@ -22,11 +22,12 @@
 @import 'nav';
 @import 'device';
 
-body {
-  background-image: none;
-  background-color: #76b852;
-  min-height: 100%;
-
+body{
+  background-image: url('main.PNG');
+  background-size: cover;
+  background-color: white;
+  //min-height: 100%;
+>>>>>>> 92b3e0ebff3b1206b33844c811884f826db56742
 }
 
 footer {
@@ -34,9 +35,8 @@ footer {
   //background-color: darkred;
   background-color: #31935d;
   position: relative;
-
   width: 100%;
-  margin: 200px 0 0 0;
+  margin: 15px 0 0 0;
   bottom: 0;
   clear: both;
 }
@@ -44,6 +44,7 @@ footer {
 .main-text {
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
   background: #76b852;
   background: -webkit-linear-gradient(to left, #76b852, #76b852);
   background: linear-gradient(to left, #76b852, #76b852);
@@ -51,9 +52,16 @@ footer {
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
 
+=======
+  //background: #76b852;
+  background: -webkit-linear-gradient(to left, #76b852 , #76b852);
+  //background: linear-gradient(to left, #76b852 , #76b852);
+  display: flex;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+>>>>>>> 92b3e0ebff3b1206b33844c811884f826db56742
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
 }
 
 .main-textlogo {
@@ -65,7 +73,8 @@ footer {
 }
 
 h1 {
-  height: 200px;
+  height: 120px;
+  margin-top: 65px;
 }
 
 h1 span {
@@ -76,7 +85,7 @@ h1 span {
   font-family: 'Titan One', cursive;
   font-family: 'Nanum Gothic Coding', sans-serif;
   font-size: 80px;
-  color: #FFF;
+  color: #202020;
   text-shadow: 0 1px 0 #CCC,
   0 2px 0 #CCC,
   0 3px 0 #CCC,

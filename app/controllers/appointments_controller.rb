@@ -66,7 +66,7 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:title, :content, :deadline, :location)
+    params.require(:appointment).permit(:title, :content, :deadline, :location, :period)
   end
 
   # 수정, 삭제 본인 확인

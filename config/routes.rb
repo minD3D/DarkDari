@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  require 'sidekiq/web'
+  mount Sidekiq::Web => "/sidekiq"
 
   root 'home#index'
   get 'home/index'
@@ -9,7 +11,11 @@ Rails.application.routes.draw do
 
   get 'home/appointments'
 
-  resources :appointments, except: :index
+  resources :appointments, except: :index do
+    collection do
+      get 'test'
+    end
+  end
 
   resources :infos, only: :create do
     member do
@@ -17,6 +23,7 @@ Rails.application.routes.draw do
       post 'change_money'
     end
   end
+
 
 
   resources :notifications, only: [:create, :destroy]

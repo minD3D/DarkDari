@@ -140,7 +140,7 @@
             myLocation = 0;
             var infoWindow = new google.maps.InfoWindow({map: map});
             var distance;
-            var distanceResult = document.getElementById("distance-result")
+            var distanceResult = document.getElementById("distance-result");
 
             // Try HTML5 geolocation.
             if (navigator.geolocation) {
@@ -200,7 +200,7 @@
         if (window.google) {
             initMap();
         } else {
-            $.ajax('https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap', {
+            $.ajax('http://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap', {
                 crossDomain: true,
                 dataType: 'script'
             });

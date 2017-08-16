@@ -28,10 +28,15 @@ class AppointmentsController < ApplicationController
     @app_type = @appointment.app_type
 
     if @appointment.save
+      #active job 부분
+       SendmessageJob.set(wait: ((Date.today..@appointment.deadline).to_a.size)-1.seconds).perform_later(@appointment.id,@appointment.period)
+     #SendmessageJob.set(wait: 10.seconds).perform_later(@appointment.id,@appointment.period)
+
       redirect_to home_show_my_page_path
     else
       render 'new'
     end
+
   end
 
   def update
@@ -52,6 +57,11 @@ class AppointmentsController < ApplicationController
     # redirect_to home_show_my_page_path
   end
 
+  def test
+    @appointment = Appointment.all
+
+  end
+
 
   private
 
@@ -66,7 +76,7 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:title, :content, :deadline, :location)
+    params.require(:appointment).permit(:title, :content, :deadline, :location, :period)
   end
 
   # 수정, 삭제 본인 확인
@@ -83,5 +93,7 @@ class AppointmentsController < ApplicationController
                 appointment_id: @appointment.id,
                 builder: true)
   end
+
+
 
 end

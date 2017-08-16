@@ -57,21 +57,22 @@
             <div class="col-md-4">
               <div class="radio">
                 <label>
-                  <input type="radio" name="hosting" value="1"/> 순한닥달이
+                  <input type="radio" name="appointment[period]" value="120"> 순한닥달이(2시간)
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="hosting" value="2"/> 급한닥달이
+                  <input type="radio" name="appointment[period]" value="60"> 급한닥달이(1시간)
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="hosting" value="3"/> 성격나쁜닥달이
+                  <input type="radio" name="appointment[period]" value="30"> 성격나쁜닥달이(30분)
                 </label>
               </div>
             </div>
           </div>
+
           <div class="form-group">
             <%= yield f %>
             <%= hidden_field_tag(:app_type, @app_type) %>
@@ -82,6 +83,7 @@
 
           </i> 목록을 빠짐없이 작성해 주셔야 약속이 생성됩니다.
           </div>
+
 
           <!-- Button -->
           <div class="form-group">
@@ -97,3 +99,8 @@
     </fieldset>
   </div>
 </div>
+<<<<<<< HEAD
+=======
+
+<%= javascript_include_tag 'datetimepicker' %>
+>>>>>>> b74c5c8e0ad36c94048091d4b614091b4d8093e4

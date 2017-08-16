@@ -13,3 +13,9 @@
               password: "123123",
               password_confirmation: "123123")
 end
+
+1..100.times do |i|
+  Text.create(text: "#{i}")
+
+
+end

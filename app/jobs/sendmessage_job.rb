@@ -37,7 +37,7 @@ class SendmessageJob < ApplicationJob
 
     #send message every period seconds    second -> minutes로 바꿔야함
     else
-      SendmessageJob.set(wait: period.seconds).perform_later(id,period)
+      SendmessageJob.set(wait: 5.seconds).perform_later(id,period)
     end
 
 

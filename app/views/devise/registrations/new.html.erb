@@ -17,20 +17,28 @@
         <label for="email2" class="control-label">E-mail</label>
         <%= f.email_field :email, autofocus: true, class: 'form-control', id: 'email2' %>
       </div>
+      
       <div class="Field Field--half">
         <label for="name" class="control-label">NickName</label>
         <%= f.text_field :nickname, class: 'form-control', id: 'name' %>
       </div>
-      <div class="Field Field--half">
-        <label for="phone" class="control-label">Phone</label>
-        <%= f.telephone_field :phone, class: 'form-control' %>
-      </div>
+      
       <div class="Field Field--half">
         <label for="password1" class="control-label">Password</label>
         <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br/>
         <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+      </div>
+      
+      <div class="Field Field--half">
+        <%= f.label :password_confirmation, class: 'control-label' %><br/>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+      </div>
+      
+      <div class="Field Field--full">
+        <label for="phone" class="control-label">Phone</label>
+        <%= f.telephone_field :phone, class: 'form-control' %>
       </div>
       
       <div class="Login-row">

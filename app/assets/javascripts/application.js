@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require bootstrap/bootstrap
 //= require jqBootstrapValidation
+//= require jquery.datetimepicker
+//= require jquery.datetimepicker.full
 
 
 

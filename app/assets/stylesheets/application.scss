@@ -25,6 +25,7 @@
 body{
   background-image: url('main.PNG');
   background-size: cover;
+  background-repeat: no-repeat;
   background-color: white;
   //min-height: 100%;
 }
@@ -53,6 +54,7 @@ footer {
   align-items: center;
 }
 
+
 .main-textlogo {
   width: auto;
   height: 100%;
@@ -63,7 +65,7 @@ footer {
 
 h1 {
   height: 120px;
-  margin-top: 65px;
+  margin-top: 90px;
 }
 
 h1 span {
@@ -74,7 +76,7 @@ h1 span {
   font-family: 'Titan One', cursive;
   font-family: 'Nanum Gothic Coding', sans-serif;
   font-size: 80px;
-  color: #202020;
+  color: black;
   text-shadow: 0 1px 0 #CCC,
   0 2px 0 #CCC,
   0 3px 0 #CCC,

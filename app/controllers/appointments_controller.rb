@@ -25,7 +25,6 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     @appointment.app_type = params[:app_type]
-    @appointment.period = params[:period]
     @app_type = @appointment.app_type
 
     if @appointment.save
@@ -77,7 +76,7 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:title, :content, :deadline, :location)
+    params.require(:appointment).permit(:title, :content, :deadline, :location, :period)
   end
 
   # 수정, 삭제 본인 확인

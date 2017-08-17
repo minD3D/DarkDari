@@ -28,40 +28,42 @@
         <td> <%= @appointment.deadline %></td>
       </tr>
       <tr>
-           <% if @appointment.app_type == 'LocationApp' %>
+        <% if @appointment.app_type == 'LocationApp' %>
             <td>
-            <div id="google-map" class="show-map"></div>
+              <div id="google-map" class="show-map"></div>
               <button onclick="currentLocation()">도착</button>
               <p id="distance-result"></p>
             </td>
-          <% end %>
+        <% end %>
       </tr>
     </table>
 
     <table class="type041">
 
-          <% if builder?(current_user, @appointment.id) %>
+      <% if builder?(current_user, @appointment.id) %>
 
-              <%= render 'search_form', appointment: @appointment %>
+          <%= render 'search_form', appointment: @appointment %>
 
-          <% end %>
+      <% end %>
 
       <tr>
         <th colspan="2">참여자들</th>
       </tr>
       <tr>
         <td colspan="2">
-        <% @appointment.users.each_with_index do |u, i| %>
+          <% @appointment.users.each_with_index do |u, i| %>
               <div class="col-md-3 card">
-                    <h3><%= u.nickname %></h3>
-                    <!-- 돈(돈약속인 경우에만), 완료여부 -->
+                <h3><%= u.nickname %></h3>
+                <!-- 돈(돈약속인 경우에만), 완료여부 -->
                 <% if @infos[i].done %>
 
                     <!-- 완료 -->
                     <% if @appointment.app_type == 'MoneyApp' %>
-                            <p class="title"><%= @infos[i].money %>원</p>
+                        <p class="title"><%= @infos[i].money %>원</p>
                     <% end %>
-                        <p><button class="button1"><a class="a">완료됨</a></button></p>
+                    <p>
+                      <button class="button1">완료됨</button>
+                    </p>
 
                 <% else %>
 
@@ -74,20 +76,21 @@
                           <% end %>
                         </p>
                     <% end %>
-                        <p><button class="button1">
-                          <a id="done-container<%= @infos[i].id %>" class="a">
-                          <% if builder?(current_user, @appointment.id) %>
-                              <%= link_to "미완료", done_info_path(@infos[i]),
-                                          method: :patch,
-                                          remote: true,
-                                          data: {confirm: '완료 시키겠습니까?'} %>
-                          <% else %>
-                              미완료
-                          <% end %>
-                        </a>
-                        </button></p>
+                    <p id="done-container<%= @infos[i].id %>">
+                      <button class="button1">
+                        <% if builder?(current_user, @appointment.id) %>
+                            <%= link_to "미완료", done_info_path(@infos[i]),
+                                        method: :patch,
+                                        remote: true,
+                                        class: 'a',
+                                        data: {confirm: '완료 시키겠습니까?'} %>
+                        <% else %>
+                            미완료
+                        <% end %>
+                      </button>
+                    </p>
                 <% end %>
-                  </div>
+              </div>
           <% end %>
         </td>
       </tr>

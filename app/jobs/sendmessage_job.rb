@@ -12,7 +12,7 @@ class SendmessageJob < ApplicationJob
         confirm = false
 
         Text.all.shuffle.each do |text|
-          @sms =text.text
+          @sms = text.text
         end
 
 
@@ -26,7 +26,7 @@ class SendmessageJob < ApplicationJob
     end
 
     unless confirm
-      SendmessageJob.set(wait: 1.minutes).perform_later(id, period)
+      SendmessageJob.set(wait: 30.minutes).perform_later(id, period)
     end
 
   end

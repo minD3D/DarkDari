@@ -154,3 +154,10 @@ h1 span:nth-child(8) {
     display: block;
   }
 }
+
+body .modal-admin {
+  /* new custom width */
+  width: 750px;
+  /* must be half of the width, minus scrollbar on the left (30px) */
+  margin-left: -375px;
+}

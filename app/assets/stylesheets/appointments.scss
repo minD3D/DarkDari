@@ -198,3 +198,26 @@ table.type041 td {
 .a > a:link { color: white; text-decoration: none;}
 .a > a:visited { color: white; text-decoration: none;}
 .a > a:hover { color: white; text-decoration: underline;}
+
+
+table.typemenu {
+
+  margin-left: 50px;
+  background-color: #e8f8d5;
+  border-collapse: separate;
+  text-align: left;
+  line-height: 1.5;
+  width: 250px;
+}
+table.typemenu th {
+  margin-right: 5px;
+  width: 100px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  border-right: 5px solid white;
+  text-align: center;
+}
+i{
+  margin: 2px 10px 2px 0;
+}

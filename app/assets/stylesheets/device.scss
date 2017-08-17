@@ -913,6 +913,7 @@ $col) {
 /* edit user */
 @import url('https://fonts.googleapis.com/css?family=Concert+One');
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url('https://fonts.googleapis.com/css?family=Itim|Nunito');
 #login .form-signin{
   padding-top: 20px;
   padding-bottom: 20px;
@@ -924,12 +925,14 @@ $col) {
 .edituser{
   font-size: 40px;
   font-family: 'Concert One', cursive;
+  //font-family: 'Nunito', sans-serif;
   margin-bottom: 47px;
   padding-left: 50px;
 }
 
 .editusers{
   font-family: 'Concert One', cursive;
+  //font-family: 'Nunito', sans-serif;
 }
 
 .editlabel{

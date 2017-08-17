@@ -198,3 +198,17 @@ table.type041 td {
 .a > a:link { color: white; text-decoration: none;}
 .a > a:visited { color: white; text-decoration: none;}
 .a > a:hover { color: white; text-decoration: underline;}
+
+
+/* form.html.erb */
+.form-buttons{
+  float: right;
+}
+  .l-app{
+    font-family: 'Nanum Gothic Coding', sans-serif;
+    text-align: center;
+  }
+  .m-app{
+    font-family: 'Nanum Gothic Coding', sans-serif;
+    text-align: center;
+  }

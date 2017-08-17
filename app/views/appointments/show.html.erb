@@ -27,13 +27,12 @@
         <td> <%= @appointment.deadline %></td>
       </tr>
     </table>
-      <% if @appointment.app_type == 'LocationApp' %>
-          <td>
-            <div id="google-map" class="show-map"></div>
-            <button onclick="currentLocation()">도착</button>
-            <p id="distance-result"></p>
-          </td>
-      <% end %>
+
+    <% if @appointment.app_type == 'LocationApp' %>
+        <div id="google-map" class="show-map"></div>
+        <button onclick="currentLocation()">도착</button>
+        <p id="distance-result"></p>
+    <% end %>
 
     <table class="type041">
 

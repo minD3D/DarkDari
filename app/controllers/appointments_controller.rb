@@ -29,8 +29,20 @@ class AppointmentsController < ApplicationController
 
     if @appointment.save
       #active job 부분
-       SendmessageJob.set(wait: ((Date.today..@appointment.deadline).to_a.size)-1.seconds).perform_later(@appointment.id,@appointment.period)
-     #SendmessageJob.set(wait: 10.seconds).perform_later(@appointment.id,@appointment.period)
+      @now = Time.now.utc
+      @now =@now -(@now.sec).seconds
+      @now =@now +9.hour
+      #현재 시간 구하기
+      @difference = TimeDifference.between(@appointment.deadline,@now).in_minutes
+      @num = @difference.to_i
+
+      if @num>30
+        SendmessageJob.set(wait: (@num-30).minute).perform_later(@appointment.id,@appointment.period)
+      else
+        SendmessageJob.set(wait: 1.minute).perform_later(@appointment.id,@appointment.period)
+
+      end
+
 
       redirect_to home_show_my_page_path
     else

@@ -12,7 +12,7 @@
       padding-top: 150px;
     }
   </style>
-  <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=<%= ENV['google_map_key'] %>"></script>
 </head>
 
 <body>
@@ -81,9 +81,7 @@
 </nav>
 
 
-<section class="yield-section">
-  <%= yield %>
-</section>
+<%= yield %>
 
 <!-- Footer -->
 <footer>

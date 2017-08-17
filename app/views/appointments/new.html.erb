@@ -1,8 +1,8 @@
 <div class="container">
   <section>
     <p>
-      <%= link_to '돈 약속하기', new_appointment_path(app_type: 'MoneyApp') %>
-      <%= link_to '장소 약속하기', new_appointment_path(app_type: 'LocationApp') %>
+      <%#= link_to '돈 약속하기', new_appointment_path(app_type: 'MoneyApp') %>
+      <%#= link_to '장소 약속하기', new_appointment_path(app_type: 'LocationApp') %>
     </p>
 
 
@@ -15,7 +15,7 @@
                 <div class="col-md-4 inputGroupContainer">
                   <input id="pac-input" class="controls" type="text" placeholder="Search Box">
                   <div id="google-map"></div>
-                  <%= f.hidden_field(:location) %>
+                  <%= f.hidden_field :location, required:true %>
                 </div>
               </div>
           <% end %>
@@ -26,7 +26,6 @@
 </div>
 
 
-<%# TODO: API키 받아서 환경변수에 설정해주기 %>
 <% if @app_type == 'LocationApp' %>
     <script>
 

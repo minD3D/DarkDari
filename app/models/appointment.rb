@@ -1,5 +1,5 @@
 class Appointment < ApplicationRecord
-  validates :title, :content, :deadline, :app_type, presence: true
+  validates :title, :content, :deadline, :app_type, :period, presence: true
 
   has_many :infos, dependent: :destroy
   has_many :users, through: :infos

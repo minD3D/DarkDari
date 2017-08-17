@@ -3,8 +3,7 @@ $.datetimepicker.setLocale('ko');
 $('#datetimepicker').datetimepicker({
     dayOfWeekStart: 1,
     startDate: new Date(),
-    minDate: new Date(),
-    minTime: new Date()
+    minDateTime: new Date()
 });
 //
 //

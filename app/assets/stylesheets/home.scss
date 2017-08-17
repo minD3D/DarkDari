@@ -4,7 +4,7 @@
 
 /*show my page*/
 @import url('https://fonts.googleapis.com/css?family=News+Cycle|Quicksand|Rubik');
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 .panel-body {
   font-family: 'Nanum Gothic Coding', sans-serif;
   color: black;
@@ -47,7 +47,12 @@ iframe {
 .ment{
   font-family: 'Nanum Gothic Coding', sans-serif;
 }
-
+.noti-ment{
+  font-family: 'Nanum Gothic Coding', sans-serif;
+}
+.section-padding{
+  border-bottom: 1px solid black;
+}
 
 /*index*/
 .navbar-default{
@@ -77,11 +82,13 @@ iframe {
 /*notification*/
 .notification{
   margin-top: 10px;
+  border-right: 1px dotted black;
 }
 .noti-buttons{
-  text-align: center;
-  font-size: 30px;
-  padding-top: 8px;
+  //text-align: center;
+  font-size: 26px;
+  padding-top: 5px;
+  padding-left: 30px;
 }
 .fa-check-circle:hover{
   color: green;
@@ -115,7 +122,7 @@ a{
 .btn:hover {
   color: #0d8141;
   border-color: #0d8141;
-  background-color: #76b852;
+  background-color: #cfe5b6;
 }
 .btn:active{
   color: #0d8141;
@@ -127,7 +134,6 @@ a{
   font-size: 25px;
 }
 
-body{
-  min-height:100%;
-  padding-bottom: 50px;
+.show-my-page-section {
+  min-height: 70%;
 }

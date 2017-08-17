@@ -1,8 +1,29 @@
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Itim|Nunito');
+  .control-label{
+    font-family: 'Nunito', sans-serif;
+  }
+  #tab2-1{
+    width: 400px;
+    height: 0px;
+    border-bottom: 1px solid red;
+  }
+</style>
+
 <div class="container">
   <div class="well form-horizontal">
     <fieldset>
-
-      <!-- Form Name -->
+      <legend>
+      <div class="row">
+        <div class="col-xs-6">
+          <h3 class="m-app"><a href="/appointments/new?app_type=MoneyApp">돈 약속하기</a></h3>
+        </div>
+        <div class="col-xs-6">
+          <h3 class="l-app"><a href="/appointments/new?app_type=LocationApp">장소 약속하기</a></h3>
+        </div>
+      </div>
+      </legend>
+      <!-- Form Name 
       <legend>
         <% case @app_type %>
         <% when 'MoneyApp' %>
@@ -10,7 +31,7 @@
         <% when 'LocationApp' %>
             <h3>장소 약속</h3>
         <% end %>
-      </legend>
+      </legend>-->
 
       <% if @appointment.errors.present? %>
           <div id="errors" class="well">
@@ -24,37 +45,37 @@
 
       <%= form_for(@appointment, class: 'well form-horizontal') do |f| %>
           <div class="form-group">
-            <%= f.label :title, class: 'col-md-4 control-label' %>
-            <div class="col-md-4 inputGroupContainer">
-              <div class="input-group">
-                <span class="input-group-addon"></span>
-                <%= f.text_field :title, class: 'form-control', required: true %>
+              <%= f.label :title, class: 'col-md-2 control-label', style: 'text-align:center;' %>
+              <div class="col-md-10 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <%= f.text_field :title, class: 'form-control', required: true %>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="form-group">
-            <%= f.label :content, class: 'col-md-4 control-label' %>
-            <div class="col-md-4 inputGroupContainer">
-              <div class="input-group">
-                <span class="input-group-addon"></span>
-                <%= f.text_field :content, class: 'form-control', required: true %>
+            <div class="form-group">
+              <%= f.label :content, class: 'col-md-2 control-label', style: 'text-align:center;' %>
+              <div class="col-md-10 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <%= f.text_field :content, class: 'form-control', required: true %>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="form-group">
-            <%= f.label :deadline, class: 'col-md-4 control-label' %>
-            <div class="col-md-4 inputGroupContainer">
-              <div class="input-group">
-                <span class="input-group-addon"></span>
-                <%= f.text_field :deadline, class: 'form-control', id: 'datetimepicker', required: true %>
+            <div class="form-group">
+              <%= f.label :deadline, class: 'col-md-2 control-label', style: 'text-align:center;' %>
+              <div class="col-md-10 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <%= f.text_field :deadline, class: 'form-control', id: 'datetimepicker', required: true %>
+                </div>
               </div>
             </div>
-          </div>
 
           <!-- radio checks -->
           <div class="form-group">
-            <label class="col-md-4 control-label">닥달강도</label>
-            <div class="col-md-4">
+            <label class="col-md-2 control-label" style="text-align:center;">닥달강도</label>
+            <div class="col-md-10">
               <div class="radio">
                 <label>
                   <input type="radio" name="appointment[period]" value="120"> 순한닥달이(2시간)
@@ -85,16 +106,21 @@
           </div>
 
 
-          <!-- Button -->
-          <div class="form-group">
-            <label class="col-md-4 control-label"></label>
-            <div class="col-md-4">
-              <%= f.submit '만들기', class: 'btn btn btn-primary btn-lg' %>
-              <a href="/home/show_my_page" class="mask">
-                <button class="btn btn-default btn-lg">약속목록</button>
-              </a>
-            </div>
+        <!-- Button -->
+        <div class="form-group">
+          <div class="form-buttons">
+            <ul class="list-inline banner-social-buttons">
+              <li>
+                <%= f.submit '만들기', class: 'btn btn btn-primary btn-lg' %>
+              </li>
+              <li>
+                <a href="/home/show_my_page" class="mask">
+                  <button class="btn btn-default btn-lg">약속목록</button>
+                </a>
+              </li>
+            </ul>
           </div>
+        </div>
       <% end %>
     </fieldset>
   </div>

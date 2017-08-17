@@ -39,8 +39,7 @@ class AppointmentsController < ApplicationController
       if @num>30
         SendmessageJob.set(wait: (@num-30).minute).perform_later(@appointment.id,@appointment.period)
       else
-        SendmessageJob.set(wait: 1.minute).perform_later(@appointment.id,@appointment.period)
-
+        SendmessageJob.set(wait: 3.seconds).perform_later(@appointment.id,@appointment.period)
       end
 
 

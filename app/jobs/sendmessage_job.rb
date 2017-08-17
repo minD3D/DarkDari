@@ -18,18 +18,17 @@ class SendmessageJob < ApplicationJob
 
 
         user = infos.user
-        user.message = @sms
-        user.save
+
 
         #저장된 text  가지고 오기
 
        # ConfirmJobJob.set(wait: (1.seconds).perform_later(id, period, infos.user_id))
 
       #coolsms 기능   api key , secret key 설정하기
-     # client = Coolsms::Client.new :api_key => '',
-     # :api_secret => '', :sender => '01063507688'
+      client = Coolsms::Client.new :api_key => ENV['cool_sms_key'],
+      :api_secret => ENV['cool_sms_secret_key'], :sender => '01063507688'
 
-     # client.send_message :to =>f.user.phone , :text => @sms
+      client.send_message :to =>user.phone , :text => @sms
       end
       end
 
@@ -37,7 +36,7 @@ class SendmessageJob < ApplicationJob
 
     #send message every period seconds    second -> minutes로 바꿔야함
     else
-      SendmessageJob.set(wait: 5.seconds).perform_later(id,period)
+      SendmessageJob.set(wait: 1.minutes).perform_later(id,period)
     end
 
 

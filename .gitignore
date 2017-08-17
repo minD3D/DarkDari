@@ -170,3 +170,6 @@ doc/api
 doc/app
 
 # End of https://www.gitignore.io/api/ruby,macos,windows,rubymine
+
+# Ignore application configuration
+/config/application.yml

@@ -14,70 +14,84 @@
 
 <div class="container">
   <section>
-    <h3>제목 : <%= @appointment.title %></h3>
-    <p>내용 : <%= @appointment.content %></p>
-    <p>마감기한 : <%= @appointment.deadline %></p>
-    <% if @appointment.app_type == 'LocationApp' %>
-        <div id="google-map" class="show-map"></div>
-        <button onclick="currentLocation()">도착</button>
-        <p id="distance-result"></p>
-    <% end %>
-  </section>
+    <table class="type04">
+      <tr>
+        <th scope="row">약속이름</th>
+        <td><%= @appointment.title %></td>
+      </tr>
+      <tr>
+        <th scope="row">약속내용</th>
+        <td><%= @appointment.content %></td>
+      </tr>
+      <tr>
+        <th scope="row">마감기한</th>
+        <td> <%= @appointment.deadline %></td>
+      </tr>
+      <tr>
+           <% if @appointment.app_type == 'LocationApp' %>
+            <td>
+            <div id="google-map" class="show-map"></div>
+              <button onclick="currentLocation()">도착</button>
+              <p id="distance-result"></p>
+            </td>
+          <% end %>
+      </tr>
+    </table>
 
+    <table class="type041">
 
-  <section>
-    <h3>참여현황</h3>
+          <% if builder?(current_user, @appointment.id) %>
 
-    <% if builder?(current_user, @appointment.id) %>
-        <!-- 유저 검색 -->
-        <%= render 'search_form', appointment: @appointment %>
-    <% end %>
+              <%= render 'search_form', appointment: @appointment %>
 
-    <article>
-      <h4>참여자들</h4>
-      <div class="row">
+          <% end %>
+
+      <tr>
+        <th colspan="2">참여자들</th>
+      </tr>
+      <tr>
+        <td colspan="2">
         <% @appointment.users.each_with_index do |u, i| %>
-            <div class="col-xs-2">
-              <!-- 닉네임-->
-              <p><%= u.nickname %></p>
+              <div class="col-md-3 card">
+                    <h3><%= u.nickname %></h3>
+                    <!-- 돈(돈약속인 경우에만), 완료여부 -->
+                <% if @infos[i].done %>
 
-              <!-- 돈(돈약속인 경우에만), 완료여부 -->
-              <% if @infos[i].done %>
-
-                  <!-- 완료 -->
-                  <% if @appointment.app_type == 'MoneyApp' %>
-                      <p><%= @infos[i].money %>원</p>
-                  <% end %>
-                  <p>완료</p>
-
-              <% else %>
-
-                  <!-- 미완료 -->
-                  <% if @appointment.app_type == 'MoneyApp' %>
-                      <p id="money-container<%= @infos[i].id %>">
-                        <em id="money<%= @infos[i].id %>"><%= @infos[i].money %>원</em>
-                        <% if builder?(current_user, @appointment.id) %>
-                            <span class="money-edit" onclick="moneyForm(<%= @infos[i].id %>)">수정</span>
-                        <% end %>
-                      </p>
-                  <% end %>
-                  <p id="done-container<%= @infos[i].id %>">
-                    <% if builder?(current_user, @appointment.id) %>
-                        <%= link_to "미완료", done_info_path(@infos[i]),
-                                    method: :patch,
-                                    remote: true,
-                                    data: {confirm: '완료 시키겠습니까?'} %>
-                    <% else %>
-                        미완료
+                    <!-- 완료 -->
+                    <% if @appointment.app_type == 'MoneyApp' %>
+                            <p class="title"><%= @infos[i].money %>원</p>
                     <% end %>
-                  </p>
+                        <p><button class="button1"><a class="a">완료됨</a></button></p>
 
-              <% end %>
+                <% else %>
 
-            </div>
-        <% end %>
-      </div>
-    </article>
+                    <!-- 미완료 -->
+                    <% if @appointment.app_type == 'MoneyApp' %>
+                        <p id="money-container<%= @infos[i].id %>">
+                          <em id="money<%= @infos[i].id %>"><%= @infos[i].money %>원</em>
+                          <% if builder?(current_user, @appointment.id) %>
+                              <span class="money-edit" onclick="moneyForm(<%= @infos[i].id %>)">수정</span>
+                          <% end %>
+                        </p>
+                    <% end %>
+                        <p><button class="button1">
+                          <a id="done-container<%= @infos[i].id %>" class="a">
+                          <% if builder?(current_user, @appointment.id) %>
+                              <%= link_to "미완료", done_info_path(@infos[i]),
+                                          method: :patch,
+                                          remote: true,
+                                          data: {confirm: '완료 시키겠습니까?'} %>
+                          <% else %>
+                              미완료
+                          <% end %>
+                        </a>
+                        </button></p>
+                <% end %>
+                  </div>
+          <% end %>
+        </td>
+      </tr>
+    </table>
   </section>
 </div>
 

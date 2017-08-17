@@ -1,33 +1,41 @@
-<article>
-  <h4>유저초대</h4>
-  <%= form_tag(appointment_path(appointment), method: :get) do %>
-      <%= search_field_tag(:s_nickname) %>
-      <%= submit_tag('유저찾기') %>
-  <% end %>
 
-  <div class="search-users">
-    <% @search_users.each do |su| %>
-        <p>
-          <%= su.nickname %>
-          <% case invited?(su.id, appointment.id) %>
-          <% when 'participating' %>
-              참여중
-          <% when 'inviting' %>
-              <%= link_to '초대취소', notification_path(get_notification_id(su.id, appointment.id), ajax: false), method: :delete %>
-          <% else %>
-              <%= link_to '초대', notifications_path(type: 'AppNote',
-                                                   user_id: su.id,
-                                                   appointment_id: appointment.id), method: :post %> <%# 페북 참고해 보니까 id같은거 암호화해서 보내는듯 %>
-          <% end %>
-        </p>
-    <% end %>
-  </div>
+<tr>
+  <th scope="row">유저초대</th>
+          <td>
+            <%= form_tag(appointment_path(appointment), method: :get) do %>
+                <%= search_field_tag(:s_nickname) %>
+                <%= submit_tag('유저찾기',class:'button1') %>
+            <% end %>
+            <div class="search-users">
+              <% @search_users.each do |su| %>
+                  <p>
+                    <%= su.nickname %>
+                    <% case invited?(su.id, appointment.id) %>
+                    <% when 'participating' %>
+                        참여중
+                    <% when 'inviting' %>
+                        <%= link_to '초대취소', notification_path(get_notification_id(su.id, appointment.id), ajax: false), method: :delete %>
+                    <% else %>
+                        <%= link_to '초대', notifications_path(type: 'AppNote',
+                                                             user_id: su.id,
+                                                             appointment_id: appointment.id), method: :post %> <%# 페북 참고해 보니까 id같은거 암호화해서 보내는듯 %>
+                    <% end %>
+                  </p>
+              <% end %>
+            </div>
 
-  <h4>초대 중인 유저</h4>
-  <% @inviting_user.each do |iu| %>
-      <p>
-        <%= iu.nickname %>
-        <%= link_to '초대취소', notification_path(get_notification_id(iu.id, appointment.id)), method: :delete %>
-      </p>
-  <% end %>
-</article>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            초대 중인 유저
+          </th>
+          <td>
+            <% @inviting_user.each do |iu| %>
+                <p>
+                  <%= iu.nickname %>
+                  <%= link_to '초대취소', notification_path(get_notification_id(iu.id, appointment.id)), method: :delete %>
+                </p>
+            <% end %>
+          </td>
+        </tr>

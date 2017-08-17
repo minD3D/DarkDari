@@ -5,8 +5,8 @@
  */
 body,
 html {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 body,
@@ -16,25 +16,25 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
 }
 
 .topnav {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .lead {
-    font-size: 18px;
-    font-weight: 400;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .intro-header {
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
-    text-align: center;
- height: 120%;
-    color: black;
+  padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+  padding-bottom: 50px;
+  text-align: center;
+  height: 120%;
+  color: black;
   background: image-url("back_new_2.jpg") no-repeat center center;
   background-size: cover;
 
@@ -48,152 +48,148 @@ h6 {
   background-size: cover;
 }
 
-
-
 .intro-message {
-    position: relative;
-    padding-top: 7%;
-    padding-bottom: 7%;
+  position: relative;
+  padding-top: 7%;
+  padding-bottom: 7%;
 
 }
 
 .intro-message > h1 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 5em;
+  margin: 0;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+  font-size: 5em;
 }
 
 .intro-divider {
-    width: 650px;
-    border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+  width: 650px;
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
 }
 
 .intro-message > h3 {
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
-@media(max-width:767px) {
-    .intro-message {
-        padding-bottom: 15%;
-    }
+@media(max-width: 767px) {
+  .intro-message {
+    padding-bottom: 15%;
+  }
 
-    .intro-message > h1 {
-        font-size: 3em;
-    }
+  .intro-message > h1 {
+    font-size: 3em;
+  }
 
-    ul.intro-social-buttons > li {
-        display: block;
-        margin-bottom: 20px;
-        padding: 0;
-    }
+  ul.intro-social-buttons > li {
+    display: block;
+    margin-bottom: 20px;
+    padding: 0;
+  }
 
-    ul.intro-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
+  ul.intro-social-buttons > li:last-child {
+    margin-bottom: 0;
+  }
 
-    .intro-divider {
-        width: 100%;
-    }
+  .intro-divider {
+    width: 100%;
+  }
 }
 
 .network-name {
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
 }
 
 .content-section-a {
-    padding: 50px 0;
-    background-color: #31935d;
-}
-
-.content-section-b {
-    padding: 50px 0;
-    border-top: 1px solid #e7e7e7;
-    border-bottom: 1px solid #e7e7e7;
+  padding: 70px 0;
+  color: #f8f8f8;
+  background-size: cover;
+  background-color: #31935d;
 }
 
 .section-heading {
-    margin-bottom: 10px;
-    margin-top: 0px;
-    padding-left: 15px;
-    //font-family: 'Concert One', cursive;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  padding-left: 15px;
+  //font-family: 'Concert One', cursive;
 }
 
 .section-heading-spacer {
-    float: left;
-    width: 600px;
-    border-top: 2.8px solid #e7e7e7;
+  float: left;
+  width: 600px;
+  border-top: 2.8px solid #e7e7e7;
 }
 
 .banner {
-    padding: 70px 0;
-    color: #f8f8f8;
-//  background: image-url("back_5.jpg") no-repeat center center;
-    background-size: cover;
+  padding: 70px 0;
+  color: #f8f8f8;
+  //  background: image-url("back_5.jpg") no-repeat center center;
+  background-size: cover;
 }
 
-.banner h2 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 3em;
+.banner h2,
+.content-section-a h2 {
+  margin: 0;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+  font-size: 3em;
 }
 
 .banner ul {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .banner-social-buttons {
-    float: right;
-    margin-top: 0;
+  float: right;
+  margin-top: 0;
 }
 
-@media(max-width:1199px) {
-    ul.banner-social-buttons {
-        float: left;
-        margin-top: 15px;
-    }
+@media(max-width: 1199px) {
+  ul.banner-social-buttons {
+    float: left;
+    margin-top: 15px;
+  }
 }
 
-@media(max-width:767px) {
-    .banner h2 {
-        margin: 0;
-        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-        font-size: 3em;
-    }
+@media(max-width: 767px) {
+  .banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    font-size: 3em;
+  }
 
-    ul.banner-social-buttons > li {
-        display: block;
-        margin-bottom: 20px;
-        padding: 0;
-    }
+  ul.banner-social-buttons > li {
+    display: block;
+    margin-bottom: 20px;
+    padding: 0;
+  }
 
-    ul.banner-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
+  ul.banner-social-buttons > li:last-child {
+    margin-bottom: 0;
+  }
 }
 
 footer {
   padding: 50px 0;
   //background-color: darkred;
   background-color: #31935d;
- // position: relative;
+  // position: relative;
   bottom: 0;
   width: 100%;
   margin: 0px 0 0 0;
 }
+
 p.copyright {
   margin: 15px 0 0;
   color: black;
 }
 
-.synopsis{
-    padding-left: 0px;
+.synopsis {
+  padding-left: 0px;
 }
 
-body{
-  min-height:100%;
+body {
+  min-height: 100%;
 }

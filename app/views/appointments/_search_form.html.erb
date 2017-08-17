@@ -1,6 +1,5 @@
 <article>
   <h4>유저초대</h4>
-  <%# TODO: 검색 ajax로 바꿔보기 %>
   <%= form_tag(appointment_path(appointment), method: :get) do %>
       <%= search_field_tag(:s_nickname) %>
       <%= submit_tag('유저찾기') %>

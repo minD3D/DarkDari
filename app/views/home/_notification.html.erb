@@ -18,7 +18,7 @@
             ...
         <% end %>
         <!-- 거절 -->
-        <a href="/notifications/<%= notification.id %>" data-remote="true" data-confirm="거절하시겠습니까?" data-method="delete">
+        <a href="/notifications/<%= notification.id %>&ajax=true" data-remote="true" data-confirm="거절하시겠습니까?" data-method="delete">
           <i class="fa fa-times-circle" aria-hidden="true">
           </i>
         </a>

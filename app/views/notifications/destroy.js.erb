@@ -1,3 +1,5 @@
-$('#notification<%= @notification.id %>').bind('ajax:success', function() {
-    $(this).remove();
-});
+$('#notification<%= @notification.id %>').remove();
+
+//$('#notification<%#= @notification.id %>').bind('ajax:success', function() {
+//    $(this).remove();
+//});

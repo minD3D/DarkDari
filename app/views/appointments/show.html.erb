@@ -18,7 +18,7 @@
     <p>내용 : <%= @appointment.content %></p>
     <p>마감기한 : <%= @appointment.deadline %></p>
     <% if @appointment.app_type == 'LocationApp' %>
-        <div id="google-map"></div>
+        <div id="google-map" class="show-map"></div>
         <button onclick="currentLocation()">도착</button>
         <p id="distance-result"></p>
     <% end %>
@@ -36,65 +36,69 @@
     <article>
       <h4>참여자들</h4>
       <div class="row">
-        <%# TODO: 파셜로 뗴어내기 %>
         <% @appointment.users.each_with_index do |u, i| %>
             <div class="col-xs-2">
               <!-- 닉네임-->
               <p><%= u.nickname %></p>
 
-              <!-- 돈 -->
-              <% if @appointment.app_type == 'MoneyApp' %>
-                  <p id="money-container<%= i %>">
-                    <em id="money<%= i %>"><%= @infos[i].money %>원</em>
-                    <% if builder?(current_user, @appointment.id) %>
-                        <span class="money-edit" onclick="moneyForm(<%= i %>)">수정</span>
-                    <% end %>
-                  </p>
-              <% end %>
+              <!-- 돈(돈약속인 경우에만), 완료여부 -->
+              <% if @infos[i].done %>
 
-              <!-- 완료여부 -->
-              <p>
-                <% if @infos[i].done %>
-                    완료!
-                <% else %>
+                  <!-- 완료 -->
+                  <% if @appointment.app_type == 'MoneyApp' %>
+                      <p><%= @infos[i].money %>원</p>
+                  <% end %>
+                  <p>완료</p>
+
+              <% else %>
+
+                  <!-- 미완료 -->
+                  <% if @appointment.app_type == 'MoneyApp' %>
+                      <p id="money-container<%= @infos[i].id %>">
+                        <em id="money<%= @infos[i].id %>"><%= @infos[i].money %>원</em>
+                        <% if builder?(current_user, @appointment.id) %>
+                            <span class="money-edit" onclick="moneyForm(<%= @infos[i].id %>)">수정</span>
+                        <% end %>
+                      </p>
+                  <% end %>
+                  <p id="done-container<%= @infos[i].id %>">
                     <% if builder?(current_user, @appointment.id) %>
                         <%= link_to "미완료", done_info_path(@infos[i]),
                                     method: :patch,
+                                    remote: true,
                                     data: {confirm: '완료 시키겠습니까?'} %>
                     <% else %>
                         미완료
                     <% end %>
-                <% end %>
-              </p>
+                  </p>
+
+              <% end %>
+
             </div>
         <% end %>
-
       </div>
     </article>
   </section>
-
-<%#= TODO: 채무액 변경기능, 완료 했으면 변경 불가 / 전송해서 수정하기 %>
-<%#= TODO: notification이 있으면 몇개 있는지 숫자 띄워주는(?) 알림 %>
-
-
 </div>
 
-
-<% case @appointment.app_type %>
-<% when 'MoneyApp' %>
+<% if @appointment.app_type == 'MoneyApp' %>
     <script>
-        function moneyForm(i) {
-            var containerId = 'money-container' + i;
-            var id = 'money' + i;
-            var money = document.getElementById(id).textContent;
+        function moneyForm(index) {
+            var money = document.getElementById(id = 'money' + index).textContent;
 
-            document.getElementById(containerId).innerHTML
-                = '<input id="money-edit-field" type="number" min="0" name="money_change" value="' + money + '">';
+            document.getElementById('money-container' + index).innerHTML
+                = '<form action="/infos/' + index + '/change_money" method="post" data-remote="true">'
+                + '<input id="money-edit-field" type="number" min="0" name="money" value="' + parseInt(money) + '">'
+                + '<input type="hidden" value="' + '<%= form_authenticity_token %>' + '" name="authenticity_token">'
+                + '<input type="submit" value="수정">'
+                + '</form>';
         }
     </script>
-<% when 'LocationApp' %>
+<% elsif @appointment.app_type == 'LocationApp' %>
     <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script>
+
+
         var map;
         var appLocation = {lat: <%= @location[0] %>, lng: <%= @location[1] %>};
         var marker;
@@ -132,12 +136,11 @@
             });
         }
 
-        <%# TODO: 현재위치 계산하는 동안 메세지 같은거 띄울 수 있으면 좋을듯 %>
         function currentLocation() {
             myLocation = 0;
             var infoWindow = new google.maps.InfoWindow({map: map});
             var distance;
-            var distanceResult = document.getElementById("distance-result")
+            var distanceResult = document.getElementById("distance-result");
 
             // Try HTML5 geolocation.
             if (navigator.geolocation) {
@@ -202,9 +205,7 @@
                 dataType: 'script'
             });
         }
-
     </script>
-<% else %>
 <% end %>
 </body>
 </html>

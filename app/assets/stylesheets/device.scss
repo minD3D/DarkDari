@@ -228,7 +228,6 @@ button {
   cursor: pointer;
 }
 
-
 .table td span {
   display: block;
   margin-top: 5px;
@@ -489,7 +488,7 @@ img {
   margin-right: auto;
   margin-top: 5px;
   padding: 50px 0;
-  background: #fff;
+  background: floralwhite;
   box-shadow: 0 0 5px 3px #d0d0d0;
 }
 #login h2 {
@@ -634,13 +633,13 @@ img {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Light'), url(http://themes.googleusercontent.com/static/fonts/roboto/v8/Hgo13k-tfSpn0qi1SFdUfbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://themes.googleusercontent.com/static/fonts/roboto/v8/Hgo13k-tfSpn0qi1SFdUfbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  src: local('Roboto Medium'), local('Roboto-Medium'), url(http://themes.googleusercontent.com/static/fonts/roboto/v8/RxZJdnzeo3R5zSexge8UUbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://themes.googleusercontent.com/static/fonts/roboto/v8/RxZJdnzeo3R5zSexge8UUbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
 
 
@@ -653,7 +652,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   line-height: 1;
   font-family: 'Roboto', "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-  background-image:url(http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/bg_pattern.gif);
+  background-image:url(https://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/bg_pattern.gif);
   font-weight:300;
 }
 ol, ul {
@@ -913,7 +912,7 @@ $col) {
 
 /* edit user */
 @import url('https://fonts.googleapis.com/css?family=Concert+One');
-@import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 #login .form-signin{
   padding-top: 20px;
   padding-bottom: 20px;
@@ -935,7 +934,6 @@ $col) {
 
 .editlabel{
   font-size: 18px;
-  margin-bottom: 0px;
 }
 
 .field{
@@ -948,11 +946,12 @@ $col) {
 }
 
 .edit_button{
-  margin-top: 0px;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 .edit_button2{
-  margin-top: 0px;
-  margin-left: 30px;
+  margin-top: 10px;
+  margin-left: 50px;
 }
 
 .deleteuser{
@@ -964,7 +963,9 @@ $col) {
 }
 
 .delete_user{
-  padding-left: 30px;
+  padding-left: 50px;
+  margin-bottom: 0px;
+  font-size: 15px;
 }
 
 .backbutton{
@@ -1105,4 +1106,9 @@ body {
   font-family: 'Concert One', cursive;
   margin-top: 15px;
   margin-bottom: 30px;
+}
+
+.darkdari-logo {
+  margin: auto;
+  width: 250px;
 }

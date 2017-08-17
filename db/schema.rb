@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729074747) do
+ActiveRecord::Schema.define(version: 20170811063116) do
 
   create_table "appointments", force: :cascade do |t|
     t.string   "title",                   null: false
     t.text     "content",                 null: false
     t.datetime "deadline",                null: false
+    t.integer  "period",                  null: false
     t.string   "location",   default: "", null: false
     t.string   "app_type",                null: false
     t.datetime "created_at",              null: false
@@ -45,6 +46,12 @@ ActiveRecord::Schema.define(version: 20170729074747) do
     t.index ["appointment_id"], name: "index_notifications_on_appointment_id"
     t.index ["requester_id"], name: "index_notifications_on_requester_id"
     t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
+  create_table "texts", force: :cascade do |t|
+    t.string   "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

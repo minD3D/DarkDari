@@ -4,7 +4,6 @@
   <title>DarkDari</title>
   <%= csrf_meta_tags %>
 
-
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -13,128 +12,74 @@
       padding-top: 150px;
     }
   </style>
-  <link rel="stylesheet" type="text/css" href="/assets/jquery.datetimepicker.css" >
-  <script src="/assets/jquery.js"></script>
-  <script src="/assets/jquery.datetimepicker.full.min.js"></script>
-  <script src="/assets/bootstrapValidator.js"></script>
   <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 </head>
 
 <body>
-  
-<nav class="navbar navbar-default navbar-fixed-top topnav navigation" role="navigation">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        navbar
-      </button>
-      <a class="navbar-brand topnav" href="/"><img src="/logo.png" , style="width:180px; height:130px; padding-top: 10px;" ,alt="로고"></a>
 
-      <!--<div class="main-textlogo">
-        <h1>
-          <span><%= image_tag 'charecterup.png', class: 'logoimg1'%></span>
-        </h1>
-      </div>-->
+<nav class="navbar navbar-default navbar-fixed-top topnav navigation" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand topnav" href="/"><img src="/logo.png" style="width:180px; height:130px; padding-top: 10px;" alt="로고"></a>
     </div>
-    <ul class="nav navbar-nav navbar-right menu">
-      <li class="menu__item">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right" style="float:right">
+        <li class="menu__item">
           <a href="/#about" class="menu__link">
-              <span class="menu__title">
-                  <span class="menu__first-word" data-hover="About">
-                      About
-                  </span>
-                  <span class="menu__second-word" data-hover="Us">
-                      Us
-                  </span>
-              </span>
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="About">About</span>
+              <span class="menu__second-word" data-hover="Us">Us</span>
+            </span>
           </a>
-      </li>
-      <li class="menu__item">
+        </li>
+        <li class="menu__item">
           <a href="/home/show_my_page" class="menu__link">
-              <span class="menu__title">
-                  <span class="menu__first-word" data-hover="My">
-                      My
-                  </span>
-                  <span class="menu__second-word" data-hover="Page">
-                      Page
-                  </span>
-              </span>
-          </a>
-      </li>
-      
-      <% if current_user %>
-        <li class="menu__item">
-          <%= link_to "#{current_user.nickname}", edit_user_registration_path, class: 'menu__link' %>
-        </li>
-        <li class="menu__item">
-          <a href="/users/sign_out" data-method="delete" class="menu__link">
             <span class="menu__title">
-              <span class="menu__first-word" data-hover="Sign">
-                  Sign
-              </span>
-              <span class="menu__second-word" data-hover="Out">
-                  Out
-              </span>
+              <span class="menu__first-word" data-hover="My">My</span>
+              <span class="menu__second-word" data-hover="Page">Page</span>
             </span>
           </a>
-          <%#= link_to 'SignOut', destroy_user_session_path, method: :delete, class: 'menu__item page-menu' %>
         </li>
-      <% else %>
-        <li class="menu__item">
-          <a href="/users/sign_in" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Sign">
-                  Sign
-              </span>
-              <span class="menu__second-word" data-hover="In">
-                  In
-              </span>
-            </span>
-          </a>
-          <%#= link_to 'SignIn', new_user_session_path, class: 'menu__item page-menu' %>
-        </li>
-      <% end %>
-    </ul>
+        <% if current_user %>
+            <li class="menu__item">
+              <%= link_to "#{current_user.nickname}", edit_user_registration_path, class: 'menu__link' %>
+            </li>
+            <li class="menu__item">
+              <a href="/users/sign_out" data-method="delete" class="menu__link">
+                <span class="menu__title">
+                  <span class="menu__first-word" data-hover="Sign">Sign</span>
+                  <span class="menu__second-word" data-hover="Out">Out</span>
+                </span>
+              </a>
+            </li>
+        <% else %>
+            <li class="menu__item">
+              <a href="/users/sign_in" class="menu__link">
+                <span class="menu__title">
+                  <span class="menu__first-word" data-hover="Sign">
+                    Sign
+                  </span>
+                  <span class="menu__second-word" data-hover="In">
+                    In
+                  </span>
+                </span>
+              </a>
+            </li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
 
-
-<!-- Navigation -->
-<!--<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-  <div class="container topnav">-->
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <!--<div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        navbar
-      </button>
-      <a class="navbar-brand topnav" href="/"> <img src="/logo.png" , style="width:180px; height:130px; padding-top: 10px;" ,alt="로고">
-      </a>
-    </div>-->
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="/#about" class="page-menu">About</a>
-        </li>
-        <li>
-          <a href="/home/show_my_page" class="page-menu">MyPage</a>
-        </li>
-        <%# if current_user %>
-            <li>
-              <%#= link_to "#{current_user.nickname}", edit_user_registration_path, class: 'page-menu' %>
-            </li>
-            <li>
-              <%#= link_to 'SignOut', destroy_user_session_path, method: :delete, class: 'page-menu' %>
-            </li>
-        <%# else %>
-            <li>
-              <%#= link_to 'SignIn', new_user_session_path,class: 'page-menu' %>
-            </li>
-        <%# end %>
-      </ul>
-    </div>-->
-    <!-- /.navbar-collapse -->
-  <!--</div>
-  <!-- /.container -->
-<!--</nav>-->
 
 
 <%= yield %>
@@ -144,6 +89,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
+        <div class="container">
         <ul class="list-inline">
           <li>
             <a href="/">Home</a>
@@ -154,9 +100,14 @@
           </li>
           <li class="footer-menu-divider">&sdot;</li>
           <li>
-            <a href="/#/home/showMyPage">Mypage</a>
+            <a href="https://github.com/minD3D/DarkDari">Github</a>
+          </li>
+          <li class="footer-menu-divider">&sdot;</li>
+          <li class="footer-menu-divider">
+            <a href="#">Gmail</a>
           </li>
         </ul>
+        </div>
         <p class="copyright text-muted small">Copyright &copy; Team DakDal. All Rights Reserved</p>
         <p class="copyright text-muted small">Likelion_5th Inha Univ </p>
         <p class="copyright text-muted small" style="float: right">2017_Dakkdari</p>

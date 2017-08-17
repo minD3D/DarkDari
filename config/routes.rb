@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  require 'sidekiq/web'
+  mount Sidekiq::Web => "/sidekiq"
 
   root 'home#index'
   get 'home/index'
@@ -14,9 +16,10 @@ Rails.application.routes.draw do
   resources :infos, only: :create do
     member do
       patch 'done'
-      patch 'change_money'
+      post 'change_money'
     end
   end
+
 
 
   resources :notifications, only: [:create, :destroy]

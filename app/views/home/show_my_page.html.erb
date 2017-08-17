@@ -2,8 +2,8 @@
 <div class="container">
   <div class="row section-padding my-noti">
     <div class="col-xs-12 col-sm-6">
-      <h2 class="subs-title"><i class="fa fa-bell-o" aria-hidden="true"></i> 알림</br></br></h2>
-      <h5 class="ment">저희 닦달 서비스를 이용해주셔서 감사합니다.</h5>
+      <h2 class="subs-title"><i class="fa fa-bell-o" aria-hidden="true"></i> 알림<br><br></h2>
+      <h5>저희 닦달 서비스를 이용해주셔서 감사합니다.</h5>
       <br>
     </div>
 
@@ -21,7 +21,7 @@
 
 <article class="container">
   <!-- Marketing Icons Section -->
-  <div class="row my-apps">
+  <div class="row my-apps" id="appointments">
     <!-- appointments/_appointment.html.erb -->
     <%= render @appointments %>
   </div>
@@ -31,7 +31,9 @@
 
 <div id="contact-info">
   <div class="container">
-    <a href="/appointments/new?app_type=MoneyApp"><button class="btn btn-default btn-lg">약속하기</button></a>
+    <a href="/appointments/new?app_type=MoneyApp">
+      <button class="btn btn-default btn-lg">약속하기</button>
+    </a>
   </div>
 </div>
 

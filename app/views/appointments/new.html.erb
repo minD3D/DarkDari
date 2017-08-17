@@ -1,12 +1,15 @@
 <div class="container">
   <section>
-    <p>
-      <%#= link_to '돈 약속하기', new_appointment_path(app_type: 'MoneyApp') %>
-      <%#= link_to '장소 약속하기', new_appointment_path(app_type: 'LocationApp') %>
-    </p>
-
-
-
+    <table class="typemenu">
+      <tr>
+        <th>
+          <%= link_to '돈 약속하기', new_appointment_path(app_type: 'MoneyApp') %>
+        </th>
+        <th>
+          <%= link_to '장소 약속하기', new_appointment_path(app_type: 'LocationApp') %>
+        </th>
+      </tr>
+    </table>
     <article>
       <%= render 'form' do |f| %>
           <% if @app_type == 'LocationApp' %>

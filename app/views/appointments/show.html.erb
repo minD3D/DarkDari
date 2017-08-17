@@ -27,16 +27,12 @@
         <th scope="row">마감기한</th>
         <td> <%= @appointment.deadline %></td>
       </tr>
-      <tr>
-        <% if @appointment.app_type == 'LocationApp' %>
-            <td>
-              <div id="google-map" class="show-map"></div>
-              <button onclick="currentLocation()">도착</button>
-              <p id="distance-result"></p>
-            </td>
-        <% end %>
-      </tr>
     </table>
+    <% if @appointment.app_type == 'LocationApp' %>
+        <div id="google-map" class="show-map"></div>
+        <button onclick="currentLocation()">도착</button>
+        <p id="distance-result"></p>
+    <% end %>
 
     <table class="type041">
 

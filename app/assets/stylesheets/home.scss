@@ -137,3 +137,27 @@ a{
 .show-my-page-section {
   min-height: 70%;
 }
+#contact{
+  padding-top: 50px;
+  background-color: #eee;
+}
+
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+
+
+.synopsis{
+  font-family: 'NanumBarunGothic', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height:200%;
+}
+
+#synopsis{
+  padding-top: 25px;
+}

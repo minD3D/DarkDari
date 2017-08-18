@@ -34,7 +34,7 @@ span{
   font-family: 'Concert One', cursive;
   width: 100%;
   border-bottom: 7px solid #31935d;
-  font-size: 28px;
+  font-size: 15px;
 }
 
 .menu {
@@ -46,7 +46,7 @@ span{
 }
 
 .menu__item {
-  border-right: 3px dotted #ccd7d7;
+  //border-right: 3px dotted #ccd7d7;
   display: inline-block;
   white-space: nowrap;
 
@@ -123,4 +123,8 @@ span{
     bottom: 120%;
     color: $color-primary;
   }
+}
+
+.navbar-nav > li > a{
+  line-height: 23px;
 }

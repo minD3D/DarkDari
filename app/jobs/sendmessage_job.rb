@@ -3,8 +3,6 @@ class SendmessageJob < ApplicationJob
 
   def perform(id, period)
     @appointment = Appointment.find(id)
-
-
     confirm = true
 
     @appointment.infos.each do |infos|
@@ -15,20 +13,20 @@ class SendmessageJob < ApplicationJob
           @sms = text.text
         end
 
-
         user = infos.user
-        client = Coolsms::Client.new(:api_key => ENV['cool_sms_key'],
-                                     :api_secret => ENV['cool_sms_secret_key'],
-                                     :sender => '01063507688')
-
-        client.send_message :to => user.phone, :text => @sms
+        client = Coolsms::Client.new(api_key: ENV['cool_sms_key'],
+                                     api_secret: ENV['cool_sms_secret_key'],
+                                     sender: ENV['hojae_phone'])
+        client.send_message to: user.phone, text: @sms
       end
+
+      next
+
     end
 
     unless confirm
       SendmessageJob.set(wait: 30.minutes).perform_later(id, period)
     end
-
   end
 
 

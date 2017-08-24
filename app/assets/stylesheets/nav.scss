@@ -9,6 +9,7 @@ $medium: 768px;
 $large: 992px;
 $x-large: 1200px;
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url('https://fonts.googleapis.com/css?family=Concert+One');
 
 @mixin hide-menu-items($index) {
   &:nth-child(n + #{$index + 1}) {
@@ -30,11 +31,11 @@ span{
 }
 
 .navigation {
-  font-family: 'Segoe UI', cursive;
+  font-family: 'Nanum Gothic Coding', sans-serif;
+  //font-family: 'Concert One', cursive;
   width: 100%;
   border-bottom: 7px solid #31935d;
-  font-size: 15px;
-  margin-right: 5%;
+  font-size: 20px;
 }
 
 .menu {
@@ -67,9 +68,31 @@ span{
   }
 }
 
+.menu__link {
+  width: auto;
+  height: auto;
+  display: block;
+  padding: 6px 30px 3px;
+
+  &:hover,
+  &:focus {
+    .menu__first-word {
+      transform: translate3d(0, -98%, 0);
+    }
+
+    .menu__second-word {
+      transform: translate3d(0, 98%, 0);
+    }
+  }
+
+  @media screen and (min-width: $medium) {
+    padding: 6px 40px 3px;
+  }
+}
 
 .menu__title {
-  font-family: 'Segoe UI', cursive;
+  font-family: 'Nanum Gothic Coding', sans-serif;
+  //font-family: 'Concert One', cursive;
   display: inline-block;
   overflow: hidden;
 }
@@ -102,84 +125,4 @@ span{
     bottom: 120%;
     color: $color-primary;
   }
-}
-
-.navbar-nav > li > a{
-  line-height: 23px;
-}
-
-.navbar-default .navbar-collapse, .navbar-default .navbar-form{
-  margin-right: 5%;
-}
-
-
-@font-face {
-  font-family: 'NanumBarunGothic';
-  font-style: normal;
-  font-weight: 700;
-  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
-  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
-}
-
-
-.nanumbarungothic * {
-  font-family: 'NanumBarunGothic', sans-serif;
-}
-
-.normal {
-  font-style: normal;
-}
-
-li span {
-  line-height: 1.8;
-  font-size: 1.3em;
-}
-
-
-.menu__link {
-  width: auto;
-  height: auto;
-  display: block;
-  padding: 6px 30px 3px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  &:hover,
-  &:focus {
-    .menu__first-word {
-      transform: translate3d(0, -95%, 0);
-
-    }
-
-    .menu__second-word {
-      transform: translate3d(0, 98%, 0);
-
-    }
-  }
-
-  @media screen and (min-width: $medium) {
-    padding: 6px 40px 3px;
-  }
-
-}
-
-.username{
-  color:#626262;
-  font-family: "Segoe UI", Verdana;
-  font-weight: 700;
-  font-size: 20px;
-  text-transform: uppercase;
-  margin-top: 7px;
-  letter-spacing:2px;
-  &:hover,
-  &:focus{
-    color: #0c8040;
-  }
-}
-
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
-  color:#626262;
-}
-.navbar-default .navbar-nav > li > a{
-  color:#626262;
 }
